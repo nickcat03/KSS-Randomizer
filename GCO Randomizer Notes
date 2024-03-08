@@ -1,0 +1,34 @@
+
+Only swap one-ways with one-ways and two-ways with two-ways
+- First randomize branching paths, then dead ends fill the blanks
+- Option to randomize save rooms
+Randomize chest contents (make sure all 60 are collectable)
+Randomize mini-bosses
+Randomize ability stands
+Randomize Music (or mute music)
+
+Door Arithmetic (THIS IS NOT IMPORTANT ANYMORE) aka doorithmatic
+At $0191D3 there is math done that does the following:
+Divide $6894 / $3755
+
+How the game reads door shit:
+Pointer points to door coords.
+ONLY CHANGE THE DOOR COORDS AND THATS IT
+Example: the trapdoor room
+03 00 B8 02 90 00 3C 00 54 00
+03 00 = Room number
+B8 02 = Do not change!!
+90 00 = Do not change!!
+3C 00 = X spawn
+54 00 = Y spawn
+
+
+All door locations:
+
+--Subtree--
+Starting Hallway: $305F50   02 00 A0 02 60 00 24 00 9C 00
+$316E0A
+$316E14
+
+08 00 B8 02 90 00 54 00 3C 00
+03 00 40 05 A8 00 3C 00 54 00
