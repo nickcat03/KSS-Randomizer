@@ -11,7 +11,7 @@ Door Arithmetic (THIS IS NOT IMPORTANT ANYMORE) aka doorithmatic
 At $0191D3 there is math done that does the following:
 Divide $6894 / $3755
 
-How the game reads door shit:
+How the game reads door data:
 Pointer points to door coords.
 ONLY CHANGE THE DOOR COORDS AND THATS IT
 Example: the trapdoor room
