@@ -51,7 +51,6 @@ program_window.resizable(False, False)
 program_window["padx"] = 14
 program_window["pady"] = 14
 
-
 #Setup frames
 frame_get_rom = Frame(program_window)
 frame_get_rom.pack()
@@ -61,7 +60,6 @@ frame_options = Frame(program_window, borderwidth=2, relief=RIDGE, padx=4, pady=
 frame_options.pack()
 frame_generate_rom = Frame(program_window)
 frame_generate_rom.pack()
-
 
 #File paths...
 #Path to ROM
