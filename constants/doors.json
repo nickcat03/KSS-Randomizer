@@ -1,10 +1,8 @@
 {
     "Tree0_Tree2": {
         "rom_location": ["305F50"],
-        "door_data": {
-            "room_number": ["02"],
-            "respawn_coordinates": ["24009C00"]
-        },
+        "room_number": ["02"],
+        "spawn_coordinates": ["24009C00"],
         "type": [0],
         "exits": ["Tree2_Tree3", "Tree2_Tree8"],
         "desc": ["Door in Starting Hallway"]
@@ -12,10 +10,8 @@
 
     "Tree2_Tree3": {
         "rom_location": ["316E14"],
-        "door_data": {
-            "room_number": ["03"],
-            "respawn_coordinates": ["3C005400"]
-        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["3C005400"],
         "type": [1],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["Door in Second Room, Lava block puzzle"]
@@ -23,10 +19,8 @@
 
     "Tree3_Tree2": {
         "rom_location": ["326DA0"],
-        "door_data": {
-            "room_number": ["02"],
-            "respawn_coordinates": ["4C05B400"]
-        },
+        "room_number": ["02"],
+        "spawn_coordinates": ["4C05B400"],
         "type": [1],
         "exits": ["Tree2_Tree3", "Tree2_Tree8"],
         "desc": ["Door in the trapdoor room back to water puzzle"]
@@ -34,10 +28,8 @@
 
     "Tree2_Tree8": {
         "rom_location": ["316E0A"],
-        "door_data": {
-            "room_number": ["08"],
-            "respawn_coordinates": ["54003C00"]
-        },
+        "room_number": ["08"],
+        "spawn_coordinates": ["54003C00"],
         "type": [1],
         "exits": ["Tree8_Tree2"],
         "desc": ["Single Chest with water current"]
@@ -45,10 +37,8 @@
 
     "Tree8_Tree2": {
         "rom_location": ["30D0F0"],
-        "door_data": {
-            "room_number": ["02"],
-            "respawn_coordinates": ["C4028400"]
-        },
+        "room_number": ["02"],
+        "spawn_coordinates": ["C4028400"],
         "type": [1],
         "exits": ["Tree2_Tree8, Tree2_Tree3"],
         "desc": ["Door back to lava block puzzle"]
@@ -56,10 +46,8 @@
 
     "Tree3_Reset1": {
         "rom_location": ["326DBE"],
-        "door_data": {
-            "room_number": ["03"],
-            "respawn_coordinates": ["04024401"]
-        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["04024401"],
         "type": [0],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["First reset door for switch puzzle"]
@@ -67,10 +55,8 @@
 
     "Tree3_Reset2": {
         "rom_location": ["326DC8"],
-        "door_data": {
-            "room_number": ["03"],
-            "respawn_coordinates": ["04024401"]
-        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["04024401"],
         "type": [0],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["Second reset door for switch puzzle"]
@@ -78,10 +64,8 @@
 
     "Tree3_Reset3": {
         "rom_location": ["326DAA"],
-        "door_data": {
-            "room_number": ["03"],
-            "respawn_coordinates": ["04024401"]
-        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["04024401"],
         "type": [0],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["Third reset door for switch puzzle"]
@@ -89,10 +73,8 @@
 
     "Tree3_Tree4": {
         "rom_location": ["326DB4"],
-        "door_data": {
-            "room_number": ["04"],
-            "respawn_coordinates": ["54002C01"]
-        },
+        "room_number": ["04"],
+        "spawn_coordinates": ["54002C01"],
         "type": [1],
         "exits": ["Tree4_Tree3", "Tree4_SaveRoom1", "Tree4_Tree5"],
         "desc": []
@@ -100,10 +82,8 @@
 
     "Tree4_Tree3": {
         "rom_location": ["339626"],
-        "door_data": {
-            "room_number": ["03"],
-            "respawn_coordinates": ["9C034401"]
-        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["9C034401"],
         "type": [1],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": []
