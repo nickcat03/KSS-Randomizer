@@ -1,148 +1,200 @@
 #Everything here is responsible for door randomization
 
+import copy
 import random
 import os 
 import json 
 from utils import *
 
-door_data = "constants/doors.json"
+DOOR_DATA = "constants/doors.json"
+ROOM_DATA = "constants/rooms.json"
+
 
 def randomize_doors(ROM_file):
-    #Grab all of the door data and put it in a list
-    doors = json.load(open(door_data))
-    door_list = list(doors.keys())
 
-    #Initialize blank lists for where all of our door shuffling will go
-    #this list will be the final list that will be sent to the ROM
-    door_list_randomized = []
-    #for keeping track of what door is up next. Start the list with the first door
-    door_queue = [door_list[0]]
-    #for keeping track of the doors that are already finished
-    already_randomized = []
-    #two separate lists to sort the door types
-    one_way_door_list = []
-    two_way_door_list = []
+    def remove_available_door_from_sub_lists(chosen_door):
+        if chosen_door in available_one_way_doors:
+            available_one_way_doors.remove(chosen_door)
 
-    #temp code
-    for i in range(len(door_list)):
-        # Select a random door to swap with
-        swap_door_index = random.randint(0, len(door_list) - 1)
+        if chosen_door in available_two_way_doors:
+            available_two_way_doors.remove(chosen_door)
 
-        # Swap the ROM locations between the current door and the randomly selected door
-        doors[door_list[i]]["rom_location"], doors[door_list[swap_door_index]]["rom_location"] = \
-            doors[door_list[swap_door_index]]["rom_location"], doors[door_list[i]]["rom_location"]
-    
-    #write data to rom
-    for i in range(len(door_list)):
+        if chosen_door in available_dead_end_one_way_doors:
+            available_dead_end_one_way_doors.remove(chosen_door)
 
-        rom_location = removeBrackets(doors[door_list[i]]['rom_location'])
-        rom_location = int(rom_location, 16)
+        if chosen_door in available_dead_end_two_way_doors:
+            available_dead_end_two_way_doors.remove(chosen_door)
 
-        for data in doors[door_list[i]]["room_number"]:
-            converted_data = hex_string_to_bytes(data)
-            writeBytesToFile(ROM_file, converted_data, rom_location, 1)
-        for data in doors[door_list[i]]["spawn_coordinates"]:
-            converted_data = hex_string_to_bytes(data)
-            writeBytesToFile(ROM_file, converted_data, rom_location + 6, 4)
+    #Grab all of the door data and put it in a dict
+    DOORS = json.load(open(DOOR_DATA))
+    #Generate keys list of all the door names so we have a way of indexing the DOORS dict if needed
+    DOOR_LIST = list(DOORS.keys())
 
+    #Do the same thing with the room data.
+    #Room data is basically what doors are in which rooms
+    ROOMS = json.load(open(ROOM_DATA))
+    ROOM_LIST = list(ROOMS.keys())
+
+    #Make a copy of the DOORS list. Doors will be deleted from this list as they are used.
+    available_doors = copy.deepcopy(DOORS)
+
+    #Split one way doors and two way doors into separate lists so they can be chosen based on current door type
+    #Also do this with dead end doors, which will require 4 lists to sort them all.
+    #These two lists will be for standard doors.
+    available_one_way_doors = []
+    available_two_way_doors = []
+
+    #Dead end doors are doors that lead to a room with no way to progress further.
+    #These are mostly bonus rooms which have chests in them and lead to nowhere else.
+    available_dead_end_one_way_doors = []
+    available_dead_end_two_way_doors = []
 
     '''
-    #Sort the door types into their own separate lists
-    for i in door_list:
-            if doors[i]['type'] == 1:
-                two_way_door_list.append(i)
+    #Sort every single door into these four lists
+    for door_name in DOOR_LIST:
+
+        #Find how many exits the next room has
+        doors_in_next_room = DOORS[door_name]['next_room'][0]
+        #Find if the door is linked to another door
+        linked_to = DOORS[current_door]["linked_to"]
+
+        #If door is linked to another door
+        if linked_to:
+            #If the next room the door leads into has one or less exit...
+            if len(ROOMS[doors_in_next_room]['doors']) <= 1:
+                available_dead_end_two_way_doors.append(door_name)
+            #If the next room has more than one exit...
             else:
-                one_way_door_list.append(i)
+                available_two_way_doors.append(door_name)
+        #If door is a one way door
+        else:
+            #If the next room has no exits (literally just the final room)
+            if len(ROOMS[doors_in_next_room]['doors']) <= 0:
+                available_dead_end_one_way_doors.append(door_name)
+            #If the next room has more than zero exit...
+            else:
+                available_one_way_doors.append(door_name)
+    '''
 
-    #Now randomize them
-    random.shuffle(one_way_door_list)
-    random.shuffle(two_way_door_list)
+    #sort with no dead end checks
+    for door_name, i in available_doors.items():
+        if "linked_to" in i and i["linked_to"]:
+            available_two_way_doors.append(door_name)
+        else:
+            available_one_way_doors.append(door_name)
+    
+    
+    #This dictionary will be the finalized list of randomized doors
+    doors_randomized = copy.deepcopy(DOORS)
 
+    #This list determines what door will be randomized next, based on the next room of the previous door.
+    #This is so all rooms are accessible.
+    #Set the first door to be the first one in the queue.
+    door_queue = [DOOR_LIST[0]]
 
-    #However, the doors need to be sorted due to two-way doors needing to be linked
-    #Run this loop until we sort through all the doors
+    #List for keeping track of what rooms we already queued up.
+    visited_rooms = set()
+
+    #This list is used for keeping track of doors that were linked together instead of randomized.
+    #If they were already linked, they need to be skipped in the for loop.
+    is_linked = set()
+
+    #This is the main randomization loop
+    #Run this list until there are no more doors available
     while len(door_queue) > 0:
-        #set variable so it's easier to reference
+
+        #Set our current door. Mainly for code readability.
         current_door = door_queue[0]
 
-        if current_door in door_list:
-            #set index as variable so it's easier to reference
-            current_door_index = door_list.index(current_door)
+        #If this door was already linked manually, skip the door
+        if current_door in is_linked:
+            door_queue.remove(current_door)
+            continue
 
-            #Continue through this loop until we are certain the door has been randomized
-            certainly_randomized = False
-            while certainly_randomized == False:
-                already_checked = 0
+        #Find the door the current door is linked to
+        linked_to = DOORS[current_door]["linked_to"]
 
-                #This is ran for two way doors
-                if doors[current_door]['type'] == 1:
-                    #If the door is a two way and the two way list is empty, pass it off as checked
-                    if len(one_way_door_list) <= 0 or len(two_way_door_list) <= 0:
-                        certainly_randomized = True
-                    elif not current_door in already_randomized:
-                        already_randomized.append(current_door)
+        #Select a random door
+        #Note: Do an if for "if total random" once this option is added, so that all doors can be chosen
+        if linked_to:
+            #Convert this to a string instead of a list element
+            linked_to = linked_to[0]
 
-                        #Run if the two way door list isn't empty
-                        if len(two_way_door_list) > 0:
-                            linked_door = find_linked_door(current_door)
-                            while two_way_door_list[0] == linked_door:
-                                random.shuffle(two_way_door_list)
-                            for i in doors[two_way_door_list[0]]['exits']:
-                                if not i in already_randomized:
-                                    door_queue.append()
-                            
-                            #Make sure two-way doors link together
-                            matching_index = door_list.index(find_linked_door(two_way_door_list[0]))
-                            current_linked_door = find_linked_door(current_door)
+            random_door = linked_to
 
-                            door_list_randomized[current_door_index] = two_way_door_list[0]
-                            door_list_randomized[matching_index] = current_linked_door
-                            already_randomized.append(matching_index)
+            current_room = DOORS[current_door]["in_room"][0]
+            random_current_room = DOORS[random_door]["in_room"][0]
 
-                            if current_linked_door in two_way_door_list:
-                                two_way_door_list.remove(current_linked_door)
-                            del two_way_door_list[0]
+            #Make sure that we do NOT select the door the current door is linked to.
+            #Doing this can result in a door that takes you back to its entrance.
 
-                #This is ran for one way doors
-                else:
-                    if len(one_way_door_list) > 0:
-                        for i in doors[one_way_door_list[0]]['exits']:
-                            if not i in already_randomized:
-                                door_queue.append(i)
+            #Also, if it is a two way, don't link with a door in the same room or else it will loop inside the room.
+            while random_door == linked_to or current_room == random_current_room:
+                random_door = random.choice(list((available_two_way_doors)))
+                random_current_room = DOORS[random_door]["in_room"][0]
+        elif not linked_to:
+            random_door = random.choice(list((available_one_way_doors)))
+            
+        #Randomize the door
+        print(f"{current_door} overwriting {random_door}")
+        doors_randomized[current_door] = available_doors[random_door]
+        remove_available_door_from_sub_lists(random_door)
+        del available_doors[random_door]
 
-                        door_list_randomized[current_door_index] = one_way_door_list[0]
-                        del one_way_door_list[0]
-                        
-        # If the door isn't scheduled to be randomized, mark it as randomized, but don't touch door_list_randomized
-        else:
-            if not current_door in already_randomized:
-                already_randomized.append(current_door)
-                for i in doors[current_door]['exits']:
-                    if not i in already_randomized:
-                        door_queue.append(i)
-        
+        #Get what the next room will be when entering this door.
+        random_next_room = DOORS[random_door]["next_room"][0]
+
+        #If we have not yet queued up this room, add the doors in this room to the queue.
+        if random_next_room not in visited_rooms:
+            #Add future doors into the queue based on the upcoming room.
+            for door in ROOMS[random_next_room]["doors"]:
+                door_queue.append(door)
+                #Add this room to the visited rooms list so it isn't checked again
+                visited_rooms.add(random_next_room)
+ 
+        #Check if the current door is normally a two-way door
+        if linked_to:
+            '''
+            -Using a different variable name for linked_to because this part can get confusing
+            -We will be writing the linked door data of the current door to the linked door
+             data of the random door we got. This way the doors lead back to each other in-game.
+            '''
+            #The door linked to the current door we have in the loop
+            door_data_to_write = linked_to
+            #The door linked to the door we randomly rolled earlier
+            door_data_to_edit = DOORS[random_door]["linked_to"][0]
+
+            print(f"{door_data_to_edit} overwriting {door_data_to_write} (by link)")
+
+            #Write the door data
+            doors_randomized[door_data_to_edit] = available_doors[door_data_to_write]
+
+            #Add the door we wrote to to the linked door list so we are sure not to overwrite it
+            is_linked.add(door_data_to_edit)
+            remove_available_door_from_sub_lists(door_data_to_write)
+            del available_doors[door_data_to_write]
+
+        #We are done working with this door, remove it from the queue
         door_queue.remove(current_door)
 
-        if len(door_queue) <= 0:
-            for i in range(len(door_list_randomized)):
-                if door_list_randomized[i] == "NULL":
-                    already_randomized.remove(door_list[i])
-                    print("ERROR: FOUND NULL")
-                door_queue.append(door_list[i])
-'''
+    #print(doors_randomized)
 
 
+    # Randomization loop has ended
+    # Start writing data to ROM
 
+    door_list_randomized = list(doors_randomized.keys())
 
+    for i in range(len(DOOR_LIST)):
 
+        #Take the ROM location that we randomized
+        rom_location = remove_brackets(doors_randomized[door_list_randomized[i]]['rom_location'])
+        rom_location = int(rom_location, 16)
 
-
-                
-
-    def find_linked_door(string):
-        underscore = string.find("_")
-        return string[underscore + 1 : len(string)] + "_" + string[0 : underscore]
-
-
-
-
+        #Write all of the data in the static strings into the new ROM locations
+        for data in DOORS[DOOR_LIST[i]]["room_number"]:
+            converted_data = hex_string_to_bytes(data)
+            writeBytesToFile(ROM_file, converted_data, rom_location, 1)
+        for data in DOORS[DOOR_LIST[i]]["spawn_coordinates"]:
+            converted_data = hex_string_to_bytes(data)
+            writeBytesToFile(ROM_file, converted_data, rom_location + 6, 4)

@@ -16,7 +16,7 @@ def convert_file_path_format(filepath):
     else:
         return filepath
 
-def removeBrackets(value):
+def remove_brackets(value):
 	value = str(value)
 	value = value.strip("[")
 	value = value.strip("]")

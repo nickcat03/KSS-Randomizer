@@ -1,0 +1,34 @@
+{
+    "Tree_Room0": {
+        "doors": ["Tree0_Tree2"],
+        "desc": ["Starting room. Not sure why I put this here cuz no doors lead back to it so it won't be used."]
+    },
+
+    "Tree_Room1": {
+        "doors": [""],
+        "desc": ["End of the game. May add a door here so you can go back if you enter this accidentally."]
+    },
+
+    "Tree_Room2": {
+        "doors": ["Tree2_Tree3", "Tree2_Tree8"],
+        "desc": ["Lava block puzzle room."]
+    },
+
+    "Tree_Room3": {
+        "doors": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
+        "desc": ["Switch puzzle room. Door heaven here."]
+    },
+
+    "Tree_Room4": {
+        "doors": ["Tree4_Tree3"],
+        "desc": ["More breakable block puzzles."]
+    },
+
+
+
+    "Tree_Room8": {
+        "doors": ["Tree8_Tree2"],
+        "desc": ["Tiny bonus room with the water current."]
+    }
+
+}
