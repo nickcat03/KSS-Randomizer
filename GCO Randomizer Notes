@@ -7,7 +7,7 @@ Randomize mini-bosses
 Randomize ability stands
 Randomize Music (or mute music)
 
-Stretch: Since there aren't that many one-way doors in the game, maybe add custom coordinates that send you back through one-ways so that you can turn one-way doors into two-way doors
+Stretch: Since there aren't that many one-way doors in the game, maybe add custom coordinates that send you back through one-ways so that you can turn one-way doors into two-way doors.
 
 Door Arithmetic (THIS IS NOT IMPORTANT ANYMORE) aka doorithmatic
 At $0191D3 there is math done that does the following:
