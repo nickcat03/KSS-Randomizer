@@ -3,7 +3,7 @@
         "rom_location": ["305F50"],
         "room_number": ["02"],
         "spawn_coordinates": ["24009C00"],
-        "type": [0],
+        "linked_to": [],
         "exits": ["Tree2_Tree3", "Tree2_Tree8"],
         "desc": ["Door in Starting Hallway"]
     },
@@ -12,7 +12,7 @@
         "rom_location": ["316E14"],
         "room_number": ["03"],
         "spawn_coordinates": ["3C005400"],
-        "type": [1],
+        "linked_to": ["Tree3_Tree2"],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["Door in Second Room, Lava block puzzle"]
     },
@@ -21,7 +21,7 @@
         "rom_location": ["326DA0"],
         "room_number": ["02"],
         "spawn_coordinates": ["4C05B400"],
-        "type": [1],
+        "linked_to": ["Tree2_Tree3"],
         "exits": ["Tree2_Tree3", "Tree2_Tree8"],
         "desc": ["Door in the trapdoor room back to water puzzle"]
     },
@@ -30,7 +30,7 @@
         "rom_location": ["316E0A"],
         "room_number": ["08"],
         "spawn_coordinates": ["54003C00"],
-        "type": [1],
+        "linked_to": ["Tree8_Tree2"],
         "exits": ["Tree8_Tree2"],
         "desc": ["Single Chest with water current"]
     },
@@ -39,7 +39,7 @@
         "rom_location": ["30D0F0"],
         "room_number": ["02"],
         "spawn_coordinates": ["C4028400"],
-        "type": [1],
+        "linked_to": ["Tree2_Tree8"],
         "exits": ["Tree2_Tree8, Tree2_Tree3"],
         "desc": ["Door back to lava block puzzle"]
     },
@@ -48,7 +48,7 @@
         "rom_location": ["326DBE"],
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
-        "type": [0],
+        "linked_to": [],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["First reset door for switch puzzle"]
     },
@@ -57,7 +57,7 @@
         "rom_location": ["326DC8"],
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
-        "type": [0],
+        "linked_to": [],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["Second reset door for switch puzzle"]
     },
@@ -66,7 +66,7 @@
         "rom_location": ["326DAA"],
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
-        "type": [0],
+        "linked_to": [],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": ["Third reset door for switch puzzle"]
     },
@@ -75,7 +75,7 @@
         "rom_location": ["326DB4"],
         "room_number": ["04"],
         "spawn_coordinates": ["54002C01"],
-        "type": [1],
+        "linked_to": ["Tree4_Tree3"],
         "exits": ["Tree4_Tree3", "Tree4_SaveRoom1", "Tree4_Tree5"],
         "desc": []
     },
@@ -84,7 +84,7 @@
         "rom_location": ["339626"],
         "room_number": ["03"],
         "spawn_coordinates": ["9C034401"],
-        "type": [1],
+        "linked_to": ["Tree3_Tree4"],
         "exits": ["Tree3_Tree2", "Tree3_Reset1", "Tree3_Reset2", "Tree3_Reset3", "Tree3_Tree4"],
         "desc": []
     }
