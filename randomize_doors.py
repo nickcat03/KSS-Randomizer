@@ -24,6 +24,21 @@ def randomize_doors(ROM_file):
 
         if chosen_door in available_dead_end_two_way_doors:
             available_dead_end_two_way_doors.remove(chosen_door)
+        
+        return
+
+    def generate_queue(door_data):
+        #Get what the next room will be when entering this door.
+        random_next_room = DOORS[door_data]["next_room"][0]
+
+        #If we have not yet queued up this room, add the doors in this room to the queue.
+        if random_next_room not in visited_rooms:
+            #Add future doors into the queue based on the upcoming room.
+            for door in ROOMS[random_next_room]["doors"]:
+                door_queue.append(door)
+                #Add this room to the visited rooms list so it isn't checked again
+                visited_rooms.add(random_next_room)
+        return
 
     #Grab all of the door data and put it in a dict
     DOORS = json.load(open(DOOR_DATA))
@@ -120,18 +135,35 @@ def randomize_doors(ROM_file):
             #Convert this to a string instead of a list element
             linked_to = linked_to[0]
 
+            #Make the random door equal to the door it is linked to so the while loop below runs at least once
             random_door = linked_to
 
-            current_room = DOORS[current_door]["in_room"][0]
-            random_current_room = DOORS[random_door]["in_room"][0]
+            current_room = DOORS[current_door]["next_room"][0]
 
             #Make sure that we do NOT select the door the current door is linked to.
             #Doing this can result in a door that takes you back to its entrance.
 
+            continue_checks = True
+            infinite_loop_check = 0
+
             #Also, if it is a two way, don't link with a door in the same room or else it will loop inside the room.
-            while random_door == linked_to or current_room == random_current_room:
+            while continue_checks:
                 random_door = random.choice(list((available_two_way_doors)))
-                random_current_room = DOORS[random_door]["in_room"][0]
+                random_next_room = DOORS[random_door]["in_room"][0]
+
+                #print("Random current:", random_next_room)
+                #print("Current:", current_room)
+
+                if random_door != linked_to and random_door != current_door and random_next_room != current_room:
+                    # Set the flag to False to break the loop
+                    continue_checks = False 
+                else:
+                    infinite_loop_check += 1
+
+                #If we never end up finding a suitable door after 20 attempts, we will reset everything and run the randomizer again.
+                if infinite_loop_check >= 20:
+                    return "ERROR"
+
         elif not linked_to:
             random_door = random.choice(list((available_one_way_doors)))
             
@@ -141,16 +173,7 @@ def randomize_doors(ROM_file):
         remove_available_door_from_sub_lists(random_door)
         del available_doors[random_door]
 
-        #Get what the next room will be when entering this door.
-        random_next_room = DOORS[random_door]["next_room"][0]
-
-        #If we have not yet queued up this room, add the doors in this room to the queue.
-        if random_next_room not in visited_rooms:
-            #Add future doors into the queue based on the upcoming room.
-            for door in ROOMS[random_next_room]["doors"]:
-                door_queue.append(door)
-                #Add this room to the visited rooms list so it isn't checked again
-                visited_rooms.add(random_next_room)
+        generate_queue(current_door)
  
         #Check if the current door is normally a two-way door
         if linked_to:
@@ -173,6 +196,8 @@ def randomize_doors(ROM_file):
             is_linked.add(door_data_to_edit)
             remove_available_door_from_sub_lists(door_data_to_write)
             del available_doors[door_data_to_write]
+
+            generate_queue(door_data_to_edit)
 
         #We are done working with this door, remove it from the queue
         door_queue.remove(current_door)
@@ -198,3 +223,5 @@ def randomize_doors(ROM_file):
         for data in DOORS[DOOR_LIST[i]]["spawn_coordinates"]:
             converted_data = hex_string_to_bytes(data)
             writeBytesToFile(ROM_file, converted_data, rom_location + 6, 4)
+
+    return "PASS"

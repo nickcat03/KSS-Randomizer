@@ -6,6 +6,7 @@
         "linked_to": [],
         "in_room": ["Tree_Room1"],
         "next_room": ["Tree_Room2"],
+        "special": [],
         "desc": ["Door in Starting Hallway"]
     },
 
@@ -16,6 +17,7 @@
         "linked_to": ["Tree3_Tree2"],
         "in_room": ["Tree_Room2"],
         "next_room": ["Tree_Room3"],
+        "special": [],
         "desc": ["Door in Second Room, Lava block puzzle"]
     },
 
@@ -26,6 +28,7 @@
         "linked_to": ["Tree2_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room2"],
+        "special": [],
         "desc": ["Door in the trapdoor room back to water puzzle"]
     },
 
@@ -36,6 +39,7 @@
         "linked_to": ["Tree8_Tree2"],
         "in_room": ["Tree_Room2"],
         "next_room": ["Tree_Room8"],
+        "special": [],
         "desc": ["Single Chest with water current"]
     },
 
@@ -46,6 +50,7 @@
         "linked_to": ["Tree2_Tree8"],
         "in_room": ["Tree_Room8"],
         "next_room": ["Tree_Room2"],
+        "special": [],
         "desc": ["Door back to lava block puzzle"]
     },
 
@@ -56,6 +61,7 @@
         "linked_to": [],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
+        "special": [],
         "desc": ["First reset door for switch puzzle"]
     },
 
@@ -66,6 +72,7 @@
         "linked_to": [],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
+        "special": [],
         "desc": ["Second reset door for switch puzzle"]
     },
 
@@ -76,6 +83,7 @@
         "linked_to": [],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
+        "special": [],
         "desc": ["Third reset door for switch puzzle"]
     },
 
@@ -86,6 +94,7 @@
         "linked_to": ["Tree4_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room4"],
+        "special": [],
         "desc": []
     },
 
@@ -96,6 +105,118 @@
         "linked_to": ["Tree3_Tree4"],
         "in_room": ["Tree_Room4"],
         "next_room": ["Tree_Room3"],
+        "special": [],
+        "desc": []
+    },
+
+    "Tree4_TreeSave": {
+        "rom_location": ["33961C"],
+        "room_number": ["05"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["TreeSave_Tree4"],
+        "in_room": ["Tree_Room4"],
+        "next_room": ["Tree_SaveRoom"],
+        "special": ["save"],
+        "desc": []
+    },
+
+    "TreeSave_Tree4": {
+        "rom_location": ["30732F"],
+        "room_number": ["04"],
+        "spawn_coordinates": ["DC02B400"],
+        "linked_to": ["Tree4_TreeSave"],
+        "in_room": ["Tree_SaveRoom"],
+        "next_room": ["Tree_Room4"],
+        "special": ["save"],
+        "desc": []
+    },
+
+    "Tree4_Tree6": {
+        "rom_location": ["339612"],
+        "room_number": ["06"],
+        "spawn_coordinates": ["54000402"],
+        "linked_to": ["Tree6_Tree4"],
+        "in_room": ["Tree_Room4"],
+        "next_room": ["Tree_Room6"],
+        "special": [],
+        "desc": []
+    },
+
+    "Tree6_Tree4": {
+        "rom_location": ["310046"],
+        "room_number": ["04"],
+        "spawn_coordinates": ["7C055400"],
+        "linked_to": ["Tree4_Tree6"],
+        "in_room": ["Tree_Room6"],
+        "next_room": ["Tree_Room4"],
+        "special": [],
+        "desc": []
+    },
+
+    "Tree6_Tree7": {
+        "rom_location": ["31003C"],
+        "room_number": ["07"],
+        "spawn_coordinates": ["54005400"],
+        "linked_to": ["Tree7_Tree6"],
+        "in_room": ["Tree_Room6"],
+        "next_room": ["Tree_Room7"],
+        "special": [],
+        "desc": []
+    },
+
+    "Tree7_Tree6": {
+        "rom_location": ["3116E9"],
+        "room_number": ["06"],
+        "spawn_coordinates": ["54035400"],
+        "linked_to": ["Tree6_Tree7"],
+        "in_room": ["Tree_Room7"],
+        "next_room": ["Tree_Room6"],
+        "special": [],
+        "desc": []
+    },
+
+    "Tree7_BeforeWhale": {
+        "rom_location": ["3116F3"],
+        "room_number": ["4D"],
+        "spawn_coordinates": ["54008400"],
+        "linked_to": ["BeforeWhale_Tree7"],
+        "in_room": ["Tree_Room7"],
+        "next_room": ["BeforeWhale_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "BeforeWhale_Tree7": {
+        "rom_location": ["309346"],
+        "room_number": ["07"],
+        "spawn_coordinates": ["2406B400"],
+        "linked_to": ["Tree7_BeforeWhale"],
+        "in_room": ["BeforeWhale_Room"],
+        "next_room": ["Tree_Room7"],
+        "special": [],
+        "desc": []
+    },
+
+
+    "BeforeWhale_WhaleBoss": {
+        "rom_location": ["309350"],
+        "room_number": ["37"],
+        "spawn_coordinates": ["3C009C00"],
+        "linked_to": ["WhaleBoss_BeforeWhale"],
+        "in_room": ["BeforeWhale_Room"],
+        "next_room": ["Whale_Room"],
+        "special": ["boss"],
+        "desc": []
+    },
+
+    "WhaleBoss_BeforeWhale": {
+        "rom_location": ["30D4DE"],
+        "room_number": ["4D"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["BeforeWhale_WhaleBoss"],
+        "in_room": ["Whale_Room"],
+        "next_room": ["BeforeWhale_Room"],
+        "special": ["boss"],
         "desc": []
     }
 }

@@ -20,15 +20,37 @@
     },
 
     "Tree_Room4": {
-        "doors": ["Tree4_Tree3"],
+        "doors": ["Tree4_Tree3", "Tree4_TreeSave", "Tree4_Tree6"],
         "desc": ["More breakable block puzzles."]
     },
 
+    "Tree_SaveRoom": {
+        "doors": ["TreeSave_Tree4"],
+        "desc": ["Save Room in Subtree (Technically labeled as room 5, hence why 5 is skipped"]
+    },
 
+    "Tree_Room6": {
+        "doors": ["Tree6_Tree4", "Tree6_Tree7"],
+        "desc": ["Crazy big maze room"]
+    },
+
+    "Tree_Room7": {
+        "doors": ["Tree7_Tree6", "Tree7_BeforeWhale"]
+    },
 
     "Tree_Room8": {
         "doors": ["Tree8_Tree2"],
         "desc": ["Tiny bonus room with the water current."]
+    },
+
+    "BeforeWhale_Room": {
+        "doors": ["BeforeWhale_Tree7", "BeforeWhale_WhaleBoss"],
+        "desc": ["Ability room before Whale bossfight"]
+    },
+
+    "Whale_Room": {
+        "doors": ["WhaleBoss_BeforeWhale"],
+        "desc": ["Whale Boss Fight"]
     }
 
 }

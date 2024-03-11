@@ -128,16 +128,18 @@ def validateSettings():
 			
 
 def generate_ROM(original_ROM, randomized_ROM):
-    seed_number = entry_seed_number.get()
+	seed_number = entry_seed_number.get()
 	
-    shutil.copyfile(original_ROM, randomized_ROM)
-    KSS_ROM = open(randomized_ROM, 'rb+')
+	shutil.copyfile(original_ROM, randomized_ROM)
+	KSS_ROM = open(randomized_ROM, 'rb+')
 	
-    random.seed(seed_number)
-    randomize_doors(KSS_ROM)
+	random.seed(seed_number)
+	check_if_pass = "ERROR"
+	while check_if_pass == "ERROR":
+		check_if_pass = randomize_doors(KSS_ROM)
 	
-    print("Done.")
-    warning_label.config(text="ROM randomized. Enjoy your game!", fg="#000000")
+	print("Done.")
+	warning_label.config(text="ROM randomized. Enjoy your game!", fg="#000000")
 
 
 # =========== Start of front end user interface code =================
@@ -146,7 +148,7 @@ def generate_ROM(original_ROM, randomized_ROM):
 random.seed()
 
 tk = Tk()
-tk.title("KatAM JP Randomizer")
+tk.title("Kirby Super Star GCO Randomizer")
 tk.resizable(False, False)
 
 #tk.iconbitmap(resource_path("katamrando.ico"))
