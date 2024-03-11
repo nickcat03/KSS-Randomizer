@@ -218,5 +218,137 @@
         "next_room": ["BeforeWhale_Room"],
         "special": ["boss"],
         "desc": []
+    },
+
+    "WhaleBoss_Minecart1": {
+        "rom_location": ["30D4E8"],
+        "room_number": ["09"],
+        "spawn_coordinates": ["9C008400"],
+        "linked_to": ["Minecart1_WhaleBoss"],
+        "in_room": ["Whale_Room"],
+        "next_room": ["Minecart1_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "Minecart1_WhaleBoss": {
+        "rom_location": ["318BB5"],
+        "room_number": ["37"],
+        "spawn_coordinates": ["D4019C00"],
+        "linked_to": ["WhaleBoss_Minecart1"],
+        "in_room": ["Minecart1_Room"],
+        "next_room": ["Whale_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "Minecart1_Crystal1": {
+        "rom_location": ["318BBF"],
+        "room_number": ["0E"],
+        "spawn_coordinates": ["9C006C00"],
+        "linked_to": ["Crystal1_Minecart1"],
+        "in_room": ["Minecart1_Room"],
+        "next_room": ["Crystal1_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "Crystal1_Minecart1": {
+        "rom_location": ["32F3D7"],
+        "room_number": ["09"],
+        "spawn_coordinates": ["F408BC01"],
+        "linked_to": ["Minecart1_Crystal1"],
+        "in_room": ["Crystal1_Room"],
+        "next_room": ["Minecart1_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "Crystal1_Crystal2": {
+        "rom_location": ["32F3E1"],
+        "room_number": ["0D"],
+        "spawn_coordinates": ["9C003C00"],
+        "linked_to": ["Crystal2_Crystal1"],
+        "in_room": ["Crystal1_Room"],
+        "next_room": ["Crystal2_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "Crystal2_Crystal1": {
+        "rom_location": ["300597"],
+        "room_number": ["0E"],
+        "spawn_coordinates": ["B400EC01"],
+        "linked_to": ["Crystal1_Crystal2"],
+        "in_room": ["Crystal2_Room"],
+        "next_room": ["Crystal1_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "Crystal2_CrystalSave": {
+        "rom_location": ["3005A1"],
+        "room_number": ["11"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["CrystalSave_Crystal2"],
+        "in_room": ["Crystal2_Room"],
+        "next_room": ["Crystal_SaveRoom"],
+        "special": ["save"],
+        "desc": []
+    },
+
+    "CrystalSave_Crystal2": {
+        "rom_location": ["307163"],
+        "room_number": ["0D"],
+        "spawn_coordinates": ["B400CC00"],
+        "linked_to": ["Crystal2_CrystalSave"],
+        "in_room": ["Crystal_SaveRoom"],
+        "next_room": ["Crystal2_Room"],
+        "special": ["save"],
+        "desc": []
+    },
+
+    "Crystal2_CrystalLeft": {
+        "rom_location": ["3005AB"],
+        "room_number": ["10"],
+        "spawn_coordinates": ["CC036C00"],
+        "linked_to": ["CrystalLeft_Crystal2"],
+        "in_room": ["Crystal2_Room"],
+        "next_room": ["CrystalLeft_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "CrystalLeft_Crystal2": {
+        "rom_location": ["34003C"],
+        "room_number": ["0D"],
+        "spawn_coordinates": ["54002C01"],
+        "linked_to": ["Crystal2_CrystalLeft"],
+        "in_room": ["CrystalLeft_Room"],
+        "next_room": ["Crystal2_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "CrystalLeft_CrystalFossils": {
+        "rom_location": ["340046"],
+        "room_number": ["12"],
+        "spawn_coordinates": ["3C035C01"],
+        "linked_to": ["CrystalFossils_CrystalLeft"],
+        "in_room": ["CrystalLeft_Room"],
+        "next_room": ["CrystalFossils_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "CrystalFossils_CrystalLeft": {
+        "rom_location": ["3482A2"],
+        "room_number": ["10"],
+        "spawn_coordinates": ["D4015C01"],
+        "linked_to": ["CrystalLeft_CrystalFossils"],
+        "in_room": ["CrystalFossils_Room"],
+        "next_room": ["CrystalLeft_Room"],
+        "special": [],
+        "desc": []
     }
 }

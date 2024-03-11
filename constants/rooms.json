@@ -49,8 +49,38 @@
     },
 
     "Whale_Room": {
-        "doors": ["WhaleBoss_BeforeWhale"],
+        "doors": ["WhaleBoss_BeforeWhale", "WhaleBoss_Minecart1"],
         "desc": ["Whale Boss Fight"]
+    },
+
+    "Minecart1_Room": {
+        "doors": ["Minecart1_WhaleBoss", "Minecart1_Crystal1"],
+        "desc": ["First Minecart room connecting Subtree and Crystal"]
+    },
+
+    "Crystal1_Room": {
+        "doors": ["Crystal1_Minecart1", "Crystal1_Crystal2"],
+        "desc": ["First room in Crystal"]
+    },
+
+    "Crystal2_Room": {
+        "doors": ["Crystal2_Crystal1", "Crystal2_CrystalLeft", "Crystal2_CrystalMid", "Crystal2_CrystalRight", "Crystal2_CrystalSave"],
+        "desc": ["Large Hub room in Crystal"]
+    },
+
+    "Crystal_SaveRoom": {
+        "doors": ["CrystalSave_Crystal2"],
+        "desc": ["Save Hut in Crystal"]
+    },
+
+    "CrystalLeft_Room": {
+        "doors": ["CrystalLeft_Crystal2", "CrystalLeft_CrystalFossils"],
+        "desc": ["Left path from the hub room"]
+    },
+
+    "CrystalFossils_Room": {
+        "doors": ["CrystalFossils_CrystalLeft"],
+        "desc": ["Small section underneath CrystalRight with fossil chests. Since it is blocked off, it is treated as a separate room."]
     }
 
 }
