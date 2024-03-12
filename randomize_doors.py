@@ -169,11 +169,11 @@ def randomize_doors(ROM_file):
 
             '''
             Check how many exits are available in the next upcoming room.
-            If there more than one exit in the room, choose from any two way door.
+            If there is more than one exit in the room, choose from any two way door.
             If there is less than 2 exits (no branching paths in the room), only choose a non dead end two way door.
             If there are no more two way doors to choose from, combine the list so we aren't stuck without a door.
             '''
-            #len(available_doors_in_room[current_room]["doors"]) > 2 or 
+            #removed from the if for now, but if it plays nice I may add it back: len(available_doors_in_room[current_room]["doors"]) > 2 or 
             if len(available_two_way_doors) <= 0:
                 #Add the dead end doors to the list of doors to be chosen
                 doors_to_choose_from.extend(available_dead_end_two_way_doors)
@@ -199,9 +199,10 @@ def randomize_doors(ROM_file):
                 else:
                     infinite_loop_check += 1
 
-                #If we never end up finding a suitable door after 20 attempts, we will reset everything and run the randomizer again.
+                #If we never end up finding a suitable door after 10 attempts, we will reset everything and run the randomizer again.
                 #Normally this will only happen if we are stuck with a very small number of doors and cannot do anything else.
                 if infinite_loop_check >= 10:
+                    print("Infinite loop detected, aborting current randomization and trying again.")
                     return "ERROR"
 
         #Run this code if the current door is a one way door
@@ -209,16 +210,19 @@ def randomize_doors(ROM_file):
             random_door = random.choice(list((available_one_way_doors)))
 
         #Because this door is being randomized, remove it from the doors available in the given room
-        #This is so that a door is always guaranteed to be a two way if its the last door to be randomized in the room
+        #This is so that a door is always guaranteed to be a non dead end if its the last door to be randomized in the room
         #print("Current room:", current_room)
         print("Removing", current_door, "from", current_room)
         available_doors_in_room[current_room]["doors"].remove(current_door)
             
-        #Randomize the door
+        #After finalizing the randomization, apply the changes into the randomized dict.
         print(f"{current_door} overwriting {random_door}")
         doors_randomized[current_door] = DOORS[random_door]
         remove_available_door_from_sub_lists(random_door)
 
+        #If things start to not work as intended, consider changing this to random_door instead
+        #That may be the more logical approach.
+        #(Do the same for the generate_queue function below as well)
         #Based on the next room of the current door, get the next doors in the queue
         generate_queue(current_door)
  
