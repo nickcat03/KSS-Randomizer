@@ -1,10 +1,10 @@
 {
-    "Tree_Room0": {
-        "doors": ["Tree0_Tree2"],
+    "Tree_Room1": {
+        "doors": ["Tree1_Tree2"],
         "desc": ["Starting room. Not sure why I put this here cuz no doors lead back to it so it won't be used."]
     },
 
-    "Tree_Room1": {
+    "Ending_Room": {
         "doors": [""],
         "desc": ["End of the game. May add a door here so you can go back if you enter this accidentally."]
     },
@@ -81,6 +81,26 @@
     "CrystalFossils_Room": {
         "doors": ["CrystalFossils_CrystalLeft"],
         "desc": ["Small section underneath CrystalRight with fossil chests. Since it is blocked off, it is treated as a separate room."]
+    },
+
+    "CrystalMid_Room": {
+        "doors": ["CrystalMid_Crystal2"],
+        "desc": ["Large water room, middle path of hub room"]
+    },
+
+    "CrystalRight_Room": {
+        "doors": ["CrystalRight_Crystal2", "CrystalRight_BeforeWindows"],
+        "desc": ["Right path from the hub room (the usual way you'd go in any%)"]
+    },
+
+    "BeforeWindows_Room": {
+        "doors": ["BeforeWindows_CrystalRight", "BeforeWindows_WindowsBoss"],
+        "desc": ["Preparation room before Battle Windows boss"]
+    },
+
+    "Windows_Room": {
+        "doors": ["WindowsBoss_BeforeWindows"],
+        "desc": ["Battle Windows Boss fight"]
     }
 
 }

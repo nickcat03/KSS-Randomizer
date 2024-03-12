@@ -134,6 +134,7 @@ def generate_ROM(original_ROM, randomized_ROM):
 	KSS_ROM = open(randomized_ROM, 'rb+')
 	
 	random.seed(seed_number)
+	print("Seed:", seed_number)
 	check_if_pass = "ERROR"
 	while check_if_pass == "ERROR":
 		check_if_pass = randomize_doors(KSS_ROM)

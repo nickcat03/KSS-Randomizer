@@ -1,5 +1,5 @@
 {
-    "Tree0_Tree2": {
+    "Tree1_Tree2": {
         "rom_location": ["305F50"],
         "room_number": ["02"],
         "spawn_coordinates": ["24009C00"],
@@ -9,6 +9,7 @@
         "special": [],
         "desc": ["Door in Starting Hallway"]
     },
+
 
     "Tree2_Tree3": {
         "rom_location": ["316E14"],
@@ -32,6 +33,7 @@
         "desc": ["Door in the trapdoor room back to water puzzle"]
     },
 
+
     "Tree2_Tree8": {
         "rom_location": ["316E0A"],
         "room_number": ["08"],
@@ -54,6 +56,7 @@
         "desc": ["Door back to lava block puzzle"]
     },
 
+
     "Tree3_Reset1": {
         "rom_location": ["326DBE"],
         "room_number": ["03"],
@@ -64,6 +67,7 @@
         "special": [],
         "desc": ["First reset door for switch puzzle"]
     },
+
 
     "Tree3_Reset2": {
         "rom_location": ["326DC8"],
@@ -76,6 +80,7 @@
         "desc": ["Second reset door for switch puzzle"]
     },
 
+
     "Tree3_Reset3": {
         "rom_location": ["326DAA"],
         "room_number": ["03"],
@@ -86,6 +91,7 @@
         "special": [],
         "desc": ["Third reset door for switch puzzle"]
     },
+
 
     "Tree3_Tree4": {
         "rom_location": ["326DB4"],
@@ -109,6 +115,7 @@
         "desc": []
     },
 
+
     "Tree4_TreeSave": {
         "rom_location": ["33961C"],
         "room_number": ["05"],
@@ -130,6 +137,7 @@
         "special": ["save"],
         "desc": []
     },
+
 
     "Tree4_Tree6": {
         "rom_location": ["339612"],
@@ -153,6 +161,7 @@
         "desc": []
     },
 
+
     "Tree6_Tree7": {
         "rom_location": ["31003C"],
         "room_number": ["07"],
@@ -174,6 +183,7 @@
         "special": [],
         "desc": []
     },
+
 
     "Tree7_BeforeWhale": {
         "rom_location": ["3116F3"],
@@ -198,6 +208,7 @@
     },
 
 
+
     "BeforeWhale_WhaleBoss": {
         "rom_location": ["309350"],
         "room_number": ["37"],
@@ -219,6 +230,7 @@
         "special": ["boss"],
         "desc": []
     },
+
 
     "WhaleBoss_Minecart1": {
         "rom_location": ["30D4E8"],
@@ -242,6 +254,7 @@
         "desc": []
     },
 
+
     "Minecart1_Crystal1": {
         "rom_location": ["318BBF"],
         "room_number": ["0E"],
@@ -263,6 +276,7 @@
         "special": [],
         "desc": []
     },
+
 
     "Crystal1_Crystal2": {
         "rom_location": ["32F3E1"],
@@ -286,6 +300,7 @@
         "desc": []
     },
 
+
     "Crystal2_CrystalSave": {
         "rom_location": ["3005A1"],
         "room_number": ["11"],
@@ -308,6 +323,7 @@
         "desc": []
     },
 
+
     "Crystal2_CrystalLeft": {
         "rom_location": ["3005AB"],
         "room_number": ["10"],
@@ -329,6 +345,7 @@
         "special": [],
         "desc": []
     },
+    
 
     "CrystalLeft_CrystalFossils": {
         "rom_location": ["340046"],
@@ -349,6 +366,98 @@
         "in_room": ["CrystalFossils_Room"],
         "next_room": ["CrystalLeft_Room"],
         "special": [],
+        "desc": []
+    },
+
+
+    "Crystal2_CrystalMid": {
+        "rom_location": ["3005BF"],
+        "room_number": ["0F"],
+        "spawn_coordinates": ["84001C02"],
+        "linked_to": ["CrystalMid_Crystal2"],
+        "in_room": ["Crystal2_Room"],
+        "next_room": ["CrystalMid_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "CrystalMid_Crystal2": {
+        "rom_location": ["34BAAC"],
+        "room_number": ["0D"],
+        "spawn_coordinates": ["84004401"],
+        "linked_to": ["Crystal2_CrystalMid"],
+        "in_room": ["CrystalMid_Room"],
+        "next_room": ["Crystal2_Room"],
+        "special": [],
+        "desc": []
+    },
+
+   
+    "Crystal2_CrystalRight": {
+        "rom_location": ["3005B5"],
+        "room_number": ["12"],
+        "spawn_coordinates": ["54005C01"],
+        "linked_to": ["CrystalRight_Crystal2"],
+        "in_room": ["Crystal2_Room"],
+        "next_room": ["CrystalRight_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "CrystalRight_Crystal2": {
+        "rom_location": ["348298"],
+        "room_number": ["0D"],
+        "spawn_coordinates": ["E4002C01"],
+        "linked_to": ["Crystal2_CrystalRight"],
+        "in_room": ["CrystalRight_Room"],
+        "next_room": ["Crystal2_Room"],
+        "special": [],
+        "desc": []
+    },
+
+
+    "CrystalRight_BeforeWindows": {
+        "rom_location": ["34828E"],
+        "room_number": ["50"],
+        "spawn_coordinates": ["54008400"],
+        "linked_to": ["BeforeWindows_CrystalRight"],
+        "in_room": ["CrystalRight_Room"],
+        "next_room": ["BeforeWindows_Room"],
+        "special": [],
+        "desc": []
+    },
+
+    "BeforeWindows_CrystalRight": {
+        "rom_location": ["307249"],
+        "room_number": ["12"],
+        "spawn_coordinates": ["74076C00"],
+        "linked_to": ["CrystalRight_BeforeWindows"],
+        "in_room": ["BeforeWindows_Room"],
+        "next_room": ["CrystalRight_Room"],
+        "special": [],
+        "desc": []
+    },
+
+
+    "BeforeWindows_WindowsBoss": {
+        "rom_location": ["307253"],
+        "room_number": ["36"],
+        "spawn_coordinates": ["3C009C00"],
+        "linked_to": ["WindowsBoss_BeforeWindows"],
+        "in_room": ["BeforeWindows_Room"],
+        "next_room": ["Windows_Room"],
+        "special": ["boss"],
+        "desc": []
+    },
+
+    "WindowsBoss_BeforeWindows": {
+        "rom_location": ["308F91"],
+        "room_number": ["50"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["BeforeWindows_WindowsBoss"],
+        "in_room": ["Windows_Room"],
+        "next_room": ["BeforeWindows_Room"],
+        "special": ["boss"],
         "desc": []
     }
 }
