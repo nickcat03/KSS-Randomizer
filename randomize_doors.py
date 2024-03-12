@@ -63,13 +63,13 @@ def randomize_doors(ROM_file):
         random_next_room = DOORS[door_data]["next_room"][0]
 
         #If we have not yet queued up this room, add the doors in this room to the queue.
-        if random_next_room not in visited_rooms:
+        if random_next_room not in rooms_queued:
             #Add future doors into the queue based on the upcoming room.
             for door in ROOMS[random_next_room]["doors"]:
                 temp_queue.append(door)
 
             #Add this room to the visited rooms list so it isn't checked again
-            visited_rooms.add(random_next_room)
+            rooms_queued.add(random_next_room)
 
             #Shuffle the doors we added so they aren't in a predictable order
             random.shuffle(temp_queue)
@@ -114,7 +114,12 @@ def randomize_doors(ROM_file):
     door_queue = [DOOR_LIST[0]]
 
     #List for keeping track of what rooms we already queued up.
+    rooms_queued = set()
+
+    #Keep track of all the rooms that have been linked so far.
+    #The purpose of this list is to make sure that rooms don't loop around into each other.
     visited_rooms = set()
+    all_rooms_visited = False
 
     #This list is used for keeping track of doors that were linked together instead of randomized.
     #If they were already linked, they need to be skipped in the for loop.
@@ -132,14 +137,14 @@ def randomize_doors(ROM_file):
             door_queue.remove(current_door)
             continue
 
-        print("Available One Way doors:", available_one_way_doors)
-        print("Available two way doors:", available_two_way_doors)
-        print("Available dead end one ways:", available_dead_end_one_way_doors)
-        print("Available dead end two ways:", available_dead_end_two_way_doors)
+        #print("Available One Way doors:", available_one_way_doors)
+        #print("Available two way doors:", available_two_way_doors)
+        #print("Available dead end one ways:", available_dead_end_one_way_doors)
+        #print("Available dead end two ways:", available_dead_end_two_way_doors)
 
         print("Current door in queue:", current_door)
 
-        #print(visited_rooms)
+        #print(rooms_queued)
 
         #Find the door the current door is linked to
         linked_to = DOORS[current_door]["linked_to"]
@@ -168,7 +173,8 @@ def randomize_doors(ROM_file):
             If there is less than 2 exits (no branching paths in the room), only choose a non dead end two way door.
             If there are no more two way doors to choose from, combine the list so we aren't stuck without a door.
             '''
-            if len(available_doors_in_room[current_room]["doors"]) > 2 or len(available_two_way_doors) <= 0:
+            #len(available_doors_in_room[current_room]["doors"]) > 2 or 
+            if len(available_two_way_doors) <= 0:
                 #Add the dead end doors to the list of doors to be chosen
                 doors_to_choose_from.extend(available_dead_end_two_way_doors)
 
@@ -180,13 +186,14 @@ def randomize_doors(ROM_file):
             1. Make sure that we do NOT select the door the current door is linked to. Doing this can result in a door that takes you back to its entrance.
             2. Do not set the randomly generated door as the current door. Otherwise nothing will have been randomized.
             3. Don't link with a door in the same room or else it may cause a loop inside the room.
+            4. Don't connect to a room that we have already went to unless all rooms have been visited.
             '''
             while continue_checks:
                 random_door = random.choice(list((doors_to_choose_from)))
-                random_next_room = DOORS[random_door]["in_room"][0]
+                random_door_room = DOORS[random_door]["in_room"][0]
 
                 #Check if all conditions apply
-                if random_door != linked_to and random_door != current_door and random_next_room != next_room:
+                if random_door != linked_to and random_door != current_door and random_door_room != next_room and (random_door_room not in visited_rooms or all_rooms_visited):
                     #If all of these checks pass, break out of the loop with the current door we rolled
                     continue_checks = False 
                 else:
@@ -250,6 +257,15 @@ def randomize_doors(ROM_file):
 
         #Failsafe in case for whatever reason our current door is repeated in the queue. Make sure not to overwrite it if it has already been written to.
         already_processed.add(current_door)
+
+        #If the current room has yet to be visited, add the room to the visited rooms list
+        if current_room not in visited_rooms:
+            visited_rooms.add(current_room)
+
+        #If all the rooms visited is the same length as the room list, mark all rooms visited as true
+        if len(visited_rooms) >= len(ROOMS):
+            print("ALL ROOMS VISITED")
+            all_rooms_visited = True
 
     #print(doors_randomized)
 
