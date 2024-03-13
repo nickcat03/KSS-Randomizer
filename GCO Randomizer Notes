@@ -24,6 +24,9 @@ B8 02 = Do not change!!
 3C 00 = X spawn
 54 00 = Y spawn
 
+for making file into runnable script use:
+pyinstaller user_interface.py --noconsole --onefile
+
 
 All door locations:
 

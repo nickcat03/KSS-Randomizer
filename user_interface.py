@@ -10,16 +10,6 @@ import shutil
 import json 
 from randomize_doors import * 
 
-
-def resource_path(relative_path):
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
-
 #Produce random seed number
 def getRandomSeed():
 	entry_seed_number.delete(0,END) 
@@ -29,7 +19,7 @@ def getRandomSeed():
 def openROM():
     filepath = filedialog.askopenfilename(filetypes=[("SNES / SFC ROM", (".sfc", ".smc", ".srm", ".swc")), ("All Files", "*")])
     if filepath != '':
-        filepath = convert_file_path_format(filepath)
+        #filepath = convert_file_path_format(filepath)
         entry_path_to_rom.delete(0,END)
         entry_path_to_rom.insert(END,filepath)
 
@@ -37,7 +27,7 @@ def openROM():
 def openDirectory():
     filepath = filedialog.askdirectory(initialdir = os.getcwd())
     if filepath != '':
-        filepath = convert_file_path_format(filepath)
+        #filepath = convert_file_path_format(filepath)
         entry_path_to_output.delete(0,END)
         entry_path_to_output.insert(END,filepath)
 
@@ -123,7 +113,7 @@ def validateSettings():
         #If everything is good to go, start ROM generation
 		if ROM_version != "" and is_valid:
 			outputrom = outputdir + "/KSS GCO Randomizer " + str(optionSeedNumber) + ".sfc"
-			outputrom = convert_file_path_format(outputrom)
+			#outputrom = convert_file_path_format(outputrom)
 			generate_ROM(inputrom,outputrom)
 			
 
