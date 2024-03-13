@@ -25,7 +25,8 @@ B8 02 = Do not change!!
 54 00 = Y spawn
 
 for making file into runnable script use:
-pyinstaller user_interface.py --noconsole --onefile
+(note, slashes differ between windows and linux)
+pyinstaller user_interface.py --noconsole --onefile --add-data "constants\doors.json:constants\" --add-data "constants\rooms.json:constants\
 
 
 All door locations:

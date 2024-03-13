@@ -47,9 +47,9 @@ def validateSettings():
 		#is_valid = False
 		#warning_label.config(text="Error: items.json not found!", fg="#FF0000")
 		
-	if os.path.isfile("constants/doors.json") == False:
-		is_valid = False
-		warning_label.config(text="Error: mirrors.json not found!", fg="#FF0000")
+	#if os.path.isfile("constants/doors.json") == False:
+	#	is_valid = False
+	#	warning_label.config(text="Error: mirrors.json not found!", fg="#FF0000")
 		
 	#if os.path.isfile("JSON\minibosses.json") == False:
 		#is_valid = False

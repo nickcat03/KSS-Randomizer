@@ -6,8 +6,10 @@ import os
 import json 
 from utils import *
 
-DOOR_DATA = resource_path("constants/doors.json")
-ROOM_DATA = resource_path("constants/rooms.json")
+DOOR_DATA = resource_path(convert_file_path_format("constants/doors.json"))
+ROOM_DATA = resource_path(convert_file_path_format("constants/rooms.json"))
+print("door json:", DOOR_DATA)
+print("room json:", ROOM_DATA)
 
 
 def randomize_doors(ROM_file):

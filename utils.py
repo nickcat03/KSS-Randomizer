@@ -13,7 +13,8 @@ def writeBytesToFile(file,data,address,bytes):
 #Windows and Unix have different file pathing formats. This to make sure each OS gets the correct filepath
 def convert_file_path_format(filepath):
     if os.name == 'nt':
-        filepath = filepath.replace('/','\\')
+        filepath = filepath.replace('/',chr(92))
+        return filepath
     else:
         return filepath
 
