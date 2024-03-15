@@ -11,6 +11,7 @@ Stretch: Since there aren't that many one-way doors in the game, maybe add custo
 
 Door Arithmetic (THIS IS NOT IMPORTANT ANYMORE) aka doorithmatic
 At $0191D3 there is math done that does the following:
+(For cannons and warpstars check routine at $CF6894)
 Divide $6894 / $3755
 
 How the game reads door data:
@@ -38,3 +39,17 @@ $316E14
 
 08 00 B8 02 90 00 54 00 3C 00
 03 00 40 05 A8 00 3C 00 54 00
+
+ROM offsets
+
+ENG - JP1.0
+305F50 - 3063A8 458
+316E0A - 3174E9 6DF
+
+JP1.1 is same as JP1.2
+
+ENG - JP1.2
+305F50 - 30666E 71E 
+316E0A - 3175A8 79E
+
+30796D

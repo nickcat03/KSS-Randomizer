@@ -12,7 +12,7 @@ print("door json:", DOOR_DATA)
 print("room json:", ROOM_DATA)
 
 
-def randomize_doors(ROM_file):
+def randomize_doors(ROM_file, ROM_version):
 
     def sort_door_sub_lists():
         #Sort every single door into these four lists
@@ -139,6 +139,8 @@ def randomize_doors(ROM_file):
             door_queue.remove(current_door)
             continue
 
+        #Add save door check here if save doors are toggled to stay stationary
+
         #print("Available One Way doors:", available_one_way_doors)
         #print("Available two way doors:", available_two_way_doors)
         #print("Available dead end one ways:", available_dead_end_one_way_doors)
@@ -218,7 +220,7 @@ def randomize_doors(ROM_file):
         available_doors_in_room[current_room]["doors"].remove(current_door)
             
         #After finalizing the randomization, apply the changes into the randomized dict.
-        print(f"{current_door} overwriting {random_door}")
+        print(f"{random_door} overwriting {current_door}")
         doors_randomized[current_door] = DOORS[random_door]
         remove_available_door_from_sub_lists(random_door)
 
@@ -282,17 +284,21 @@ def randomize_doors(ROM_file):
     door_list_randomized = list(doors_randomized.keys())
 
     for i in range(len(DOOR_LIST)):
+        door_name = DOORS[DOOR_LIST[i]]
+        # Take the ROM locations that we randomized
+        rom_locations = doors_randomized[door_list_randomized[i]]['rom_location'][ROM_version]
 
-        #Take the ROM location that we randomized
-        rom_location = remove_brackets(doors_randomized[door_list_randomized[i]]['rom_location'])
-        rom_location = int(rom_location, 16)
+        # Iterate over each ROM location and write data
+        # In most cases doors will only be one tile wide, but two tile doors have two separate locations in ROM
+        for rom_location in rom_locations:
+            rom_location = int(rom_location, 16)
 
-        #Write all of the data in the static strings into the new ROM locations
-        for data in DOORS[DOOR_LIST[i]]["room_number"]:
-            converted_data = hex_string_to_bytes(data)
-            writeBytesToFile(ROM_file, converted_data, rom_location, 1)
-        for data in DOORS[DOOR_LIST[i]]["spawn_coordinates"]:
-            converted_data = hex_string_to_bytes(data)
-            writeBytesToFile(ROM_file, converted_data, rom_location + 6, 4)
+            # Write all of the data in the static strings into the new ROM locations
+            for data in door_name["room_number"]:
+                converted_data = hex_string_to_bytes(data)
+                writeBytesToFile(ROM_file, converted_data, rom_location, 1)
+            for data in door_name["spawn_coordinates"]:
+                converted_data = hex_string_to_bytes(data)
+                writeBytesToFile(ROM_file, converted_data, rom_location + 6, 4)
 
     return "PASS"

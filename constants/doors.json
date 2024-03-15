@@ -1,463 +1,1008 @@
 {
     "Tree1_Tree2": {
-        "rom_location": ["305F50"],
+        "rom_location": {
+            "ENG": ["305F50"],
+            "JP0": ["3063A8"],
+            "JP1": ["30666E"]
+        },
         "room_number": ["02"],
         "spawn_coordinates": ["24009C00"],
         "linked_to": [],
         "in_room": ["Tree_Room1"],
         "next_room": ["Tree_Room2"],
-        "special": [],
-        "desc": ["Door in Starting Hallway"]
+        "special": []
     },
 
 
     "Tree2_Tree3": {
-        "rom_location": ["316E14"],
+        "rom_location": {
+            "ENG": ["316E14"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["03"],
         "spawn_coordinates": ["3C005400"],
         "linked_to": ["Tree3_Tree2"],
         "in_room": ["Tree_Room2"],
         "next_room": ["Tree_Room3"],
-        "special": [],
-        "desc": ["Door in Second Room, Lava block puzzle"]
+        "special": []
     },
 
     "Tree3_Tree2": {
-        "rom_location": ["326DA0"],
+        "rom_location": {
+            "ENG": ["326DA0"],
+            "JP0": ["3174E9"],
+            "JP1": ["3175A8"]
+        },
         "room_number": ["02"],
         "spawn_coordinates": ["4C05B400"],
         "linked_to": ["Tree2_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room2"],
-        "special": [],
-        "desc": ["Door in the trapdoor room back to water puzzle"]
+        "special": []
     },
 
 
     "Tree2_Tree8": {
-        "rom_location": ["316E0A"],
+        "rom_location": {
+            "ENG": ["316E0A"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["08"],
         "spawn_coordinates": ["54003C00"],
         "linked_to": ["Tree8_Tree2"],
         "in_room": ["Tree_Room2"],
         "next_room": ["Tree_Room8"],
-        "special": [],
-        "desc": ["Single Chest with water current"]
+        "special": []
     },
 
     "Tree8_Tree2": {
-        "rom_location": ["30D0F0"],
+        "rom_location": {
+            "ENG": ["30D0F0"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["02"],
         "spawn_coordinates": ["C4028400"],
         "linked_to": ["Tree2_Tree8"],
         "in_room": ["Tree_Room8"],
         "next_room": ["Tree_Room2"],
-        "special": [],
-        "desc": ["Door back to lava block puzzle"]
+        "special": []
     },
 
 
     "Tree3_Reset1": {
-        "rom_location": ["326DBE"],
+        "rom_location": {
+            "ENG": ["326DBE"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
         "linked_to": [],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": [],
-        "desc": ["First reset door for switch puzzle"]
+        "special": []
     },
 
 
     "Tree3_Reset2": {
-        "rom_location": ["326DC8"],
+        "rom_location": {
+            "ENG": ["326DC8"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
         "linked_to": [],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": [],
-        "desc": ["Second reset door for switch puzzle"]
+        "special": []
     },
 
 
     "Tree3_Reset3": {
-        "rom_location": ["326DAA"],
+        "rom_location": {
+            "ENG": ["326DAA"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
         "linked_to": [],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": [],
-        "desc": ["Third reset door for switch puzzle"]
+        "special": []
     },
 
 
     "Tree3_Tree4": {
-        "rom_location": ["326DB4"],
+        "rom_location": {
+            "ENG": ["326DB4"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["04"],
         "spawn_coordinates": ["54002C01"],
         "linked_to": ["Tree4_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room4"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "Tree4_Tree3": {
-        "rom_location": ["339626"],
+        "rom_location": {
+            "ENG": ["339626"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["03"],
         "spawn_coordinates": ["9C034401"],
         "linked_to": ["Tree3_Tree4"],
         "in_room": ["Tree_Room4"],
         "next_room": ["Tree_Room3"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "Tree4_TreeSave": {
-        "rom_location": ["33961C"],
+        "rom_location": {
+            "ENG": ["33961C"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["05"],
         "spawn_coordinates": ["B4008400"],
         "linked_to": ["TreeSave_Tree4"],
         "in_room": ["Tree_Room4"],
         "next_room": ["Tree_SaveRoom"],
-        "special": ["save"],
-        "desc": []
+        "special": ["save"]
     },
 
     "TreeSave_Tree4": {
-        "rom_location": ["30732F"],
+        "rom_location": {
+            "ENG": ["30732F"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["04"],
         "spawn_coordinates": ["DC02B400"],
         "linked_to": ["Tree4_TreeSave"],
         "in_room": ["Tree_SaveRoom"],
         "next_room": ["Tree_Room4"],
-        "special": ["save"],
-        "desc": []
+        "special": ["save"]
     },
 
 
     "Tree4_Tree6": {
-        "rom_location": ["339612"],
+        "rom_location": {
+            "ENG": ["339612"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["06"],
         "spawn_coordinates": ["54000402"],
         "linked_to": ["Tree6_Tree4"],
         "in_room": ["Tree_Room4"],
         "next_room": ["Tree_Room6"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "Tree6_Tree4": {
-        "rom_location": ["310046"],
+        "rom_location": {
+            "ENG": ["310046"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["04"],
         "spawn_coordinates": ["7C055400"],
         "linked_to": ["Tree4_Tree6"],
         "in_room": ["Tree_Room6"],
         "next_room": ["Tree_Room4"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "Tree6_Tree7": {
-        "rom_location": ["31003C"],
+        "rom_location": {
+            "ENG": ["31003C"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["07"],
         "spawn_coordinates": ["54005400"],
         "linked_to": ["Tree7_Tree6"],
         "in_room": ["Tree_Room6"],
         "next_room": ["Tree_Room7"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "Tree7_Tree6": {
-        "rom_location": ["3116E9"],
+        "rom_location": {
+            "ENG": ["3116E9"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["06"],
         "spawn_coordinates": ["54035400"],
         "linked_to": ["Tree6_Tree7"],
         "in_room": ["Tree_Room7"],
         "next_room": ["Tree_Room6"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "Tree7_BeforeWhale": {
-        "rom_location": ["3116F3"],
+        "rom_location": {
+            "ENG": ["3116F3"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["4D"],
         "spawn_coordinates": ["54008400"],
         "linked_to": ["BeforeWhale_Tree7"],
         "in_room": ["Tree_Room7"],
         "next_room": ["BeforeWhale_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "BeforeWhale_Tree7": {
-        "rom_location": ["309346"],
+        "rom_location": {
+            "ENG": ["309346"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["07"],
         "spawn_coordinates": ["2406B400"],
         "linked_to": ["Tree7_BeforeWhale"],
         "in_room": ["BeforeWhale_Room"],
         "next_room": ["Tree_Room7"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
 
     "BeforeWhale_WhaleBoss": {
-        "rom_location": ["309350"],
+        "rom_location": {
+            "ENG": ["309350"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["37"],
         "spawn_coordinates": ["3C009C00"],
         "linked_to": ["WhaleBoss_BeforeWhale"],
         "in_room": ["BeforeWhale_Room"],
         "next_room": ["Whale_Room"],
-        "special": ["boss"],
-        "desc": []
+        "special": ["boss"]
     },
 
     "WhaleBoss_BeforeWhale": {
-        "rom_location": ["30D4DE"],
+        "rom_location": {
+            "ENG": ["30D4DE"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["4D"],
         "spawn_coordinates": ["B4008400"],
         "linked_to": ["BeforeWhale_WhaleBoss"],
         "in_room": ["Whale_Room"],
         "next_room": ["BeforeWhale_Room"],
-        "special": ["boss"],
-        "desc": []
+        "special": ["boss"]
     },
 
 
     "WhaleBoss_Minecart1": {
-        "rom_location": ["30D4E8"],
+        "rom_location": {
+            "ENG": ["30D4E8"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["09"],
         "spawn_coordinates": ["9C008400"],
         "linked_to": ["Minecart1_WhaleBoss"],
         "in_room": ["Whale_Room"],
         "next_room": ["Minecart1_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "Minecart1_WhaleBoss": {
-        "rom_location": ["318BB5"],
+        "rom_location": {
+            "ENG": ["318BB5"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["37"],
         "spawn_coordinates": ["D4019C00"],
         "linked_to": ["WhaleBoss_Minecart1"],
         "in_room": ["Minecart1_Room"],
         "next_room": ["Whale_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "Minecart1_Crystal1": {
-        "rom_location": ["318BBF"],
+        "rom_location": {
+            "ENG": ["318BBF"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0E"],
         "spawn_coordinates": ["9C006C00"],
         "linked_to": ["Crystal1_Minecart1"],
         "in_room": ["Minecart1_Room"],
         "next_room": ["Crystal1_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "Crystal1_Minecart1": {
-        "rom_location": ["32F3D7"],
+        "rom_location": {
+            "ENG": ["32F3D7"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["09"],
         "spawn_coordinates": ["F408BC01"],
         "linked_to": ["Minecart1_Crystal1"],
         "in_room": ["Crystal1_Room"],
         "next_room": ["Minecart1_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "Crystal1_Crystal2": {
-        "rom_location": ["32F3E1"],
+        "rom_location": {
+            "ENG": ["32F3E1"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0D"],
         "spawn_coordinates": ["9C003C00"],
         "linked_to": ["Crystal2_Crystal1"],
         "in_room": ["Crystal1_Room"],
         "next_room": ["Crystal2_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "Crystal2_Crystal1": {
-        "rom_location": ["300597"],
+        "rom_location": {
+            "ENG": ["300597"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0E"],
         "spawn_coordinates": ["B400EC01"],
         "linked_to": ["Crystal1_Crystal2"],
         "in_room": ["Crystal2_Room"],
         "next_room": ["Crystal1_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "Crystal2_CrystalSave": {
-        "rom_location": ["3005A1"],
+        "rom_location": {
+            "ENG": ["3005A1"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["11"],
         "spawn_coordinates": ["B4008400"],
         "linked_to": ["CrystalSave_Crystal2"],
         "in_room": ["Crystal2_Room"],
         "next_room": ["Crystal_SaveRoom"],
-        "special": ["save"],
-        "desc": []
+        "special": ["save"]
     },
 
     "CrystalSave_Crystal2": {
-        "rom_location": ["307163"],
+        "rom_location": {
+            "ENG": ["307163"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0D"],
         "spawn_coordinates": ["B400CC00"],
         "linked_to": ["Crystal2_CrystalSave"],
         "in_room": ["Crystal_SaveRoom"],
         "next_room": ["Crystal2_Room"],
-        "special": ["save"],
-        "desc": []
+        "special": ["save"]
     },
 
 
     "Crystal2_CrystalLeft": {
-        "rom_location": ["3005AB"],
+        "rom_location": {
+            "ENG": ["3005AB"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["10"],
         "spawn_coordinates": ["CC036C00"],
         "linked_to": ["CrystalLeft_Crystal2"],
         "in_room": ["Crystal2_Room"],
         "next_room": ["CrystalLeft_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "CrystalLeft_Crystal2": {
-        "rom_location": ["34003C"],
+        "rom_location": {
+            "ENG": ["34003C"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0D"],
         "spawn_coordinates": ["54002C01"],
         "linked_to": ["Crystal2_CrystalLeft"],
         "in_room": ["CrystalLeft_Room"],
         "next_room": ["Crystal2_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
     
 
     "CrystalLeft_CrystalFossils": {
-        "rom_location": ["340046"],
+        "rom_location": {
+            "ENG": ["340046"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["12"],
         "spawn_coordinates": ["3C035C01"],
         "linked_to": ["CrystalFossils_CrystalLeft"],
         "in_room": ["CrystalLeft_Room"],
         "next_room": ["CrystalFossils_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "CrystalFossils_CrystalLeft": {
-        "rom_location": ["3482A2"],
+        "rom_location": {
+            "ENG": ["3482A2"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["10"],
         "spawn_coordinates": ["D4015C01"],
         "linked_to": ["CrystalLeft_CrystalFossils"],
         "in_room": ["CrystalFossils_Room"],
         "next_room": ["CrystalLeft_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "Crystal2_CrystalMid": {
-        "rom_location": ["3005BF"],
+        "rom_location": {
+            "ENG": ["3005BF"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0F"],
         "spawn_coordinates": ["84001C02"],
         "linked_to": ["CrystalMid_Crystal2"],
         "in_room": ["Crystal2_Room"],
         "next_room": ["CrystalMid_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "CrystalMid_Crystal2": {
-        "rom_location": ["34BAAC"],
+        "rom_location": {
+            "ENG": ["34BAAC"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0D"],
         "spawn_coordinates": ["84004401"],
         "linked_to": ["Crystal2_CrystalMid"],
         "in_room": ["CrystalMid_Room"],
         "next_room": ["Crystal2_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
    
     "Crystal2_CrystalRight": {
-        "rom_location": ["3005B5"],
+        "rom_location": {
+            "ENG": ["3005B5"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["12"],
         "spawn_coordinates": ["54005C01"],
         "linked_to": ["CrystalRight_Crystal2"],
         "in_room": ["Crystal2_Room"],
         "next_room": ["CrystalRight_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "CrystalRight_Crystal2": {
-        "rom_location": ["348298"],
+        "rom_location": {
+            "ENG": ["348298"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["0D"],
         "spawn_coordinates": ["E4002C01"],
         "linked_to": ["Crystal2_CrystalRight"],
         "in_room": ["CrystalRight_Room"],
         "next_room": ["Crystal2_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "CrystalRight_BeforeWindows": {
-        "rom_location": ["34828E"],
+        "rom_location": {
+            "ENG": ["34828E"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["50"],
         "spawn_coordinates": ["54008400"],
         "linked_to": ["BeforeWindows_CrystalRight"],
         "in_room": ["CrystalRight_Room"],
         "next_room": ["BeforeWindows_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
     "BeforeWindows_CrystalRight": {
-        "rom_location": ["307249"],
+        "rom_location": {
+            "ENG": ["307249"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["12"],
         "spawn_coordinates": ["74076C00"],
         "linked_to": ["CrystalRight_BeforeWindows"],
         "in_room": ["BeforeWindows_Room"],
         "next_room": ["CrystalRight_Room"],
-        "special": [],
-        "desc": []
+        "special": []
     },
 
 
     "BeforeWindows_WindowsBoss": {
-        "rom_location": ["307253"],
+        "rom_location": {
+            "ENG": ["307253"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["36"],
         "spawn_coordinates": ["3C009C00"],
         "linked_to": ["WindowsBoss_BeforeWindows"],
         "in_room": ["BeforeWindows_Room"],
         "next_room": ["Windows_Room"],
-        "special": ["boss"],
-        "desc": []
+        "special": ["boss"]
     },
 
     "WindowsBoss_BeforeWindows": {
-        "rom_location": ["308F91"],
+        "rom_location": {
+            "ENG": ["308F91"],
+            "JP0": [""],
+            "JP1": [""]
+        },
         "room_number": ["50"],
         "spawn_coordinates": ["B4008400"],
         "linked_to": ["BeforeWindows_WindowsBoss"],
         "in_room": ["Windows_Room"],
         "next_room": ["BeforeWindows_Room"],
-        "special": ["boss"],
-        "desc": []
+        "special": ["boss"]
+    },
+
+
+    "WindowsBoss_Minecart2": {
+        "rom_location": {
+            "ENG": ["308F9B"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["0A"],
+        "spawn_coordinates": ["006C006C"],
+        "linked_to": ["Minecart2_WindowsBoss"],
+        "in_room": ["Windows_Room"],
+        "next_room": ["Minecart2_Room"],
+        "special": []
+    },
+
+    "Minecart2_WindowsBoss": {
+        "rom_location": {
+            "ENG": ["315E8C"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["36"],
+        "spawn_coordinates": ["DC029C00"],
+        "linked_to": ["WindowsBoss_Minecart2"],
+        "in_room": ["Minecart2_Room"],
+        "next_room": ["Windows_Room"],
+        "special": []
+    },
+
+
+    "Minecart2_TowerOutside": {
+        "rom_location": {
+            "ENG": ["315E96"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["13"],
+        "spawn_coordinates": ["2C015400"],
+        "linked_to": ["TowerOutside_Minecart2"],
+        "in_room": ["Minecart2_Room"],
+        "next_room": ["TowerOutside_Room"],
+        "special": []
+    },
+
+    "TowerOutside_Minecart2": {
+        "rom_location": {
+            "ENG": ["32C7FC"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["0A"],
+        "spawn_coordinates": ["DC051C02"],
+        "linked_to": ["Minecart2_TowerOutside"],
+        "in_room": ["TowerOutside_Room"],
+        "next_room": ["Minecart2_Room"],
+        "special": []
+    },
+
+
+    "TowerOutside_TowerSave": {
+        "rom_location": {
+            "ENG": ["32C838"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["33"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["TowerSave_TowerOutside"],
+        "in_room": ["TowerOutside_Room"],
+        "next_room": ["Tower_SaveRoom"],
+        "special": ["save"]
+    },
+
+    "TowerSave_TowerOutside": {
+        "rom_location": {
+            "ENG": ["307415"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["13"],
+        "spawn_coordinates": ["7C02FC03"],
+        "linked_to": ["TowerOutside_TowerSave"],
+        "in_room": ["Tower_SaveRoom"],
+        "next_room": ["TowerOutside_Room"],
+        "special": ["save"]
+    },
+
+
+    "TowerOutside_TowerBottom": {
+        "rom_location": {
+            "ENG": ["32C81A", "32C824"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["14"],
+        "spawn_coordinates": ["0C034401"],
+        "linked_to": ["TowerBottom_TowerOutside"],
+        "in_room": ["TowerOutside_Room"],
+        "next_room": ["TowerBottom_Room"],
+        "special": []
+    },
+
+    "TowerBottom_TowerOutside": {
+        "rom_location": {
+            "ENG": ["315828", "513832"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["13"],
+        "spawn_coordinates": ["5C01E403"],
+        "linked_to": ["TowerOutside_TowerBottom"],
+        "in_room": ["TowerBottom_Room"],
+        "next_room": ["TowerOutside_Room"],
+        "special": []
+    },
+
+
+    "TowerBottom_TowerGordos": {
+        "rom_location": {
+            "ENG": ["315814"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2B"],
+        "spawn_coordinates": ["54008400"],
+        "linked_to": ["TowerGordos_TowerBottom"],
+        "in_room": ["TowerBottom_Room"],
+        "next_room": ["TowerGordos_Room"],
+        "special": []
+    },
+
+    "TowerGordos_TowerBottom": {
+        "rom_location": {
+            "ENG": ["304721"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["14"],
+        "spawn_coordinates": ["C4025400"],
+        "linked_to": ["TowerBottom_TowerGordos"],
+        "in_room": ["TowerGordos_Room"],
+        "next_room": ["TowerBottom_Room"],
+        "special": []
+    },
+
+
+    "TowerBottom_TowerStake": {
+        "rom_location": {
+            "ENG": ["31581E"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2C"],
+        "spawn_coordinates": ["B4005400"],
+        "linked_to": ["TowerStake_TowerBottom"],
+        "in_room": ["TowerBottom_Room"],
+        "next_room": ["TowerStake_Room"],
+        "special": []
+    },
+
+    "TowerStake_TowerBottom": {
+        "rom_location": {
+            "ENG": ["303DB9"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["14"],
+        "spawn_coordinates": ["54004401"],
+        "linked_to": ["TowerBottom_TowerStake"],
+        "in_room": ["TowerStake_Room"],
+        "next_room": ["TowerBottom_Room"],
+        "special": []
+    },
+
+
+    "TowerStake_TowerElevators": {
+        "rom_location": {
+            "ENG": ["303DC3"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["15"],
+        "spawn_coordinates": ["B4005400"],
+        "linked_to": ["TowerElevators_TowerStake"],
+        "in_room": ["TowerStake_Room"],
+        "next_room": ["TowerElevators_Room"],
+        "special": []
+    },
+
+    "TowerElevators_TowerStake": {
+        "rom_location": {
+            "ENG": ["303737"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2C"],
+        "spawn_coordinates": ["6C009C00"],
+        "linked_to": ["TowerStake_TowerElevators"],
+        "in_room": ["TowerElevators_Room"],
+        "next_room": ["TowerStake_Room"],
+        "special": []
+    },
+
+
+    "TowerElevators_TowerBasementSplit": {
+        "rom_location": {
+            "ENG": ["303741"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["29"],
+        "spawn_coordinates": ["3C008400"],
+        "linked_to": ["TowerBasementSplit_TowerElevators"],
+        "in_room": ["TowerElevators_Room"],
+        "next_room": ["TowerBasementSplit_Room"],
+        "special": []
+    },
+
+    "TowerBasementSplit_TowerElevators": {
+        "rom_location": {
+            "ENG": ["305643"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["15"],
+        "spawn_coordinates": ["5400C40B"],
+        "linked_to": ["TowerElevators_TowerBasementSplit"],
+        "in_room": ["TowerBasementSplit_Room"],
+        "next_room": ["TowerElevators_Room"],
+        "special": []
+    },
+
+
+    "TowerBasementSplit_TowerBasementTop": {
+        "rom_location": {
+            "ENG": ["305639"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["16"],
+        "spawn_coordinates": ["6C00FC00"],
+        "linked_to": ["TowerBasementTop_TowerBasementSplit"],
+        "in_room": ["TowerBasementSplit_Room"],
+        "next_room": ["TowerBasementTop_Room"],
+        "special": []
+    },
+
+    "TowerBasementTop_TowerBasementSplit": {
+        "rom_location": {
+            "ENG": ["31B83E"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["29"],
+        "spawn_coordinates": ["2C015400"],
+        "linked_to": ["TowerBasementSplit_TowerBasementTop"],
+        "in_room": ["TowerBasementTop_Room"],
+        "next_room": ["TowerBasementSplit_Room"],
+        "special": []
+    },
+
+
+    "TowerBasementTop_TowerBasementPool": {
+        "rom_location": {
+            "ENG": ["31B83E"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2A"],
+        "spawn_coordinates": ["54005400"],
+        "linked_to": ["TowerBasementPool_TowerBasementTop"],
+        "in_room": ["TowerBasementTop_Room"],
+        "next_room": ["TowerBasementPool_Room"],
+        "special": []
+    },
+
+    "TowerBasementPool_TowerBasementTop": {
+        "rom_location": {
+            "ENG": ["31C41F"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["16"],
+        "spawn_coordinates": ["4C02FC00"],
+        "linked_to": ["TowerBasementTop_TowerBasementPool"],
+        "in_room": ["TowerBasementPool_Room"],
+        "next_room": ["TowerBasementTop_Room"],
+        "special": []
+    },
+
+
+    "TowerBasementPool_TowerBasementCannon": {
+        "rom_location": {
+            "ENG": ["31C433"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2A"],
+        "spawn_coordinates": ["28024800"],
+        "linked_to": [],
+        "in_room": ["TowerBasementPool_Room"],
+        "next_room": ["TowerBasementPool_Room"],
+        "special": ["cannon"]
+    },
+
+
+    "TowerBasementPool_TowerBasementStream": {
+        "rom_location": {
+            "ENG": ["31C429"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2E"],
+        "spawn_coordinates": ["C4025400"],
+        "linked_to": ["TowerBasementStream_TowerBasementPool"],
+        "in_room": ["TowerBasementPool_Room"],
+        "next_room": ["TowerBasementStream_Room"],
+        "special": []
+    },
+
+    "TowerBasementStream_TowerBasementPool": {
+        "rom_location": {
+            "ENG": ["3026E9"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2A"],
+        "spawn_coordinates": ["5400B400"],
+        "linked_to": ["TowerBasementPool_TowerBasementStream"],
+        "in_room": ["TowerBasementStream_Room"],
+        "next_room": ["TowerBasementPool_Room"],
+        "special": []
+    },
+
+
+    "TowerBasementStream_TowerBasementSplit": {
+        "rom_location": {
+            "ENG": ["3026DF"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["29"],
+        "spawn_coordinates": ["2C01B400"],
+        "linked_to": ["TowerBasementSplit_TowerBasementStream"],
+        "in_room": ["TowerBasementStream_Room"],
+        "next_room": ["TowerBasementSplit_Room"],
+        "special": []
+    },
+
+    "TowerBasementSplit_TowerBasementStream": {
+        "rom_location": {
+            "ENG": ["30564D"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2E"],
+        "spawn_coordinates": ["54005400"],
+        "linked_to": ["TowerBasementStream_TowerBasementSplit"],
+        "in_room": ["TowerBasementSplit_Room"],
+        "next_room": ["TowerBasementStream_Room"],
+        "special": []
+    },
+
+
+    "TowerBottom_TowerLadders": {
+        "rom_location": {
+            "ENG": ["31583C"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["17"],
+        "spawn_coordinates": ["54000402"],
+        "linked_to": ["TowerLadders_TowerBottom"],
+        "in_room": ["TowerBottom_Room"],
+        "next_room": ["TowerLadders_Room"],
+        "special": []
+    },
+
+    "TowerLadders_TowerBottom": {
+        "rom_location": {
+            "ENG": ["303C7F"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["14"],
+        "spawn_coordinates": ["D4044401"],
+        "linked_to": ["TowerBottom_TowerLadders"],
+        "in_room": ["TowerLadders_Room"],
+        "next_room": ["TowerBottom_Room"],
+        "special": []
+    },
+
+
+
+
+
+
+    "TowerOutside_TowerTop": {
+        "rom_location": {
+            "ENG": ["32C806", "32C810"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1C"],
+        "spawn_coordinates": ["74013C00"],
+        "linked_to": ["TowerTop_TowerOutside"],
+        "in_room": ["TowerOutside_Room"],
+        "next_room": ["TowerTop_Room"],
+        "special": []
+    },
+
+    "TowerTop_TowerOutside": {
+        "rom_location": {
+            "ENG": ["312593", "31259D"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["13"],
+        "spawn_coordinates": ["5C013C03"],
+        "linked_to": ["TowerOutside_TowerTop"],
+        "in_room": ["TowerTop_Room"],
+        "next_room": ["TowerOutside_Room"],
+        "special": []
     }
 }

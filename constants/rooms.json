@@ -99,8 +99,78 @@
     },
 
     "Windows_Room": {
-        "doors": ["WindowsBoss_BeforeWindows"],
+        "doors": ["WindowsBoss_BeforeWindows", "WindowsBoss_Minecart2"],
         "desc": ["Battle Windows Boss fight"]
+    },
+
+    "Minecart2_Room": {
+        "doors": ["Minecart2_WindowsBoss", "Minecart2_TowerOutside"],
+        "desc": ["Minecart room connecting Crystal and Old Tower"]
+    },
+
+    "TowerOutside_Room": {
+        "doors": ["TowerOutside_Minecart2", "TowerOutside_TowerSave", "TowerOutside_TowerTop", "TowerOutside_TowerBottom"],
+        "desc": ["Old Tower entrance with save room"]
+    },
+
+    "Tower_SaveRoom": {
+        "doors": ["TowerSave_TowerOutside"],
+        "desc": ["Save room for Old Tower"]
+    },
+
+    "TowerBottom_Room": {
+        "doors": ["TowerBottom_TowerOutside", "TowerBottom_TowerStake", "TowerBottom_TowerGordos", "TowerBottom_TowerLadders"],
+        "desc": ["Long tower hallway with the cannons on top of star blocks and springs."]
+    },
+
+    "TowerGordos_Room": {
+        "doors": ["TowerGordos_TowerBottom"],
+        "desc": ["Bouncing Gordos and star blocks with chest in the middle"]
+    },
+
+    "TowerStake_Room": {
+        "doors": ["TowerStake_TowerBottom", "TowerStake_TowerElevators"],
+        "desc": ["Room that requires Stone/Hammer to progress in"]
+    },
+
+    "TowerElevators_Room": {
+        "doors": ["TowerElevators_TowerStake", "TowerElevators_TowerBasementSplit"],
+        "desc": ["Long vertical room with two elevators"]
+    },
+
+    "TowerBasementSplit_Room": {
+        "doors": ["TowerBasementSplit_TowerBasementTop", "TowerBasementSplit_TowerBasementStream", "TowerBasementSplit_TowerElevators"],
+        "desc": ["Split path with two Burning Leos"]
+    },
+
+    "TowerBasementTop_Room": {
+        "doors": ["TowerBasementTop_TowerBasementSplit", "TowerBasementTop_TowerBasementPool"],
+        "desc": ["Jukid Miniboss"]
+    },
+
+    "TowerBasementPool_Room": {
+        "doors": ["TowerBasementPool_TowerBasementTop", "TowerBasementPool_TowerBasementCannon", "TowerBasementPool_TowerBasementStream"],
+        "desc": ["Room with the large pool and a cannon fuse in the water"]
+    },
+
+    "TowerBasementStream_Room": {
+        "doors": ["TowerBasementStream_TowerBasementPool", "TowerBasementStream_TowerBasementSplit"],
+        "desc": ["Room with water current floating above a pit"]
+    },
+
+    "TowerLadders_Room": {
+        "doors": ["TowerLadders_TowerBottom"],
+        "desc": ["Lots of ladders in here"]
+    },
+
+
+
+
+
+
+    "TowerTop_Room": {
+        "doors": ["TowerTop_TowerOutside"],
+        "desc": ["Top door room from the outside of Old Tower"]
     }
 
 }

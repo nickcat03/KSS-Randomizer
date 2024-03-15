@@ -106,18 +106,24 @@ def validateSettings():
 				case "003301":
 					ROM_version = "JP1"
 				case "003302":
-					ROM_version = "JP2"
+					# 003302 is JP 1.2, but since 1.1 and 1.2 share the same ROM locations, they will be grouped together
+					ROM_version = "JP1"
 				case _:
 					pass
 
         #If everything is good to go, start ROM generation
 		if ROM_version != "" and is_valid:
-			outputrom = outputdir + "/KSS GCO Randomizer " + str(optionSeedNumber) + ".sfc"
+			#Put proper game title abbreviation based on region
+			if ROM_version == "ENG":
+				game_title = "KSS"
+			else:
+				game_title = "SDX"
+			outputrom = outputdir + "/" + game_title + " GCO Randomizer " + str(optionSeedNumber) + ".sfc"
 			#outputrom = convert_file_path_format(outputrom)
-			generate_ROM(inputrom,outputrom)
+			generate_ROM(inputrom, outputrom, ROM_version)
 			
 
-def generate_ROM(original_ROM, randomized_ROM):
+def generate_ROM(original_ROM, randomized_ROM, ROM_version):
 	seed_number = entry_seed_number.get()
 	
 	shutil.copyfile(original_ROM, randomized_ROM)
@@ -127,7 +133,7 @@ def generate_ROM(original_ROM, randomized_ROM):
 	print("Seed:", seed_number)
 	check_if_pass = "ERROR"
 	while check_if_pass == "ERROR":
-		check_if_pass = randomize_doors(KSS_ROM)
+		check_if_pass = randomize_doors(KSS_ROM, ROM_version)
 	
 	print("Done.")
 	warning_label.config(text="ROM randomized. Enjoy your game!", fg="#000000")
