@@ -18,7 +18,7 @@
         "rom_location": {
             "ENG": ["316E14"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["3175B2"]
         },
         "room_number": ["03"],
         "spawn_coordinates": ["3C005400"],
@@ -31,8 +31,8 @@
     "Tree3_Tree2": {
         "rom_location": {
             "ENG": ["326DA0"],
-            "JP0": ["3174E9"],
-            "JP1": ["3175A8"]
+            "JP0": [""],
+            "JP1": ["327987"]
         },
         "room_number": ["02"],
         "spawn_coordinates": ["4C05B400"],
@@ -46,8 +46,8 @@
     "Tree2_Tree8": {
         "rom_location": {
             "ENG": ["316E0A"],
-            "JP0": [""],
-            "JP1": [""]
+            "JP0": ["3174E9"],
+            "JP1": ["3175A8"]
         },
         "room_number": ["08"],
         "spawn_coordinates": ["54003C00"],
@@ -61,7 +61,7 @@
         "rom_location": {
             "ENG": ["30D0F0"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["30D914"]
         },
         "room_number": ["02"],
         "spawn_coordinates": ["C4028400"],
@@ -76,7 +76,7 @@
         "rom_location": {
             "ENG": ["326DBE"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["3279A5"]
         },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
@@ -91,7 +91,7 @@
         "rom_location": {
             "ENG": ["326DC8"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["3279AF"]
         },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
@@ -106,7 +106,7 @@
         "rom_location": {
             "ENG": ["326DAA"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["327991"]
         },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
@@ -121,7 +121,7 @@
         "rom_location": {
             "ENG": ["326DB4"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["32799B"]
         },
         "room_number": ["04"],
         "spawn_coordinates": ["54002C01"],
@@ -135,7 +135,7 @@
         "rom_location": {
             "ENG": ["339626"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["339FD0"]
         },
         "room_number": ["03"],
         "spawn_coordinates": ["9C034401"],
@@ -150,7 +150,7 @@
         "rom_location": {
             "ENG": ["33961C"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["339FC6"]
         },
         "room_number": ["05"],
         "spawn_coordinates": ["B4008400"],
@@ -164,7 +164,7 @@
         "rom_location": {
             "ENG": ["30732F"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["307A4D"]
         },
         "room_number": ["04"],
         "spawn_coordinates": ["DC02B400"],
@@ -179,7 +179,7 @@
         "rom_location": {
             "ENG": ["339612"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["339FBC"]
         },
         "room_number": ["06"],
         "spawn_coordinates": ["54000402"],
@@ -193,7 +193,7 @@
         "rom_location": {
             "ENG": ["310046"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["310BD4"]
         },
         "room_number": ["04"],
         "spawn_coordinates": ["7C055400"],
@@ -208,7 +208,7 @@
         "rom_location": {
             "ENG": ["31003C"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["310BCA"]
         },
         "room_number": ["07"],
         "spawn_coordinates": ["54005400"],
@@ -222,7 +222,7 @@
         "rom_location": {
             "ENG": ["3116E9"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["312277"]
         },
         "room_number": ["06"],
         "spawn_coordinates": ["54035400"],
@@ -237,7 +237,7 @@
         "rom_location": {
             "ENG": ["3116F3"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["312281"]
         },
         "room_number": ["4D"],
         "spawn_coordinates": ["54008400"],
@@ -251,7 +251,7 @@
         "rom_location": {
             "ENG": ["309346"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["309C07"]
         },
         "room_number": ["07"],
         "spawn_coordinates": ["2406B400"],
@@ -267,7 +267,7 @@
         "rom_location": {
             "ENG": ["309350"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["309C11"]
         },
         "room_number": ["37"],
         "spawn_coordinates": ["3C009C00"],
@@ -281,7 +281,7 @@
         "rom_location": {
             "ENG": ["30D4DE"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["30DD02"]
         },
         "room_number": ["4D"],
         "spawn_coordinates": ["B4008400"],
@@ -296,7 +296,7 @@
         "rom_location": {
             "ENG": ["30D4E8"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["30DD0C"]
         },
         "room_number": ["09"],
         "spawn_coordinates": ["9C008400"],
@@ -310,7 +310,7 @@
         "rom_location": {
             "ENG": ["318BB5"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["31904F"]
         },
         "room_number": ["37"],
         "spawn_coordinates": ["D4019C00"],
@@ -325,7 +325,7 @@
         "rom_location": {
             "ENG": ["318BBF"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["319059"]
         },
         "room_number": ["0E"],
         "spawn_coordinates": ["9C006C00"],
@@ -339,7 +339,7 @@
         "rom_location": {
             "ENG": ["32F3D7"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["31003C"]
         },
         "room_number": ["09"],
         "spawn_coordinates": ["F408BC01"],
@@ -354,7 +354,7 @@
         "rom_location": {
             "ENG": ["32F3E1"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["310046"]
         },
         "room_number": ["0D"],
         "spawn_coordinates": ["9C003C00"],
@@ -368,7 +368,7 @@
         "rom_location": {
             "ENG": ["300597"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["300938"]
         },
         "room_number": ["0E"],
         "spawn_coordinates": ["B400EC01"],
@@ -383,7 +383,7 @@
         "rom_location": {
             "ENG": ["3005A1"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["300942"]
         },
         "room_number": ["11"],
         "spawn_coordinates": ["B4008400"],
@@ -397,7 +397,7 @@
         "rom_location": {
             "ENG": ["307163"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["307881"]
         },
         "room_number": ["0D"],
         "spawn_coordinates": ["B400CC00"],
@@ -412,7 +412,7 @@
         "rom_location": {
             "ENG": ["3005AB"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["30094C"]
         },
         "room_number": ["10"],
         "spawn_coordinates": ["CC036C00"],
@@ -426,7 +426,7 @@
         "rom_location": {
             "ENG": ["34003C"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["3415FF"]
         },
         "room_number": ["0D"],
         "spawn_coordinates": ["54002C01"],
@@ -441,7 +441,7 @@
         "rom_location": {
             "ENG": ["340046"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["341609"]
         },
         "room_number": ["12"],
         "spawn_coordinates": ["3C035C01"],
@@ -455,7 +455,7 @@
         "rom_location": {
             "ENG": ["3482A2"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["349865"]
         },
         "room_number": ["10"],
         "spawn_coordinates": ["D4015C01"],
@@ -470,7 +470,7 @@
         "rom_location": {
             "ENG": ["3005BF"],
             "JP0": [""],
-            "JP1": [""]
+            "JP1": ["300960"]
         },
         "room_number": ["0F"],
         "spawn_coordinates": ["84001C02"],
