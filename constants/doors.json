@@ -7,10 +7,24 @@
         },
         "room_number": ["02"],
         "spawn_coordinates": ["24009C00"],
-        "linked_to": [],
+        "linked_to": ["Tree2_Tree1"],
         "in_room": ["Tree_Room1"],
         "next_room": ["Tree_Room2"],
-        "special": []
+        "special": ["one-way"]
+    },
+
+    "Tree2_Tree1": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["00"],
+        "spawn_coordinates": ["93026A00"],
+        "linked_to": ["Tree1_Tree2"],
+        "in_room": ["Tree_Room2"],
+        "next_room": ["Tree_Room1"],
+        "special": ["one-way"]
     },
 
 
@@ -80,10 +94,24 @@
         },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
-        "linked_to": [],
+        "linked_to": ["Reset1_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": []
+        "special": ["one-way"]
+    },
+
+    "Reset1_Tree3": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["04024401"],
+        "linked_to": ["Tree3_Reset1"],
+        "in_room": ["Tree_Room3"],
+        "next_room": ["Tree_Room3"],
+        "special": ["one-way"]
     },
 
 
@@ -95,10 +123,24 @@
         },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
-        "linked_to": [],
+        "linked_to": ["Reset2_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": []
+        "special": ["one-way"]
+    },
+
+    "Reset2_Tree3": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["5500EA01"],
+        "linked_to": ["Tree3_Reset2"],
+        "in_room": ["Tree_Room3"],
+        "next_room": ["Tree_Room3"],
+        "special": ["one-way"]
     },
 
 
@@ -110,10 +152,24 @@
         },
         "room_number": ["03"],
         "spawn_coordinates": ["04024401"],
-        "linked_to": [],
+        "linked_to": ["Reset3_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": []
+        "special": ["one-way"]
+    },
+
+    "Reset3_Tree3": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["03"],
+        "spawn_coordinates": ["4F01CA00"],
+        "linked_to": ["Tree3_Reset3"],
+        "in_room": ["Tree_Room3"],
+        "next_room": ["Tree_Room3"],
+        "special": ["one-way"]
     },
 
 
@@ -685,7 +741,7 @@
 
     "TowerBottom_TowerOutside": {
         "rom_location": {
-            "ENG": ["315828", "513832"],
+            "ENG": ["315828", "315832"],
             "JP0": [""],
             "JP1": [""]
         },
@@ -767,7 +823,7 @@
         "linked_to": ["TowerElevators_TowerStake"],
         "in_room": ["TowerStake_Room"],
         "next_room": ["TowerElevators_Room"],
-        "special": []
+        "special": ["ability"]
     },
 
     "TowerElevators_TowerStake": {
@@ -880,10 +936,24 @@
         },
         "room_number": ["2A"],
         "spawn_coordinates": ["28024800"],
-        "linked_to": [],
+        "linked_to": ["TowerBasementCannon_TowerBasementPool"],
         "in_room": ["TowerBasementPool_Room"],
         "next_room": ["TowerBasementPool_Room"],
-        "special": ["cannon"]
+        "special": ["one-way"]
+    },
+
+    "TowerBasementCannon_TowerBasementPool": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["2A"],
+        "spawn_coordinates": ["D3015200"],
+        "linked_to": ["TowerBasementPool_TowerBasementCannon"],
+        "in_room": ["TowerBasementPool_Room"],
+        "next_room": ["TowerBasementPool_Room"],
+        "special": ["one-way"]
     },
 
 

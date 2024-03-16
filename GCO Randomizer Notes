@@ -53,3 +53,47 @@ ENG - JP1.2
 316E0A - 3175A8 79E
 
 30796D
+
+
+TG's katam Randomizer Code step by step:
+
+for each value in queue, run this code...
+
+if current door is in the door list:
+
+    (check for dead end, if it is a dead end, move to dead ends and reshuffle)
+    if the upcoming door in shuffled list has no exits left in the given room:
+        append to dead end list, reshuffle dead end list, and delete the upcoming door in shuffled list
+
+    if not current door in already randomized: (if the door hasn't been randomized yet)
+        append the current door to the already randomized list
+
+        (do more dead end tests)
+        if the upcoming door in shuffled list has no exits left in the given room:
+            append to dead end list, reshuffle dead end list, and delete the upcoming door in shuffled list
+
+        if the length of the two way door list is greater than 0:
+            while the upcoming door is equal to its linked counterpart:
+                randomize two way list
+
+            (generating new queue)
+            (basically, for all doors in the room of the upcoming door in shuffled list, if they aren't already randomized, add them to the queue list)
+            for all doors of the upcoming door:
+                if not doors in already randomized:
+                    append exit to queue list
+
+            (apply randomization)
+            randomized_door_list[current_door] = door in the random list
+            (apply door link)
+            randomized_door_list[door_linked_to_door_in_random_list] = linked_door_of_current_door
+            append door_linked_to_door_in_random_list to already randomized list
+
+            bulk remove current linked door from all shuffled lists
+            delete the upcoming door in shuffled list
+
+        else (if the two way door list is 0):
+            while dead end two way list == linked current door:
+                shuffle dead end two ways
+            (apply randomization as before and bulk remove)
+
+

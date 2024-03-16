@@ -32,6 +32,9 @@ def hex_string_to_bytes(hex_string):
     # Ensure the length of the hex string is even
     if len(hex_string) % 2 != 0:
         hex_string = '0' + hex_string
+
+    if len(hex_string) < 2:
+         hex_string = '00'
     print(hex_string)
 
     # Convert the hex string to bytes
