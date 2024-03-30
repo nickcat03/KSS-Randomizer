@@ -645,7 +645,7 @@
             "JP1": [""]
         },
         "room_number": ["0A"],
-        "spawn_coordinates": ["006C006C"],
+        "spawn_coordinates": ["6C006C00"],
         "linked_to": ["Minecart2_WindowsBoss"],
         "in_room": ["Windows_Room"],
         "next_room": ["Minecart2_Room"],
@@ -901,7 +901,7 @@
 
     "TowerBasementTop_TowerBasementPool": {
         "rom_location": {
-            "ENG": ["31B83E"],
+            "ENG": ["31B848"],
             "JP0": [""],
             "JP1": [""]
         },

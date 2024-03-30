@@ -8,7 +8,9 @@ import sys
 def writeBytesToFile(file,data,address,bytes):
 	file.seek(address)
 	file.write(data)
-	print("Wrote " + str(data) + " to " + str(address))
+     
+	hex_data = ''.join(format(byte, '02X') for byte in data)
+	print("Wrote " + hex_data + " to " + hex(address))
 
 #Windows and Unix have different file pathing formats. This to make sure each OS gets the correct filepath
 def convert_file_path_format(filepath):
@@ -25,16 +27,21 @@ def remove_brackets(value):
 	value = value.strip("'")
 	return value
 
-def hex_string_to_bytes(hex_string):
+def hex_string_to_bytes(hex_string, desired_length):
     # Strip any leading '0x' if present
     hex_string = hex_string.lstrip('0x')
 
-    # Ensure the length of the hex string is even
+    # Make hex string even
     if len(hex_string) % 2 != 0:
         hex_string = '0' + hex_string
 
-    if len(hex_string) < 2:
-         hex_string = '00'
+    # Calculate the number of bytes in the hex string
+    num_bytes = len(hex_string) // 2
+
+    # If the number of bytes is less than the desired length, pad with zeros at the beginning
+    if num_bytes < desired_length:
+        hex_string = '0' * (2 * (desired_length - num_bytes)) + hex_string
+
     print(hex_string)
 
     # Convert the hex string to bytes

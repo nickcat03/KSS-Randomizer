@@ -9,6 +9,19 @@ print("door json:", DOOR_DATA)
 print("room json:", ROOM_DATA)
 
 def randomize_doors(ROM_file, ROM_version):
+    def check_allowed_doors():
+        # If the user doesn't want switch puzzle doors to be randomized, remove them everywhere
+        if not randomize_switch_puzzle:
+            DOORS.remove("Tree3_Reset1")
+            DOORS.remove("Tree3_Reset2")
+            DOORS.remove("Tree3_Reset3")
+            DOORS.remove("Reset1_Tree3")
+            DOORS.remove("Reset2_Tree3")
+            DOORS.remove("Reset3_Tree3")
+            ROOMS["Tree_Room3"]["doors"].remove("Tree3_Reset1")
+            ROOMS["Tree_Room3"]["doors"].remove("Tree3_Reset2")
+            ROOMS["Tree_Room3"]["doors"].remove("Tree3_Reset3")
+
     def sort_door_sub_lists():
         for door_name in DOOR_LIST:
             next_room = DOORS[door_name]['next_room'][0]
@@ -39,31 +52,36 @@ def randomize_doors(ROM_file, ROM_version):
             door_queue.extend(temp_queue)
 
     def write_data_to_ROM():
-        door_list_randomized = list(doors_randomized.keys())
-        print("Door list randomized:", door_list_randomized)
-        for i in range(len(door_list_randomized)):
-            print("Processing door:", door_list_randomized[i])
-            print("Door data type:", type(doors_randomized[door_list_randomized[i]]))
-            print("Data", doors_randomized[door_list_randomized[i]])
-            door_name = DOORS[DOOR_LIST[i]]
-            rom_locations = doors_randomized[door_list_randomized[i]]['rom_location'][ROM_version]
+        for door in DOOR_LIST:
+            print("Writing door data", doors_randomized[door])
+            print("Address being written to:", DOORS[door])
+            door_data = doors_randomized[door]
+            rom_locations = DOORS[door]['rom_location'][ROM_version]
             #Most doors have one rom location, but some may have two if they span two tiles
             #Doors that have no rom locations are custom coordinates to link one-way doors
             for rom_location in rom_locations:
                 rom_location = int(rom_location, 16)
-                for data in door_name["room_number"]:
-                    converted_data = hex_string_to_bytes(data)
+                for data in door_data["room_number"]:
+                    converted_data = hex_string_to_bytes(data, 1)
                     writeBytesToFile(ROM_file, converted_data, rom_location, 1)
-                for data in door_name["spawn_coordinates"]:
-                    converted_data = hex_string_to_bytes(data)
+                for data in door_data["spawn_coordinates"]:
+                    converted_data = hex_string_to_bytes(data, 4)
                     writeBytesToFile(ROM_file, converted_data, rom_location + 6, 4)
 
-
+    #This will be togglable later, setting to true permanently for testing purposes
+    true_random = True
+    
+    #Will be togglable, this is for switch puzzle doors. They can be a bit weird.
+    randomize_switch_puzzle = False
 
     # Load door and room data
     DOORS = json.load(open(DOOR_DATA))
-    DOOR_LIST = list(DOORS.keys())
     ROOMS = json.load(open(ROOM_DATA))
+
+    # Remove any doors from the main DOORS list if they were toggled off by the user
+    check_allowed_doors()
+
+    DOOR_LIST = list(DOORS.keys())
     ROOM_LIST = list(ROOMS.keys())
 
     # Copy door data for manipulation
@@ -124,24 +142,26 @@ def randomize_doors(ROM_file, ROM_version):
 
         available_doors_in_room[current_room]["doors"].remove(current_door)
 
-        print(f"{random_door} overwriting {current_door}")
+        print(f"{current_door} becomes {random_door}")
         doors_randomized[current_door] = DOORS[random_door]
         remove_door_from_sub_lists(random_door)
         generate_queue(random_door)
 
-        if linked_to:
+        #Code for linking doors together. Always ran if true random is enabled, or if the door is a two-way door
+        if true_random or DOORS[current_door]["special"] != ["one-way"]:
             door_data_to_write = linked_to
             door_data_to_edit = DOORS[random_door]["linked_to"][0]
             doors_randomized[door_data_to_edit] = DOORS[door_data_to_write]
             already_processed.add(door_data_to_edit)
             remove_door_from_sub_lists(door_data_to_write)
             linked_room_of_random_door = DOORS[door_data_to_edit]["in_room"][0]
-            print(f"{door_data_to_write} overwriting {door_data_to_edit} (by link)")
+            print(f"{door_data_to_edit} becomes {door_data_to_write} (by link)")
             
+            #Custom door data for one way doors are not listed in the room data, so check if the door is there first before removing it.
             if door_data_to_edit in available_doors_in_room[linked_room_of_random_door]["doors"]:
                 available_doors_in_room[linked_room_of_random_door]["doors"].remove(door_data_to_edit)
             else:
-                print(f"{door_data_to_edit} not found in the list")
+                print(f"{door_data_to_edit} is most likely a custom door, so it was not removed from the list.")
 
             #generate_queue(door_data_to_edit)
 
@@ -154,6 +174,8 @@ def randomize_doors(ROM_file, ROM_version):
         if len(visited_rooms) >= len(ROOMS):
             print("ALL ROOMS VISITED")
             all_rooms_visited = True
+
+        print("processed doors:", already_processed)
 
 
     print("Available pathing doors:", available_pathing_doors)
