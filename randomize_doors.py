@@ -38,8 +38,8 @@ def randomize_doors(ROM_file, ROM_version):
             If a room has one door, put it in dead end list
             If a room has branching paths, put it in pathing door list
             '''
-
-            if "ability" in special_attributes or len(ROOMS[next_room]['doors']) <= 1:
+            #"ability" in special_attributes or     ;    processing ability doors differently so this won't work
+            if len(ROOMS[next_room]['doors']) <= 1:
                 available_dead_end_doors.append(door)
             else:
                 available_pathing_doors.append(door)
@@ -151,7 +151,12 @@ def randomize_doors(ROM_file, ROM_version):
             if len(doors_to_choose_from) <= 0:
                 doors_to_choose_from = get_valid_doors(available_pathing_doors, linked_to, current_room, visited_rooms, True)
 
-            if len(doors_to_choose_from) <= 0 or len(available_doors_in_room[current_room]["doors"]) > 1:
+            if len(doors_to_choose_from) <= 6 or len(available_doors_in_room[current_room]["doors"]) > 1:
+                '''
+                Using a length of 6 here is pretty arbitrary, but the intention is if we are running low on branching rooms,
+                we want to start filling in the blanks with dead end doors asap. I'm sure this number could be
+                adjusted but 6 should work fine (shrug)
+                '''
                 doors_to_choose_from.extend(get_valid_doors(available_dead_end_doors, linked_to, current_room, visited_rooms, False))
                 if len(doors_to_choose_from) <= 0:
                     doors_to_choose_from.extend(get_valid_doors(available_dead_end_doors, linked_to, current_room, visited_rooms, True))

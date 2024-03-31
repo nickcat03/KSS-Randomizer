@@ -794,7 +794,7 @@
         "linked_to": ["TowerStake_TowerBottom"],
         "in_room": ["TowerBottom_Room"],
         "next_room": ["TowerStake_Room"],
-        "special": ["ability"]
+        "special": []
     },
 
     "TowerStake_TowerBottom": {
@@ -823,7 +823,7 @@
         "linked_to": ["TowerElevators_TowerStake"],
         "in_room": ["TowerStake_Room"],
         "next_room": ["TowerElevators_Room"],
-        "special": []
+        "special": ["ability"]
     },
 
     "TowerElevators_TowerStake": {
@@ -1215,5 +1215,701 @@
         "in_room": ["TowerTop_Room"],
         "next_room": ["TowerOutside_Room"],
         "special": []
+    },
+
+
+    "TowerTop_TowerClouds": {
+        "rom_location": {
+            "ENG": ["3125A7"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1D"],
+        "spawn_coordinates": ["2C01C405"],
+        "linked_to": ["TowerClouds_TowerTop"],
+        "in_room": ["TowerTop_Room"],
+        "next_room": ["TowerClouds_Room"],
+        "special": []
+    },
+
+    "TowerClouds_TowerTop": {
+        "rom_location": {
+            "ENG": ["32AEE7"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1C"],
+        "spawn_coordinates": ["54009C00"],
+        "linked_to": ["TowerTop_TowerClouds"],
+        "in_room": ["TowerClouds_Room"],
+        "next_room": ["TowerTop_Room"],
+        "special": []
+    },
+
+
+    "TowerClouds_TowerSleep": {
+        "rom_location": {
+            "ENG": ["32AEDD"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["32"],
+        "spawn_coordinates": ["3C008400"],
+        "linked_to": ["TowerSleep_TowerClouds"],
+        "in_room": ["TowerClouds_Room"],
+        "next_room": ["TowerSleep_Room"],
+        "special": []
+    },
+
+    "TowerSleep_TowerClouds": {
+        "rom_location": {
+            "ENG": ["304963"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1D"],
+        "spawn_coordinates": ["4C02D404"],
+        "linked_to": ["TowerClouds_TowerSleep"],
+        "in_room": ["TowerSleep_Room"],
+        "next_room": ["TowerClouds_Room"],
+        "special": []
+    },
+
+
+    "TowerClouds_TowerStars": {
+        "rom_location": {
+            "ENG": ["32AED3"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["44"],
+        "spawn_coordinates": ["5400DC02"],
+        "linked_to": ["TowerStars_TowerClouds"],
+        "in_room": ["TowerClouds_Room"],
+        "next_room": ["TowerStars_Room"],
+        "special": []
+    },
+
+    "TowerStars_TowerClouds": {
+        "rom_location": {
+            "ENG": ["31F1CB"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1D"],
+        "spawn_coordinates": ["A4012C01"],
+        "linked_to": ["TowerClouds_TowerStars"],
+        "in_room": ["TowerStars_Room"],
+        "next_room": ["TowerClouds_Room"],
+        "special": []
+    },
+
+
+    "TowerClouds_TowerSkull": {
+        "rom_location": {
+            "ENG": ["32AEBF"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["31"],
+        "spawn_coordinates": ["84006C00"],
+        "linked_to": ["TowerSkull_TowerClouds"],
+        "in_room": ["TowerClouds_Room"],
+        "next_room": ["TowerSkull_Room"],
+        "special": []
+    },
+
+    "TowerSkull_TowerClouds": {
+        "rom_location": {
+            "ENG": ["306634"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1D"],
+        "spawn_coordinates": ["FC006C00"],
+        "linked_to": ["TowerClouds_TowerSkull"],
+        "in_room": ["TowerSkull_Room"],
+        "next_room": ["TowerClouds_Room"],
+        "special": []
+    },
+
+
+    "TowerClouds_TowerPool": {
+        "rom_location": {
+            "ENG": ["32AEC9"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1F"],
+        "spawn_coordinates": ["9C005C01"],
+        "linked_to": ["TowerPool_TowerClouds"],
+        "in_room": ["TowerClouds_Room"],
+        "next_room": ["TowerPool_Room"],
+        "special": []
+    },
+
+    "TowerPool_TowerClouds": {
+        "rom_location": {
+            "ENG": ["316B10"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1D"],
+        "spawn_coordinates": ["1C026C00"],
+        "linked_to": ["TowerClouds_TowerPool"],
+        "in_room": ["TowerPool_Room"],
+        "next_room": ["TowerClouds_Room"],
+        "special": []
+    },
+
+
+    "TowerPool_BeforeChameleo": {
+        "rom_location": {
+            "ENG": ["316AFC"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["4E"],
+        "spawn_coordinates": ["54008400"],
+        "linked_to": ["BeforeChameleo_TowerPool"],
+        "in_room": ["TowerPool_Room"],
+        "next_room": ["BeforeChameleo_Room"],
+        "special": []
+    },
+
+    "BeforeChameleo_TowerPool": {
+        "rom_location": {
+            "ENG": ["308C84"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1F"],
+        "spawn_coordinates": ["E4005400"],
+        "linked_to": ["TowerPool_BeforeChameleo"],
+        "in_room": ["BeforeChameleo_Room"],
+        "next_room": ["TowerPool_Room"],
+        "special": []
+    },
+
+
+    "BeforeChameleo_ChameleoBoss": {
+        "rom_location": {
+            "ENG": ["308C8E"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["38"],
+        "spawn_coordinates": ["3C009C00"],
+        "linked_to": ["ChameleoBoss_BeforeChameleo"],
+        "in_room": ["BeforeChameleo_Room"],
+        "next_room": ["Chameleo_Room"],
+        "special": ["boss"]
+    },
+
+    "ChameleoBoss_BeforeChameleo": {
+        "rom_location": {
+            "ENG": ["30861D"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["4E"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["BeforeChameleo_ChameleoBoss"],
+        "in_room": ["Chameleo_Room"],
+        "next_room": ["BeforeChameleo_Room"],
+        "special": ["boss"]
+    },
+
+
+    "ChameleoBoss_TowerCannons": {
+        "rom_location": {
+            "ENG": ["308627"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["20"],
+        "spawn_coordinates": ["FC00C402"],
+        "linked_to": ["TowerCannons_ChameleoBoss"],
+        "in_room": ["Chameleo_Room"],
+        "next_room": ["TowerCannons_Room"],
+        "special": []
+    },
+
+    "TowerCannons_ChameleoBoss": {
+        "rom_location": {
+            "ENG": ["311ABF"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["38"],
+        "spawn_coordinates": ["D4019C00"],
+        "linked_to": ["ChameleoBoss_TowerCannons"],
+        "in_room": ["TowerCannons_Room"],
+        "next_room": ["Chameleo_Room"],
+        "special": []
+    },
+
+
+    "TowerCannons_TowerCandles1": {
+        "rom_location": {
+            "ENG": ["311A97"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["23"],
+        "spawn_coordinates": ["14018403"],
+        "linked_to": ["TowerCandles1_TowerCannons"],
+        "in_room": ["TowerCannons_Room"],
+        "next_room": ["TowerCandles1_Room"],
+        "special": []
+    },
+
+    "TowerCandles1_TowerCannons": {
+        "rom_location": {
+            "ENG": ["31D1B6"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["20"],
+        "spawn_coordinates": ["54006C00"],
+        "linked_to": ["TowerCannons_TowerCandles1"],
+        "in_room": ["TowerCandles1_Room"],
+        "next_room": ["TowerCannons_Room"],
+        "special": []
+    },
+
+
+    "TowerCandles1_TowerWind1": {
+        "rom_location": {
+            "ENG": ["31D1AC"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["2F"],
+        "spawn_coordinates": ["54005400"],
+        "linked_to": ["TowerWind1_TowerCandles1"],
+        "in_room": ["TowerCandles1_Room"],
+        "next_room": ["TowerWind1_Room"],
+        "special": []
+    },
+
+    "TowerWind1_TowerCandles1": {
+        "rom_location": {
+            "ENG": ["308BBD"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["23"],
+        "spawn_coordinates": ["1401D401"],
+        "linked_to": ["TowerCandles1_TowerWind1"],
+        "in_room": ["TowerWind1_Room"],
+        "next_room": ["TowerCandles1_Room"],
+        "special": []
+    },
+
+
+    "TowerCandles1_TowerFreefall": {
+        "rom_location": {
+            "ENG": ["31D1A2"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["25"],
+        "spawn_coordinates": ["E400B400"],
+        "linked_to": ["TowerFreefall_TowerCandles1"],
+        "in_room": ["TowerCandles1_Room"],
+        "next_room": ["TowerFreefall_Room"],
+        "special": ["one-way"]
+    },
+
+    "TowerFreefall_TowerCandles1": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["23"],
+        "spawn_coordinates": ["FC006A00"],
+        "linked_to": ["TowerCandles1_TowerFreefall"],
+        "in_room": ["TowerFreefall_Room"],
+        "next_room": ["TowerCandles1"],
+        "special": ["one-way"]
+    },
+
+
+    "TowerFreefall_TowerCannons": {
+        "rom_location": {
+            "ENG": ["317D10"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["20"],
+        "spawn_coordinates": ["FC004401"],
+        "linked_to": ["TowerCannons_TowerFreefall"],
+        "in_room": ["TowerFreefall_Room"],
+        "next_room": ["TowerCannons_Room"],
+        "special": ["one-way"]
+    },
+
+    "TowerCannons_Towerfreefall": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["25"],
+        "spawn_coordinates": ["2C01C205"],
+        "linked_to": ["TowerFreefall_TowerCannons"],
+        "in_room": ["TowerCannons_Room"],
+        "next_room": ["TowerFreefall_Room"],
+        "special": ["one-way"]
+    },
+
+
+    "TowerCannons_TowerCandles2": {
+        "rom_location": {
+            "ENG": ["311AA1"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["24"],
+        "spawn_coordinates": ["14018403"],
+        "linked_to": ["TowerCandles2_TowerCannons"],
+        "in_room": ["TowerCannons_Room"],
+        "next_room": ["TowerCandles2_Room"],
+        "special": []
+    },
+
+    "TowerCandles2_TowerCannons": {
+        "rom_location": {
+            "ENG": ["31CF7E"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["20"],
+        "spawn_coordinates": ["BC016C00"],
+        "linked_to": ["TowerCannons_TowerCandles2"],
+        "in_room": ["TowerCandles2_Room"],
+        "next_room": ["TowerCannons_Room"],
+        "special": []
+    },
+
+
+    "TowerCandles2_TowerWind2": {
+        "rom_location": {
+            "ENG": ["31CF74"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["30"],
+        "spawn_coordinates": ["B4005400"],
+        "linked_to": ["TowerWind2_TowerCandles2"],
+        "in_room": ["TowerCandles2_Room"],
+        "next_room": ["TowerWind2_Room"],
+        "special": []
+    },
+
+    "TowerWind2_TowerCandles2": {
+        "rom_location": {
+            "ENG": ["308AF6"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["24"],
+        "spawn_coordinates": ["1401D401"],
+        "linked_to": ["TowerCandles2_TowerWind2"],
+        "in_room": ["TowerWind2_Room"],
+        "next_room": ["TowerCandles2_Room"],
+        "special": []
+    },
+
+
+    "TowerCandles2_TowerFreefall": {
+        "rom_location": {
+            "ENG": ["31CF6A"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["25"],
+        "spawn_coordinates": ["A401CC00"],
+        "linked_to": ["TowerFreefall_TowerCandles2"],
+        "in_room": ["TowerCandles2_Room"],
+        "next_room": ["TowerFreefall_Room"],
+        "special": ["one-way"]
+    },
+
+    "TowerFreefall_TowerCandles2": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["24"],
+        "spawn_coordinates": ["FC006A00"],
+        "linked_to": ["TowerCandles2_TowerFreefall"],
+        "in_room": ["TowerFreefall_Room"],
+        "next_room": ["TowerCandles2_Room"],
+        "special": ["one-way"]
+    },
+
+
+    "TowerCannons_TowerOutside": {
+        "rom_location": {
+            "ENG": ["311AAB", "311AB5"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["13"],
+        "spawn_coordinates": ["44010402"],
+        "linked_to": ["TowerOutside_TowerCannons"],
+        "in_room": ["TowerCannons_Room"],
+        "next_room": ["TowerOutside_Room"],
+        "special": ["one-way"]
+    },
+
+    "TowerOutside_TowerCannons": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["20"],
+        "spawn_coordinates": ["F9006A00"],
+        "linked_to": ["TowerCannons_TowerOutside"],
+        "in_room": ["TowerOutside_Room"],
+        "next_room": ["TowerCannons_Room"],
+        "special": ["one-way"]
+    },
+
+
+    "TowerPool_TowerBridge": {
+        "rom_location": {
+            "ENG": ["316B06"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["21"],
+        "spawn_coordinates": ["54009C00"],
+        "linked_to": ["TowerBridge_TowerPool"],
+        "in_room": ["TowerPool_Room"],
+        "next_room": ["TowerBridge_Room"],
+        "special": ["ability"]
+    },
+
+    "TowerBridge_TowerPool": {
+        "rom_location": {
+            "ENG": ["31292D"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["1F"],
+        "spawn_coordinates": ["34028400"],
+        "linked_to": ["TowerPool_TowerBridge"],
+        "in_room": ["TowerBridge_Room"],
+        "next_room": ["TowerPool_Room"],
+        "special": []
+    },
+
+
+    "TowerBridge_TowerChamber": {
+        "rom_location": {
+            "ENG": ["312937"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["22"],
+        "spawn_coordinates": ["9C005C01"],
+        "linked_to": ["TowerChamber_TowerBridge"],
+        "in_room": ["TowerBridge_Room"],
+        "next_room": ["TowerChamber_Room"],
+        "special": []
+    },
+
+    "TowerChamber_TowerBridge": {
+        "rom_location": {
+            "ENG": ["3164DE"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["21"],
+        "spawn_coordinates": ["3C039C00"],
+        "linked_to": ["TowerBridge_TowerChamber"],
+        "in_room": ["TowerChamber_Room"],
+        "next_room": ["TowerBridge_Room"],
+        "special": []
+    },
+
+
+    "TowerChamber_TowerEnemies1": {
+        "rom_location": {
+            "ENG": ["3164CA"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["26"],
+        "spawn_coordinates": ["9C005C01"],
+        "linked_to": ["TowerEnemies1_TowerChamber"],
+        "in_room": ["TowerChamber_Room"],
+        "next_room": ["TowerEnemies1_Room"],
+        "special": []
+    },
+
+    "TowerEnemies1_TowerChamber": {
+        "rom_location": {
+            "ENG": ["31FEAF"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["22"],
+        "spawn_coordinates": ["9C005400"],
+        "linked_to": ["TowerChamber_TowerEnemies1"],
+        "in_room": ["TowerEnemies1_Room"],
+        "next_room": ["TowerChamber_Room"],
+        "special": []
+    },
+
+
+    "TowerEnemies1_TowerDoubleAbility": {
+        "rom_location": {
+            "ENG": ["31FEA5"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["28"],
+        "spawn_coordinates": ["5400CC00"],
+        "linked_to": ["TowerDoubleAbility_TowerEnemies1"],
+        "in_room": ["TowerEnemies1_Room"],
+        "next_room": ["TowerDoubleAbility_Room"],
+        "special": []
+    },
+
+    "TowerDoubleAbility_TowerEnemies1": {
+        "rom_location": {
+            "ENG": ["31E457"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["26"],
+        "spawn_coordinates": ["84005400"],
+        "linked_to": ["TowerEnemies1_TowerDoubleAbility"],
+        "in_room": ["TowerDoubleAbility_Room"],
+        "next_room": ["TowerEnemies1_Room"],
+        "special": []
+    },
+
+
+    "TowerChamber_TowerEnemies2": {
+        "rom_location": {
+            "ENG": ["3164D4"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["27"],
+        "spawn_coordinates": ["9C005C01"],
+        "linked_to": ["TowerEnemies2_TowerChamber"],
+        "in_room": ["TowerChamber_Room"],
+        "next_room": ["TowerEnemies2_Room"],
+        "special": []
+    },
+
+    "TowerEnemies2_TowerChamber": {
+        "rom_location": {
+            "ENG": ["301508"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["22"],
+        "spawn_coordinates": ["8C015400"],
+        "linked_to": ["TowerChamber_TowerEnemies2"],
+        "in_room": ["TowerEnemies2_Room"],
+        "next_room": ["TowerChamber_Room"],
+        "special": []
+    },
+
+
+    "TowerEnemies2_TowerDoubleAbility": {
+        "rom_location": {
+            "ENG": ["3014FE"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["28"],
+        "spawn_coordinates": ["BC01CC00"],
+        "linked_to": ["TowerDoubleAbility_TowerEnemies2"],
+        "in_room": ["TowerEnemies2_Room"],
+        "next_room": ["TowerDoubleAbility_Room"],
+        "special": []
+    },
+
+    "TowerDoubleAbility_TowerEnemies2": {
+        "rom_location": {
+            "ENG": ["31E46B"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["27"],
+        "spawn_coordinates": ["84005400"],
+        "linked_to": ["TowerEnemies2_TowerDoubleAbility"],
+        "in_room": ["TowerDoubleAbility_Room"],
+        "next_room": ["TowerEnemies2_Room"],
+        "special": []
+    },
+
+
+    "TowerDoubleAbility_TowerMirror": {
+        "rom_location": {
+            "ENG": ["31E461"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["2D"],
+        "spawn_coordinates": ["CC00CC00"],
+        "linked_to": ["TowerMirror_TowerDoubleAbility"],
+        "in_room": ["TowerDoubleAbility_Room"],
+        "next_room": ["TowerMirror_Room"],
+        "special": ["ability"]
+    },
+
+    "TowerMirror_TowerDoubleAbility": {
+        "rom_location": {
+            "ENG": ["303336"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["28"],
+        "spawn_coordinates": ["E400CC00"],
+        "linked_to": ["TowerDoubleAbility_TowerMirror"],
+        "in_room": ["TowerMirror_Room"],
+        "next_room": ["TowerDoubleAbility_Room"],
+        "special": []
+    },
+
+
+    "TowerChamber_TowerOutside": {
+        "rom_location": {
+            "ENG": ["3164E8", "3164F2"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["13"],
+        "spawn_coordinates": ["4C021C02"],
+        "linked_to": ["TowerOutside_TowerChamber"],
+        "in_room": ["TowerChamber_Room"],
+        "next_room": ["TowerOutside_Room"],
+        "special": ["one-way"]
+    },
+
+    "TowerOutside_TowerChamber": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["22"],
+        "spawn_coordinates": ["FA000202"],
+        "linked_to": ["TowerChamber_TowerOutside"],
+        "in_room": ["TowerChamber_Room"],
+        "next_room": ["TowerOutside_Room"],
+        "special": ["one-way"]
     }
 }

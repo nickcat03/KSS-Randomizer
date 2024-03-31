@@ -35,7 +35,8 @@
     },
 
     "Tree_Room7": {
-        "doors": ["Tree7_Tree6", "Tree7_BeforeWhale"]
+        "doors": ["Tree7_Tree6", "Tree7_BeforeWhale"],
+        "desc": ["Room with a lot of slopes and the TAC enemies"]
     },
 
     "Tree_Room8": {
@@ -184,8 +185,102 @@
     },
 
     "TowerTop_Room": {
-        "doors": ["TowerTop_TowerOutside"],
+        "doors": ["TowerTop_TowerOutside", "TowerTop_TowerClouds", "TowerTop_TowerSlope"],
         "desc": ["Top door room from the outside of Old Tower"]
-    }
+    },
 
+    "TowerClouds_Room": {
+        "doors": ["TowerClouds_TowerTop", "TowerClouds_TowerSleep", "TowerClouds_TowerStars", "TowerClouds_TowerSkull", "TowerClouds_TowerPool"],
+        "desc": ["Huge vertical room"]
+    },
+
+    "TowerSleep_Room": {
+        "doors": ["TowerSleep_TowerClouds"],
+        "desc": ["Windy room with Sleep statues"]
+    },
+
+    "TowerStars_Room": {
+        "doors": ["TowerStars_TowerClouds"],
+        "desc": ["Vertical room with two springs"]
+    },
+
+    "TowerSkull_Room": {
+        "doors": ["TowerSkull_TowerClouds"],
+        "desc": ["Autoscroller with the lava skull on the right side"]
+    },
+
+    "TowerPool_Room": {
+        "doors": ["TowerPool_TowerClouds", "TowerPool_BeforeChameleo", "TowerPool_TowerBridge"],
+        "desc": ["Room where Ninja partner clip takes place in 100% RTA"]
+    },
+
+    "BeforeChameleo_Room": {
+        "doors": ["BeforeChameleo_TowerPool", "BeforeChameleo_ChameleoBoss"],
+        "desc": ["Ability room before Chameleo Arm boss"]
+    },
+
+    "Chameleo_Room": {
+        "doors": ["ChameleoBoss_BeforeChameleo", "ChameleoBoss_TowerCannons"],
+        "desc": ["Chameleo Arm boss fight"]
+    },
+
+    "TowerCannons_Room": {
+        "doors": ["TowerCannons_ChameleoBoss", "TowerCannons_TowerCandles1", "TowerCannons_TowerCandles2", "TowerCannons_TowerOutside"],
+        "desc": ["Vertical room with several cannons, coming out of Chameleo boss fight"]
+    },
+
+    "TowerCandles1_Room": {
+        "doors": ["TowerCandles1_TowerCannons", "TowerCandles1_TowerWind1", "TowerCandles1_TowerFreefall"],
+        "desc": ["Left room from cannon room with candles lit up"]
+    },
+
+    "TowerWind1_Room": {
+        "doors": ["TowerWind1_TowerCandles1"],
+        "desc": ["Outside room coming from the left candle room"]
+    },
+
+    "TowerCandles2_Room": {
+        "doors": ["TowerCandles2_TowerCannons", "TowerCandles2_TowerWind2", "TowerCandles2_TowerFreefall"],
+        "desc": ["Right room from cannon room, room is completely dark"]
+    },
+
+    "TowerWind2_Room": {
+        "doors": ["TowerWind2_TowerCandles2"],
+        "desc": ["Outside room coming from the right candle room"]
+    },
+
+    "TowerFreefall_Room": {
+        "doors": ["TreeFreefall_TowerCannons"],
+        "desc": ["Large vertical room with the only way out being back to the cannon room"]
+    },
+
+    "TowerBridge_Room": {
+        "doors": ["TowerBridge_TowerPool", "TowerBridge_TowerChamber"],
+        "desc": ["Large breaking bridge with a ton of Bronto Burts"]
+    },
+
+    "TowerChamber_Room": {
+        "doors": ["TowerChamber_TowerBridge", "TowerChamber_TowerEnemies1", "TowerChamber_TowerEnemies2", "TowerChamber_TowerOutside"],
+        "desc": ["Room with the pool of water with a chest inside it"]
+    },
+
+    "TowerEnemies1_Room": {
+        "doors": ["TowerEnemies1_TowerChamber", "TowerEnemies1_TowerDoubleAbility"],
+        "desc": ["Left room from the tower chamber full of various enemies"]
+    },
+    
+    "TowerEnemies2_Room": {
+        "doors": ["TowerEnemies2_TowerChamber", "TowerEnemies2_TowerDoubleAbility"],
+        "desc": ["Right room from the tower chamber full of various enemies"]
+    },
+
+    "TowerDoubleAbility_Room": {
+        "doors": ["TowerDoubleAbility_TowerEnemies1", "TowerDoubleAbility_TowerEnemies2", "TowerDoubleAbility_TowerMirror"],
+        "desc": ["Room that requires Stone and Ninja (at least in RTA)"]
+    },
+
+    "TowerMirror_Room": {
+        "doors": ["TowerMirror_TowerDoubleAbility"],
+        "desc": ["Mirror puzzle (not really a puzzle but lol)"]
+    }
 }
