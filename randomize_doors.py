@@ -9,26 +9,40 @@ print("door json:", DOOR_DATA)
 print("room json:", ROOM_DATA)
 
 def randomize_doors(ROM_file, ROM_version):
-    def check_allowed_doors():
-        # If the user doesn't want switch puzzle doors to be randomized, remove them everywhere
-        if not randomize_switch_puzzle:
-            DOORS.remove("Tree3_Reset1")
-            DOORS.remove("Tree3_Reset2")
-            DOORS.remove("Tree3_Reset3")
-            DOORS.remove("Reset1_Tree3")
-            DOORS.remove("Reset2_Tree3")
-            DOORS.remove("Reset3_Tree3")
-            ROOMS["Tree_Room3"]["doors"].remove("Tree3_Reset1")
-            ROOMS["Tree_Room3"]["doors"].remove("Tree3_Reset2")
-            ROOMS["Tree_Room3"]["doors"].remove("Tree3_Reset3")
+
+    def check_options():
+        to_remove = []
+        for door in DOORS:
+            special_attributes = DOORS[door]["special"]
+            if (("switchpuzzle" in special_attributes and not randomize_switch_puzzle) or
+            ("one-way" in special_attributes and not randomize_one_ways) or
+            ("save" in special_attributes and not randomize_save_rooms)):
+                room = DOORS[door]["in_room"][0]
+                print("Removing", door, "from", room)
+                if room in ROOMS and door in ROOMS[room]["doors"]:
+                    ROOMS[room]["doors"].remove(door)
+                to_remove.append(door)
+
+        for door in to_remove:
+            if door in DOORS:
+                print("deleting", door)
+                del DOORS[door]
 
     def sort_door_sub_lists():
-        for door_name in DOOR_LIST:
-            next_room = DOORS[door_name]['next_room'][0]
-            if len(ROOMS[next_room]['doors']) > 1:
-                available_pathing_doors.append(door_name)
+        for door in DOOR_LIST:
+            special_attributes = DOORS[door]["special"]
+            next_room = DOORS[door]['next_room'][0]
+
+            '''
+            Ability is for checking if a room requires a specific ability in order to proceed, with no other way to progress otherwise. Mark it as a dead end if so.
+            If a room has one door, put it in dead end list
+            If a room has branching paths, put it in pathing door list
+            '''
+
+            if "ability" in special_attributes or len(ROOMS[next_room]['doors']) <= 1:
+                available_dead_end_doors.append(door)
             else:
-                available_dead_end_doors.append(door_name)
+                available_pathing_doors.append(door)
 
         random.shuffle(available_pathing_doors)
         random.shuffle(available_dead_end_doors)
@@ -44,6 +58,7 @@ def randomize_doors(ROM_file, ROM_version):
     def generate_queue(chosen_door):
         temp_queue = []
         random_next_room = DOORS[chosen_door]["next_room"][0]
+        print("Adding doors in", random_next_room, "to queue")
         if random_next_room not in rooms_queued:
             for door in ROOMS[random_next_room]["doors"]:
                 temp_queue.append(door)
@@ -73,18 +88,20 @@ def randomize_doors(ROM_file, ROM_version):
     
     #Will be togglable, this is for switch puzzle doors. They can be a bit weird.
     randomize_switch_puzzle = False
+    randomize_one_ways = False
+    randomize_save_rooms = False
 
     # Load door and room data
     DOORS = json.load(open(DOOR_DATA))
     ROOMS = json.load(open(ROOM_DATA))
 
-    # Remove any doors from the main DOORS list if they were toggled off by the user
-    check_allowed_doors()
+    # Delete doors from lists based on user options
+    check_options()
 
     DOOR_LIST = list(DOORS.keys())
     ROOM_LIST = list(ROOMS.keys())
 
-    # Copy door data for manipulation
+    # Copy door data for data manipulation
     available_doors_in_room = copy.deepcopy(ROOMS)
 
     # Initialize door lists
@@ -95,91 +112,118 @@ def randomize_doors(ROM_file, ROM_version):
     sort_door_sub_lists()
 
     doors_randomized = copy.deepcopy(DOORS)
-    door_queue = [DOOR_LIST[0]]
+    not_processed = copy.deepcopy(DOOR_LIST)
     rooms_queued = set()
     visited_rooms = set()
-    all_rooms_visited = False
     already_processed = set()
 
-    while door_queue:
+    def process_door_queue():
+        all_rooms_visited = False
+        while door_queue:
 
-        current_door = door_queue[0]
+            current_door = door_queue[0]
 
-        print("Current door in queue:", current_door)
+            print("Current door in queue:", current_door)
 
-        if current_door in already_processed:
+            if len(visited_rooms) >= len(ROOMS):
+                print("ALL ROOMS VISITED")
+                all_rooms_visited = True
+
+            if current_door in already_processed:
+                door_queue.remove(current_door)
+                continue
+
+            linked_to = DOORS[current_door]["linked_to"]
+            current_room = DOORS[current_door]["in_room"][0]
+            next_room = DOORS[current_door]["next_room"][0]
+
+            linked_to = linked_to[0]
+            continue_checks = True
+            infinite_loop_check = 0
+            doors_to_choose_from = available_pathing_doors.copy()
+
+            if len(available_pathing_doors) <= 0 or len(available_doors_in_room[current_room]["doors"]) > 1:
+                doors_to_choose_from.extend(available_dead_end_doors)
+
+            while continue_checks:
+                random_door = random.choice(list(doors_to_choose_from))
+                random_door_room = DOORS[random_door]["in_room"][0]
+                random_door_next_room = DOORS[random_door]["next_room"][0]
+
+                print("random door:", random_door)
+
+                #Notes for later
+                #This function should be fixed so that the large if block is checked for every door_to_choose_from
+                #For each door that doesnt pass the check, remove that from doors_to_choose_from. Then do the randomization.
+                #If there are no doors to choose from, make dead end doors available or restart the randomization
+                #(this is a lot better than the crappy assumption that "all rooms have been visited at this point")
+
+                # and (random_door_room not in visited_rooms or all_rooms_visited)   ;   and random_door_room != next_room  ;    and random_door != current_door    ;   and random_door_room != current_room
+                if random_door != linked_to and random_door_next_room != current_room and ((random_door_room not in visited_rooms and random_door_next_room not in visited_rooms) or all_rooms_visited):
+                    continue_checks = False
+                else:
+                    infinite_loop_check += 1
+
+                if infinite_loop_check == 20:
+                    print("Assuming that all rooms have been visited at this point.")
+                    all_rooms_visited = True
+
+                elif infinite_loop_check > 40:
+                    print("Aborting")
+                    return "ERROR"
+
+
+            available_doors_in_room[current_room]["doors"].remove(current_door)
+
+            print(f"{current_door} becomes {random_door}")
+            doors_randomized[current_door] = DOORS[random_door]
+            remove_door_from_sub_lists(random_door)
+            generate_queue(random_door)
+
+            #Code for linking doors together. Always ran if true random is enabled, or if the door is a two-way door
+            if true_random or DOORS[current_door]["special"] != ["one-way"]:
+                door_data_to_write = linked_to
+                door_data_to_edit = DOORS[random_door]["linked_to"][0]
+                doors_randomized[door_data_to_edit] = DOORS[door_data_to_write]
+                already_processed.add(door_data_to_edit)
+                not_processed.remove(door_data_to_edit)
+                remove_door_from_sub_lists(door_data_to_write)
+
+                #Remove the linked door from the ROOM list
+                linked_room_of_random_door = DOORS[door_data_to_edit]["in_room"][0]
+                print(f"{door_data_to_edit} becomes {door_data_to_write} (by link)")
+                
+                #Custom door data for one way doors are not listed in the room data, so check if the door is there first before removing it.
+                if door_data_to_edit in available_doors_in_room[linked_room_of_random_door]["doors"]:
+                    available_doors_in_room[linked_room_of_random_door]["doors"].remove(door_data_to_edit)
+                else:
+                    print(f"{door_data_to_edit} is most likely a custom door, so it was not removed from the list.")
+
+                # This is probably redundant
+                linked_door_room = DOORS[door_data_to_edit]["in_room"][0]
+                if linked_door_room not in visited_rooms:
+                    visited_rooms.add(linked_door_room)
+
             door_queue.remove(current_door)
-            continue
+            already_processed.add(current_door)
+            not_processed.remove(current_door)
 
-        linked_to = DOORS[current_door]["linked_to"]
-        current_room = DOORS[current_door]["in_room"][0]
-        next_room = DOORS[current_door]["next_room"][0]
-
-        linked_to = linked_to[0]
-        continue_checks = True
-        infinite_loop_check = 0
-        doors_to_choose_from = available_pathing_doors.copy()
-
-        if len(available_pathing_doors) <= 0:
-            doors_to_choose_from.extend(available_dead_end_doors)
-
-        while continue_checks:
-            random_door = random.choice(list(doors_to_choose_from))
-            random_door_room = DOORS[random_door]["in_room"][0]
-
-            print("random door:", random_door)
-
-            # and (random_door_room not in visited_rooms or all_rooms_visited)
-            if random_door != linked_to and random_door != current_door and random_door_room != next_room and random_door_room != current_room:
-                continue_checks = False
-            else:
-                infinite_loop_check += 1
-
-            if infinite_loop_check >= 10:
-                print("Infinite loop detected, aborting current randomization and trying again.")
-                return "ERROR"
+            if current_room not in visited_rooms:
+                visited_rooms.add(current_room)
 
 
-        available_doors_in_room[current_room]["doors"].remove(current_door)
-
-        print(f"{current_door} becomes {random_door}")
-        doors_randomized[current_door] = DOORS[random_door]
-        remove_door_from_sub_lists(random_door)
-        generate_queue(random_door)
-
-        #Code for linking doors together. Always ran if true random is enabled, or if the door is a two-way door
-        if true_random or DOORS[current_door]["special"] != ["one-way"]:
-            door_data_to_write = linked_to
-            door_data_to_edit = DOORS[random_door]["linked_to"][0]
-            doors_randomized[door_data_to_edit] = DOORS[door_data_to_write]
-            already_processed.add(door_data_to_edit)
-            remove_door_from_sub_lists(door_data_to_write)
-            linked_room_of_random_door = DOORS[door_data_to_edit]["in_room"][0]
-            print(f"{door_data_to_edit} becomes {door_data_to_write} (by link)")
-            
-            #Custom door data for one way doors are not listed in the room data, so check if the door is there first before removing it.
-            if door_data_to_edit in available_doors_in_room[linked_room_of_random_door]["doors"]:
-                available_doors_in_room[linked_room_of_random_door]["doors"].remove(door_data_to_edit)
-            else:
-                print(f"{door_data_to_edit} is most likely a custom door, so it was not removed from the list.")
-
-            #generate_queue(door_data_to_edit)
-
-        door_queue.remove(current_door)
-        already_processed.add(current_door)
-
-        if current_room not in visited_rooms:
-            visited_rooms.add(current_room)
-
-        if len(visited_rooms) >= len(ROOMS):
-            print("ALL ROOMS VISITED")
-            all_rooms_visited = True
-
-        print("processed doors:", already_processed)
-
+    door_queue = [available_doors[0], available_doors[2]]
+    process_door_queue()
 
     print("Available pathing doors:", available_pathing_doors)
     print("Available dead end doors:", available_dead_end_doors)
+
+    print("Some doors are impossible to access (Randomized", len(already_processed), "out of", len(DOOR_LIST), "doors.")
+    print("Processed", len(already_processed), "doors out of", len(DOOR_LIST), "doors")
+    print("Not processed:", not_processed)
+    if len(already_processed) < len(DOOR_LIST):
+        return "ERROR"
+        
 
     # Write data to ROM
     write_data_to_ROM()

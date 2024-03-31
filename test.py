@@ -12,8 +12,6 @@ def hex_string_to_bytes(hex_string, desired_length):
     if num_bytes < desired_length:
         hex_string = '0' * (2 * (desired_length - num_bytes)) + hex_string
 
-    print(hex_string)
-
     # Convert the hex string to bytes
     return bytes.fromhex(hex_string)
 

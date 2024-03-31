@@ -97,7 +97,7 @@
         "linked_to": ["Reset1_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way"]
+        "special": ["one-way", "switchpuzzle"]
     },
 
     "Reset1_Tree3": {
@@ -111,7 +111,7 @@
         "linked_to": ["Tree3_Reset1"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way"]
+        "special": ["one-way", "switchpuzzle"]
     },
 
 
@@ -126,7 +126,7 @@
         "linked_to": ["Reset2_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way"]
+        "special": ["one-way", "switchpuzzle"]
     },
 
     "Reset2_Tree3": {
@@ -140,7 +140,7 @@
         "linked_to": ["Tree3_Reset2"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way"]
+        "special": ["one-way", "switchpuzzle"]
     },
 
 
@@ -155,7 +155,7 @@
         "linked_to": ["Reset3_Tree3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way"]
+        "special": ["one-way", "switchpuzzle"]
     },
 
     "Reset3_Tree3": {
@@ -169,7 +169,7 @@
         "linked_to": ["Tree3_Reset3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way"]
+        "special": ["one-way", "switchpuzzle"]
     },
 
 
@@ -794,7 +794,7 @@
         "linked_to": ["TowerStake_TowerBottom"],
         "in_room": ["TowerBottom_Room"],
         "next_room": ["TowerStake_Room"],
-        "special": []
+        "special": ["ability"]
     },
 
     "TowerStake_TowerBottom": {
@@ -823,7 +823,7 @@
         "linked_to": ["TowerElevators_TowerStake"],
         "in_room": ["TowerStake_Room"],
         "next_room": ["TowerElevators_Room"],
-        "special": ["ability"]
+        "special": []
     },
 
     "TowerElevators_TowerStake": {
