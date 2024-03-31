@@ -131,11 +131,13 @@ def generate_ROM(original_ROM, randomized_ROM, ROM_version):
 	
 	random.seed(seed_number)
 	print("Seed:", seed_number)
+	iterations = 0
 	check_if_pass = "ERROR"
 	while check_if_pass == "ERROR":
+		iterations += 1
 		check_if_pass = randomize_doors(KSS_ROM, ROM_version)
 	
-	print("Done.")
+	print("Done. Iterated through door generation", iterations, "times.")
 	warning_label.config(text="ROM randomized. Enjoy your game!", fg="#000000")
 
 
