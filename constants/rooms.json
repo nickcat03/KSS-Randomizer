@@ -159,14 +159,29 @@
     },
 
     "TowerLadders_Room": {
-        "doors": ["TowerLadders_TowerBottom"],
+        "doors": ["TowerLadders_TowerBottom", "TowerLadders_TowerNuts"],
         "desc": ["Lots of ladders in here"]
     },
 
+    "TowerNuts_Room": {
+        "doors": ["TowerNuts_TowerLadders", "TowerNuts_TowerBonkers"],
+        "desc": ["The room with all the nuts. Lol nuts."]
+    },
 
+    "TowerBonkers_Room": {
+        "doors": ["TowerBonkers_TowerNuts", "TowerBonkers_TowerKnights"],
+        "desc": ["Bonkers fight with the bomb block on the floor"]
+    },
 
+    "TowerKnights_Room": {
+        "doors": ["TowerKnights_TowerBonkers", "TowerKnights_TowerSlope"],
+        "desc": ["Meta Knights mini boss hallway"]
+    },
 
-
+    "TowerSlope_Room": {
+        "doors": ["TowerSlope_TowerKnights", "TowerSlope_TowerTop"],
+        "desc": ["The room with that skateboard thing in it. I forgot what they're called :)"]
+    },
 
     "TowerTop_Room": {
         "doors": ["TowerTop_TowerOutside"],

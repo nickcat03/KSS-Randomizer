@@ -1043,9 +1043,150 @@
         "special": []
     },
 
+    
+    "TowerLadders_TowerNuts": {
+        "rom_location": {
+            "ENG": ["303C75"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["18"],
+        "spawn_coordinates": ["B4034401"],
+        "linked_to": ["TowerNuts_TowerLadders"],
+        "in_room": ["TowerLadders_Room"],
+        "next_room": ["TowerNuts_Room"],
+        "special": []
+    },
+
+    "TowerNuts_TowerLadders": {
+        "rom_location": {
+            "ENG": ["3003DB"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["17"],
+        "spawn_coordinates": ["54008400"],
+        "linked_to": ["TowerLadders_TowerNuts"],
+        "in_room": ["TowerNuts_Room"],
+        "next_room": ["TowerLadders_Room"],
+        "special": []
+    },
 
 
+    "TowerNuts_TowerBonkers": {
+        "rom_location": {
+            "ENG": ["3003D1"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["19"],
+        "spawn_coordinates": ["5400B400"],
+        "linked_to": ["TowerBonkers_TowerNuts"],
+        "in_room": ["TowerNuts_Room"],
+        "next_room": ["TowerBonkers_Room"],
+        "special": []
+    },
 
+    "TowerBonkers_TowerNuts": {
+        "rom_location": {
+            "ENG": ["31EFEA"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["18"],
+        "spawn_coordinates": ["6C006C00"],
+        "linked_to": ["TowerNuts_TowerBonkers"],
+        "in_room": ["TowerBonkers_Room"],
+        "next_room": ["TowerNuts_Room"],
+        "special": []
+    },
+
+
+    "TowerBonkers_TowerKnights": {
+        "rom_location": {
+            "ENG": ["31EFF4"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1A"],
+        "spawn_coordinates": ["FC006C00"],
+        "linked_to": ["TowerKnights_TowerBonkers"],
+        "in_room": ["TowerBonkers_Room"],
+        "next_room": ["TowerKnights_Room"],
+        "special": []
+    },
+
+    "TowerKnights_TowerBonkers": {
+        "rom_location": {
+            "ENG": ["3035E2"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["19"],
+        "spawn_coordinates": ["C402B400"],
+        "linked_to": ["TowerBonkers_TowerKnights"],
+        "in_room": ["TowerKnights_Room"],
+        "next_room": ["TowerBonkers_Room"],
+        "special": []
+    },
+
+
+    "TowerKnights_TowerSlope": {
+        "rom_location": {
+            "ENG": ["3035EC"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1B"],
+        "spawn_coordinates": ["54004401"],
+        "linked_to": ["TowerSlope_TowerKnights"],
+        "in_room": ["TowerKnights_Room"],
+        "next_room": ["TowerSlope_Room"],
+        "special": []
+    },
+
+    "TowerSlope_TowerKnights": {
+        "rom_location": {
+            "ENG": ["30091A"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1A"],
+        "spawn_coordinates": ["24036C00"],
+        "linked_to": ["TowerKnights_TowerSlope"],
+        "in_room": ["TowerSlope_Room"],
+        "next_room": ["TowerKnights_Room"],
+        "special": []
+    },
+
+
+    "TowerSlope_TowerTop": {
+        "rom_location": {
+            "ENG": ["300910"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1C"],
+        "spawn_coordinates": ["D4049C00"],
+        "linked_to": ["TowerTop_TowerSlope"],
+        "in_room": ["TowerSlope_Room"],
+        "next_room": ["TowerTop_Room"],
+        "special": []
+    },
+
+    "TowerTop_TowerSlope": {
+        "rom_location": {
+            "ENG": ["3125B1"],
+            "JP0": [""],
+            "JP1": [""]
+        },
+        "room_number": ["1B"],
+        "spawn_coordinates": ["C4026C00"],
+        "linked_to": ["TowerSlope_TowerTop"],
+        "in_room": ["TowerTop_Room"],
+        "next_room": ["TowerSlope_Room"],
+        "special": []
+    },
 
 
     "TowerOutside_TowerTop": {
