@@ -4,11 +4,6 @@
         "desc": ["Starting room. Not sure why I put this here cuz no doors lead back to it so it won't be used."]
     },
 
-    "Ending_Room": {
-        "doors": [""],
-        "desc": ["End of the game. May add a door here so you can go back if you enter this accidentally."]
-    },
-
     "Tree_Room2": {
         "doors": ["Tree2_Tree3", "Tree2_Tree8"],
         "desc": ["Lava block puzzle room."]
@@ -110,7 +105,7 @@
     },
 
     "TowerOutside_Room": {
-        "doors": ["TowerOutside_Minecart2", "TowerOutside_TowerSave", "TowerOutside_TowerTop", "TowerOutside_TowerBottom"],
+        "doors": ["TowerOutside_Minecart2", "TowerOutside_TowerSave", "TowerOutside_TowerTop", "TowerOutside_TowerBottom", "TowerOutside_Minecart3"],
         "desc": ["Old Tower entrance with save room"]
     },
 
@@ -282,5 +277,135 @@
     "TowerMirror_Room": {
         "doors": ["TowerMirror_TowerDoubleAbility"],
         "desc": ["Mirror puzzle (not really a puzzle but lol)"]
+    },
+
+    "Minecart3_Room": {
+        "doors": ["Minecart3_TowerOutside", "Minecart3_Garden1"],
+        "desc": ["Connects Old Tower and Garden"]
+    },
+
+    "Garden1_Room": {
+        "doors": ["Garden1_Minecart3", "Garden1_GardenZoo", "Garden1_GardenWind"],
+        "desc": ["First room in Garden with the Birdon switch"]
+    },
+
+    "GardenZoo_Room": {
+        "doors": ["GardenZoo_Garden1"],
+        "desc": ["The Birdons... if you know you know"]
+    },
+
+    "GardenWind_Room": {
+        "doors": ["GardenWind_Garden1", "GardenWind_GardenHub"],
+        "desc": ["Vertical room with wind gusts blowing left and right"]
+    },
+
+    "GardenHub_Room": {
+        "doors": ["GardenHub_GardenWind", "GardenHub_GardenSave", "GardenHub_GardenLeft", "GardenHub_GardenMid", "GardenHub_GardenRight"],
+        "desc": ["Hub room in Garden"]
+    },
+
+    "Garden_SaveRoom": {
+        "doors": ["GardenSave_GardenHub"],
+        "desc": ["Save room in Garden"]
+    },
+
+    "GardenLeft_Room": {
+        "doors": ["GardenLeft_GardenHub", "GardenLeft_GardenXmas", "GardenLeft_GardenClouds"],
+        "desc": ["Room with Capsule J enemies and cannons"]
+    },
+
+    "GardenXmas_Room": {
+        "doors": ["GardenXmas_GardenLeft"],
+        "desc": ["Simple bomb block puzzle room with Xmas Tree treasure"]
+    },
+
+    "GardenClouds_Room": {
+        "doors": ["GardenClouds_GardenLeft", "GardenClouds_GardenGordos", "GardenClouds_GardenPlatforms", "GardenClouds_GardenBonus", "GardenClouds_GardenBlock", "GardenClouds_GardenWheelie", "GardenClouds_GardenMech", "GardenClouds_GardenStars", "GardenClouds_GardenHub"],
+        "desc": ["This room probably has the most branching paths in the entirety of GCO"]
+    },
+
+    "GardenGordos_Room": {
+        "doors": ["GardenGordos_GardenClouds"],
+        "desc": ["The Gordo switch 'puzzle' :)"]
+    },
+
+    "GardenPlatforms_Room": {
+        "doors": ["GardenPlatforms_GardenClouds"],
+        "desc": ["Rotating platforms with a lot of electricity blocks"]
+    },
+
+    "GardenBonus_Room": {
+        "doors": ["GardenBonus_GardenClouds"],
+        "desc": ["I'll be honest I forgot this room even existed"]
+    },
+
+    "GardenBlock_Room": {
+        "doors": ["GardenBlock_GardenClouds"],
+        "desc": ["The room with the single star block in the ceiling"]
+    },
+
+    "GardenWheelie_Room": {
+        "doors": ["GardenWheelie_GardenClouds"],
+        "desc": ["Puzzle that requires Wheelie to complete"]
+    },
+
+    "GardenMech_Room": {
+        "doors": ["GardenMech_GardenClouds"],
+        "desc": ["Never entered this room in my life lmao"]
+    },
+
+    "GardenStars_Room": {
+        "doors": ["GardenStars_GardenClouds"],
+        "desc": ["Space room with all the falling blocks"]
+    },
+
+    "GardenRight_Room": {
+        "doors": ["GardenRight_GardenHub", "GardenRight_GardenBuggzy"],
+        "desc": ["Cannon room in Garden"]
+    },
+
+    "GardenBuggzy_Room": {
+        "doors": ["GardenBuggzy_GardenRight", "GardenBuggzy_GardenPool"],
+        "desc": ["Buggzy miniboss followed by a steep downward slope"]
+    },
+
+    "GardenPool_Room": {
+        "doors": ["GardenPool_GardenBuggzy", "GardenPool_GardenHub"],
+        "desc": ["Where beam mix occurs in 100% RTA"]
+    },
+
+    "GardenMid_Room": {
+        "doors": ["GardenMid_GardenHub", "GardenMid_GardenSprings"],
+        "desc": ["Room with a bunch of cuttable platforms"]
+    },
+
+    "GardenSprings_Room": {
+        "doors": ["GardenSprings_GardenMid", "GardenSprings_BeforeWham"],
+        "desc": ["Tons of springs..."]
+    },
+
+    "BeforeWham_Room": {
+        "doors": ["BeforeWham_GardenSprings", "BeforeWham_WhamBoss"],
+        "desc": ["Ability room before Wham Bam boss"]
+    },
+
+    "Wham_Room": {
+        "doors": ["WhamBoss_BeforeWham", "WhamBoss_Minecart4"],
+        "desc": ["Wham Bam ROCK"]
+    },
+
+    "Minecart4_Room": {
+        "doors": ["Minecart4_WhamBoss", "Minecart4_EndingElevator"],
+        "desc": ["Final Minecart room"]
+    },
+
+    "EndingElevator_Room": {
+        "doors": ["EndingElevator_Minecart4", "EndingElevator_End"],
+        "desc": ["The final stretch"]
+    },
+
+    "End_Room": {
+        "doors": [],
+        "desc": ["The end :)"]
     }
 }

@@ -1911,5 +1911,817 @@
         "in_room": ["TowerChamber_Room"],
         "next_room": ["TowerOutside_Room"],
         "special": ["one-way"]
+    },
+
+
+    "TowerOutside_Minecart3": {
+        "rom_location": {
+            "ENG": ["32C82E"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["0B"],
+        "spawn_coordinates": ["64086C00"],
+        "linked_to": ["Minecart3_TowerOutside"],
+        "in_room": ["TowerOutside_Room"],
+        "next_room": ["Minecart3_Room"],
+        "special": []
+    },
+
+    "Minecart3_TowerOutside": {
+        "rom_location": {
+            "ENG": ["3196DA"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["13"],
+        "spawn_coordinates": ["3C00FC03"],
+        "linked_to": ["TowerOutside_Minecart3"],
+        "in_room": ["Minecart3_Room"],
+        "next_room": ["TowerOutside_Room"],
+        "special": []
+    },
+
+
+    "Minecart3_Garden1": {
+        "rom_location": {
+            "ENG": ["3196E4"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3A"],
+        "spawn_coordinates": ["DC02B400"],
+        "linked_to": ["Garden1_Minecart3"],
+        "in_room": ["Minecart3_Room"],
+        "next_room": ["Garden1_Room"],
+        "special": []
+    },
+
+    "Garden1_Minecart3": {
+        "rom_location": {
+            "ENG": ["31C1E0"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["0B"],
+        "spawn_coordinates": ["6C00E400"],
+        "linked_to": ["Minecart3_Garden1"],
+        "in_room": ["Garden1_Room"],
+        "next_room": ["Minecart3_Room"],
+        "special": []
+    },
+
+
+    "Garden1_GardenZoo": {
+        "rom_location": {
+            "ENG": ["31C1CC"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4B"],
+        "spawn_coordinates": ["84003C00"],
+        "linked_to": ["GardenZoo_Garden1"],
+        "in_room": ["Garden1_Room"],
+        "next_room": ["GardenZoo_Room"],
+        "special": []
+    },
+
+    "GardenZoo_Garden1": {
+        "rom_location": {
+            "ENG": ["30624D"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3A"],
+        "spawn_coordinates": ["8C015400"],
+        "linked_to": ["Garden1_GardenZoo"],
+        "in_room": ["GardenZoo_Room"],
+        "next_room": ["Garden1_Room"],
+        "special": []
+    },
+
+
+    "Garden1_GardenWind": {
+        "rom_location": {
+            "ENG": ["31C1D6"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["46"],
+        "spawn_coordinates": ["84003C00"],
+        "linked_to": ["GardenWind_Garden1"],
+        "in_room": ["Garden1_Room"],
+        "next_room": ["GardenWind_Room"],
+        "special": []
+    },
+
+    "GardenWind_Garden1": {
+        "rom_location": {
+            "ENG": ["300FEA"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3A"],
+        "spawn_coordinates": ["3C00B400"],
+        "linked_to": ["Garden1_GardenWind"],
+        "in_room": ["GardenWind_Room"],
+        "next_room": ["Garden1_Room"],
+        "special": []
+    },
+
+
+    "GardenWind_GardenHub": {
+        "rom_location": {
+            "ENG": ["300FF4"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4C"],
+        "spawn_coordinates": ["B4005400"],
+        "linked_to": ["GardenHub_GardenWind"],
+        "in_room": ["GardenWind_Room"],
+        "next_room": ["GardenHub_Room"],
+        "special": []
+    },
+
+    "GardenHub_GardenWind": {
+        "rom_location": {
+            "ENG": ["31EE08"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["46"],
+        "spawn_coordinates": ["6C000402"],
+        "linked_to": ["GardenWind_GardenHub"],
+        "in_room": ["GardenHub_Room"],
+        "next_room": ["GardenWind_Room"],
+        "special": []
+    },
+
+
+    "GardenHub_GardenSave": {
+        "rom_location": {
+            "ENG": ["31EE12"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["34"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["GardenSave_GardenHub"],
+        "in_room": ["GardenHub_Room"],
+        "next_room": ["Garden_SaveRoom"],
+        "special": ["save"]
+    },
+
+    "GardenSave_GardenHub": {
+        "rom_location": {
+            "ENG": ["3074FB"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4C"],
+        "spawn_coordinates": ["B400B400"],
+        "linked_to": ["GardenHub_GardenSave"],
+        "in_room": ["Garden_SaveRoom"],
+        "next_room": ["GardenHub_Room"],
+        "special": ["save"]
+    },
+
+
+    "GardenHub_GardenLeft": {
+        "rom_location": {
+            "ENG": ["31EE1C"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3C"],
+        "spawn_coordinates": ["C4051401"],
+        "linked_to": ["GardenLeft_GardenHub"],
+        "in_room": ["GardenHub_Room"],
+        "next_room": ["GardenLeft_Room"],
+        "special": []
+    },
+
+    "GardenLeft_GardenHub": {
+        "rom_location": {
+            "ENG": ["32EC19"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4C"],
+        "spawn_coordinates": ["54001401"],
+        "linked_to": ["GardenHub_GardenLeft"],
+        "in_room": ["GardenLeft_Room"],
+        "next_room": ["GardenHub_Room"],
+        "special": []
+    },
+
+
+    "GardenLeft_GardenXmas": {
+        "rom_location": {
+            "ENG": ["32EC2D"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3D"],
+        "spawn_coordinates": ["A8007800"],
+        "linked_to": ["GardenXmas_GardenLeft"],
+        "in_room": ["GardenLeft_Room"],
+        "next_room": ["GardenXmas_Room"],
+        "special": ["ability"]
+    },
+    
+    "GardenXmas_GardenLeft": {
+        "rom_location": {
+            "ENG": ["301822"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3C"],
+        "spawn_coordinates": ["E4003C00"],
+        "linked_to": ["GardenLeft_GardenXmas"],
+        "in_room": ["GardenXmas_Room"],
+        "next_room": ["GardenLeft_Room"],
+        "special": []
+    },
+
+
+    "GardenLeft_GardenClouds": {
+        "rom_location": {
+            "ENG": ["32EC23"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["9003F801"],
+        "linked_to": ["GardenClouds_GardenLeft"],
+        "in_room": ["GardenLeft_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+    "GardenClouds_GardenLeft": {
+        "rom_location": {
+            "ENG": ["338935"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3C"],
+        "spawn_coordinates": ["84002400"],
+        "linked_to": ["GardenLeft_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenLeft_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenGordos": {
+        "rom_location": {
+            "ENG": ["33890D"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["40"],
+        "spawn_coordinates": ["6C008400"],
+        "linked_to": ["GardenGordos_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenGordos_Room"],
+        "special": []
+    },
+
+    "GardenGordos_GardenClouds": {
+        "rom_location": {
+            "ENG": ["305429"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["F4024401"],
+        "linked_to": ["GardenClouds_GardenGordos"],
+        "in_room": ["GardenGordos_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenPlatforms": {
+        "rom_location": {
+            "ENG": ["338903"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3F"],
+        "spawn_coordinates": ["9C004401"],
+        "linked_to": ["GardenPlatforms_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenPlatforms_Room"],
+        "special": []
+    },
+
+    "GardenPlatforms_GardenClouds": {
+        "rom_location": {
+            "ENG": ["3031DF"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["B403B400"],
+        "linked_to": ["GardenClouds_GardenPlatforms"],
+        "in_room": ["GardenPlatforms_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenBonus": {
+        "rom_location": {
+            "ENG": ["33892B"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["41"],
+        "spawn_coordinates": ["9C008400"],
+        "linked_to": ["GardenBonus_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenBonus_Room"],
+        "special": []
+    },
+
+    "GardenBonus_GardenClouds": {
+        "rom_location": {
+            "ENG": ["302409"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["AC020402"],
+        "linked_to": ["GardenClouds_GardenBonus"],
+        "in_room": ["GardenBonus_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenBlock": {
+        "rom_location": {
+            "ENG": ["338917"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["42"],
+        "spawn_coordinates": ["6C00E400"],
+        "linked_to": ["GardenBlock_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenBlock_Room"],
+        "special": []
+    },
+
+    "GardenBlock_GardenClouds": {
+        "rom_location": {
+            "ENG": ["305211"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["BC018C01"],
+        "linked_to": ["GardenClouds_GardenBlock"],
+        "in_room": ["GardenBlock_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenWheelie": {
+        "rom_location": {
+            "ENG": ["3388F9"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["43"],
+        "spawn_coordinates": ["6C009C00"],
+        "linked_to": ["GardenWheelie_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenWheelie_Room"],
+        "special": []
+    },
+
+    "GardenWheelie_GardenClouds": {
+        "rom_location": {
+            "ENG": ["31CD2E"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["D4015400"],
+        "linked_to": ["GardenClouds_GardenWheelie"],
+        "in_room": ["GardenWheelie_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenMech": {
+        "rom_location": {
+            "ENG": ["3388EF"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["45"],
+        "spawn_coordinates": ["84005400"],
+        "linked_to": ["GardenMech_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenMech_Room"],
+        "special": []
+    },
+
+    "GardenMech_GardenClouds": {
+        "rom_location": {
+            "ENG": ["301B32"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["54003C00"],
+        "linked_to": ["GardenClouds_GardenMech"],
+        "in_room": ["GardenMech_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenStars": {
+        "rom_location": {
+            "ENG": ["338921"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["1E"],
+        "spawn_coordinates": ["E4008400"],
+        "linked_to": ["GardenStars_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenStars_Room"],
+        "special": []
+    },
+
+    "GardenStars_GardenClouds": {
+        "rom_location": {
+            "ENG": ["302C75"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["5C010402"],
+        "linked_to": ["GardenClouds_GardenStars"],
+        "in_room": ["GardenStars_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": []
+    },
+
+
+    "GardenClouds_GardenHub": {
+        "rom_location": {
+            "ENG": ["33893F", "301B26"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4C"],
+        "spawn_coordinates": ["00003000"],
+        "linked_to": ["GardenHub_GardenClouds"],
+        "in_room": ["GardenClouds_Room"],
+        "next_room": ["GardenHub_Room"],
+        "special": ["one-way"]
+    },
+
+    "GardenHub_GardenClouds": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3E"],
+        "spawn_coordinates": ["4E005A01"],
+        "linked_to": ["GardenClouds_GardenHub"],
+        "in_room": ["GardenHub_Room"],
+        "next_room": ["GardenClouds_Room"],
+        "special": ["one-way"]
+    },
+
+
+    "GardenHub_GardenRight": {
+        "rom_location": {
+            "ENG": ["31EE26"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3B"],
+        "spawn_coordinates": ["54005400"],
+        "linked_to": ["GardenRight_GardenHub"],
+        "in_room": ["GardenHub_Room"],
+        "next_room": ["GardenRight_Room"],
+        "special": []
+    },
+
+    "GardenRight_GardenHub": {
+        "rom_location": {
+            "ENG": ["32E439"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4C"],
+        "spawn_coordinates": ["14011401"],
+        "linked_to": ["GardenHub_GardenRight"],
+        "in_room": ["GardenRight_Room"],
+        "next_room": ["GardenHub_Room"],
+        "special": []
+    },
+
+
+    "GardenRight_GardenBuggzy": {
+        "rom_location": {
+            "ENG": ["32E443"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["47"],
+        "spawn_coordinates": ["EC043C00"],
+        "linked_to": ["GardenBuggzy_GardenRight"],
+        "in_room": ["GardenRight_Room"],
+        "next_room": ["GardenBuggzy_Room"],
+        "special": []
+    },
+
+    "GardenBuggzy_GardenRight": {
+        "rom_location": {
+            "ENG": ["3167E6"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["3B"],
+        "spawn_coordinates": ["E4000402"],
+        "linked_to": ["GardenRight_GardenBuggzy"],
+        "in_room": ["GardenBuggzy_Room"],
+        "next_room": ["GardenRight_Room"],
+        "special": []
+    },
+
+
+    "GardenBuggzy_GardenPool": {
+        "rom_location": {
+            "ENG": ["3167F0"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["48"],
+        "spawn_coordinates": ["8C076C00"],
+        "linked_to": ["GardenPool_GardenBuggzy"],
+        "in_room": ["GardenBuggzy_Room"],
+        "next_room": ["GardenPool_Room"],
+        "special": []
+    },
+
+    "GardenPool_GardenBuggzy": {
+        "rom_location": {
+            "ENG": ["336D49"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["47"],
+        "spawn_coordinates": ["54008403"],
+        "linked_to": ["GardenBuggzy_GardenPool"],
+        "in_room": ["GardenPool_Room"],
+        "next_room": ["GardenBuggzy_Room"],
+        "special": []
+    },
+
+
+    "GardenPool_GardenHub": {
+        "rom_location": {
+            "ENG": ["336D53"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4C"],
+        "spawn_coordinates": ["00003000"],
+        "linked_to": ["GardenHub_GardenPool"],
+        "in_room": ["GardenPool_Room"],
+        "next_room": ["GardenHub_Room"],
+        "special": ["one-way"]
+    },
+
+    "GardenHub_GardenPool": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["48"],
+        "spawn_coordinates": ["6C003A00"],
+        "linked_to": ["GardenPool_GardenHub"],
+        "in_room": ["GardenHub_Room"],
+        "next_room": ["GardenPool_Room"],
+        "special": ["one-way"]
+    },
+
+
+    "GardenHub_GardenMid": {
+        "rom_location": {
+            "ENG": ["31EE30"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["49"],
+        "spawn_coordinates": ["54003C00"],
+        "linked_to": ["GardenMid_GardenHub"],
+        "in_room": ["GardenHub_Room"],
+        "next_room": ["GardenMid_Room"],
+        "special": []
+    },
+
+    "GardenMid_GardenHub": {
+        "rom_location": {
+            "ENG": ["31D606"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4C"],
+        "spawn_coordinates": ["CC004401"],
+        "linked_to": ["GardenHub_GardenMid"],
+        "in_room": ["GardenMid_Room"],
+        "next_room": ["GardenHub_Room"],
+        "special": []
+    },
+
+
+    "GardenMid_GardenSprings": {
+        "rom_location": {
+            "ENG": ["31D610"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4A"],
+        "spawn_coordinates": ["3C006C00"],
+        "linked_to": ["GardenSprings_GardenMid"],
+        "in_room": ["GardenMid_Room"],
+        "next_room": ["GardenSprings_Room"],
+        "special": []
+    },
+
+    "GardenSprings_GardenMid": {
+        "rom_location": {
+            "ENG": ["31F3AA"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["49"],
+        "spawn_coordinates": ["C4024401"],
+        "linked_to": ["GardenMid_GardenSprings"],
+        "in_room": ["GardenSprings_Room"],
+        "next_room": ["GardenMid_Room"],
+        "special": []
+    },
+
+
+    "GardenSprings_BeforeWham": {
+        "rom_location": {
+            "ENG": ["31F3B4"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4F"],
+        "spawn_coordinates": ["54008400"],
+        "linked_to": ["BeforeWham_GardenSprings"],
+        "in_room": ["GardenSprings_Room"],
+        "next_room": ["BeforeWham_Room"],
+        "special": []
+    },
+    
+    "BeforeWham_GardenSprings": {
+        "rom_location": {
+            "ENG": ["306050"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4A"],
+        "spawn_coordinates": ["B400C402"],
+        "linked_to": ["GardenSprings_BeforeWham"],
+        "in_room": ["BeforeWham_Room"],
+        "next_room": ["GardenSprings_Room"],
+        "special": []
+    },
+
+
+    "BeforeWham_WhamBoss": {
+        "rom_location": {
+            "ENG": ["30605A"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["39"],
+        "spawn_coordinates": ["D4019C00"],
+        "linked_to": ["WhamBoss_BeforeWham"],
+        "in_room": ["BeforeWham_Room"],
+        "next_room": ["Wham_Room"],
+        "special": []
+    },
+
+    "WhamBoss_BeforeWham": {
+        "rom_location": {
+            "ENG": ["308D55"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["4F"],
+        "spawn_coordinates": ["B4008400"],
+        "linked_to": ["BeforeWham_WhamBoss"],
+        "in_room": ["Wham_Room"],
+        "next_room": ["BeforeWham_Room"],
+        "special": []
+    },
+
+
+    "WhamBoss_Minecart4": {
+        "rom_location": {
+            "ENG": ["308D4B"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["0C"],
+        "spawn_coordinates": ["DC051C02"],
+        "linked_to": ["Minecart4_WhamBoss"],
+        "in_room": ["Wham_Room"],
+        "next_room": ["Minecart4_Room"],
+        "special": []
+    },
+
+    "Minecart4_WhamBoss": {
+        "rom_location": {
+            "ENG": ["317722"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["39"],
+        "spawn_coordinates": ["3C009C00"],
+        "linked_to": ["WhamBoss_Minecart4"],
+        "in_room": ["Minecart4_Room"],
+        "next_room": ["Wham_Room"],
+        "special": []
+    },
+
+
+    "Minecart4_EndingElevator": {
+        "rom_location": {
+            "ENG": ["317718"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["35"],
+        "spawn_coordinates": ["9C007C05"],
+        "linked_to": ["EndingElevator_Minecart4"],
+        "in_room": ["Minecart4_Room"],
+        "next_room": ["EndingElevator_Room"],
+        "special": []
+    },
+
+    "EndingElevator_Minecart4": {
+        "rom_location": {
+            "ENG": ["3016A1"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["0C"],
+        "spawn_coordinates": ["84006C00"],
+        "linked_to": ["Minecart4_EndingElevator"],
+        "in_room": ["EndingElevator_Room"],
+        "next_room": ["Minecart4_Room"],
+        "special": []
+    },
+
+
+    "EndingElevator_End": {
+        "rom_location": {
+            "ENG": ["301697"],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["01"],
+        "spawn_coordinates": ["64025C01"],
+        "linked_to": ["End_EndingElevator"],
+        "in_room": ["EndingElevator_Room"],
+        "next_room": ["End_Room"],
+        "special": ["one-way"]
+    },
+
+    "End_EndingElevator": {
+        "rom_location": {
+            "ENG": [],
+            "JP0": [],
+            "JP1": []
+        },
+        "room_number": ["35"],
+        "spawn_coordinates": ["6C008200"],
+        "linked_to": ["End_EndingElevator"],
+        "in_room": ["End_Room"],
+        "next_room": ["EndingElevator_Room"],
+        "special": ["one-way"]
     }
 }
