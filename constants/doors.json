@@ -794,7 +794,7 @@
         "linked_to": ["TowerStake_TowerBottom"],
         "in_room": ["TowerBottom_Room"],
         "next_room": ["TowerStake_Room"],
-        "special": []
+        "special": ["ability"]
     },
 
     "TowerStake_TowerBottom": {
@@ -823,7 +823,7 @@
         "linked_to": ["TowerElevators_TowerStake"],
         "in_room": ["TowerStake_Room"],
         "next_room": ["TowerElevators_Room"],
-        "special": ["ability"]
+        "special": []
     },
 
     "TowerElevators_TowerStake": {
@@ -1693,7 +1693,7 @@
         "linked_to": ["TowerBridge_TowerPool"],
         "in_room": ["TowerPool_Room"],
         "next_room": ["TowerBridge_Room"],
-        "special": ["ability"]
+        "special": []
     },
 
     "TowerBridge_TowerPool": {
@@ -1867,7 +1867,7 @@
         "linked_to": ["TowerMirror_TowerDoubleAbility"],
         "in_room": ["TowerDoubleAbility_Room"],
         "next_room": ["TowerMirror_Room"],
-        "special": ["ability"]
+        "special": []
     },
 
     "TowerMirror_TowerDoubleAbility": {
@@ -2128,7 +2128,7 @@
         "linked_to": ["GardenXmas_GardenLeft"],
         "in_room": ["GardenLeft_Room"],
         "next_room": ["GardenXmas_Room"],
-        "special": ["ability"]
+        "special": []
     },
     
     "GardenXmas_GardenLeft": {

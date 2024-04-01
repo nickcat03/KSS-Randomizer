@@ -34,12 +34,11 @@ def randomize_doors(ROM_file, ROM_version):
             next_room = DOORS[door]['next_room'][0]
 
             '''
-            Ability is for checking if a room requires a specific ability in order to proceed, with no other way to progress otherwise. Mark it as a dead end if so.
+            "ability" is for checking if a room requires a specific ability in order to proceed, with no other way to progress otherwise. Mark it as a dead end if so.
             If a room has one door, put it in dead end list
             If a room has branching paths, put it in pathing door list
             '''
-            #"ability" in special_attributes or     ;    processing ability doors differently so this won't work
-            if len(ROOMS[next_room]['doors']) <= 1:
+            if "ability" in special_attributes or len(ROOMS[next_room]['doors']) <= 1:
                 available_dead_end_doors.append(door)
             else:
                 available_pathing_doors.append(door)
