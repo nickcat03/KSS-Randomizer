@@ -163,21 +163,34 @@ abilitycheck = StringVar()
 musiccheck = StringVar()
 palettecheck = IntVar()
 
-mirrorcheck.set("Don't Randomize")
+mirrorcheck.set("Two-Way Doors Only")
 itemcheck.set("Don't Randomize")
 minibosscheck.set("Don't Randomize")
 abilitycheck.set("Don't Randomize")
 musiccheck.set("Don't Randomize")
+
+language_var = StringVar()
+language_var.set("English")  # Set default language
 
 #Set up our frames.
 frame_get_rom = Frame(tk)
 frame_get_rom.pack()
 frame_seed_number = Frame(tk)
 frame_seed_number.pack()
-frame_options = Frame(tk, borderwidth=2, relief=RIDGE, padx=4, pady=4)
-frame_options.pack()
+# Create a container frame for frame_options1 and frame_options2
+frame_options_container = Frame(tk)
+frame_options_container.pack()
+
+frame_options1 = Frame(frame_options_container, borderwidth=0, relief=RIDGE, padx=4, pady=4)
+frame_options1.pack(side=LEFT, fill=BOTH, expand=True)  # Set side to LEFT to position it on the left, and fill=BOTH to make it expand horizontally
+
+frame_options2 = Frame(frame_options_container, borderwidth=0, relief=RIDGE, padx=4, pady=4)
+frame_options2.pack(side=LEFT, fill=BOTH, expand=True)  # Set side to LEFT to position it on the left, and fill=BOTH to make it expand horizontally
+
+# Position frame_generate_rom at the bottom of frame_options_container
 frame_generate_rom = Frame(tk)
-frame_generate_rom.pack()
+
+frame_generate_rom.pack(side=BOTTOM, pady=10)  # Set side to BOTTOM and fill to X to position it at the bottom and make it expand horizontally, add some padding for aesthetic
 
 #File paths section.
 Label(frame_get_rom, text="Path to ROM:").grid(row=0,column=0,sticky=E)
@@ -210,45 +223,65 @@ random_seed_button = Button(frame_seed_number, text="?", command=getRandomSeed)
 random_seed_button.grid(row=0,column=2)
 
 #Options section.
-Label(frame_options, text="Doors:").grid(row=0, column=0, sticky=E)
-check_randomize_mirrors = OptionMenu(frame_options, mirrorcheck, "Don't Randomize", "Normal Random", "Total Random", command=checkMirrorSettings)
+
+randomize_doors = Checkbutton(frame_options1, text="Randomize Doors")
+randomize_doors.grid(row=0, column=0, sticky=W)
+
+check_randomize_mirrors = OptionMenu(frame_options1, mirrorcheck, "Two-Way Doors Only", "Shuffle By Type", "Total Random", command=checkMirrorSettings)
 check_randomize_mirrors.configure(width=19)
-check_randomize_mirrors.grid(row=0, column=1, sticky=W)
+check_randomize_mirrors.grid(row=1, column=0, sticky=W)
 
-check_randomize_spoilerlog = Checkbutton(frame_options, text="Generate spoiler log.", variable=mirrorspoiler, state=DISABLED)
-check_randomize_spoilerlog.grid(row=1, column=0, columnspan=2)
+# Checkboxes for randomization settings
+randomize_save_doors = Checkbutton(frame_options1, text="Randomize Save Doors")
+randomize_save_doors.grid(row=2, column=0, sticky=W)
 
-Label(frame_options, text="Chests Contents:").grid(row=2, column=0, sticky=E)
-check_randomize_items = OptionMenu(frame_options, itemcheck, "Don't Randomize", "Shuffle Chests")
+randomize_ability_doors = Checkbutton(frame_options1, text="Randomize Ability Doors")
+randomize_ability_doors.grid(row=3, column=0, sticky=W)
+
+randomize_switch_puzzle = Checkbutton(frame_options1, text="Randomize Switch Puzzle")
+randomize_switch_puzzle.grid(row=4, column=0, sticky=W)
+
+#Chest content
+Label(frame_options2, text="Chests Contents:").grid(row=2, column=0, sticky=E)
+check_randomize_items = OptionMenu(frame_options2, itemcheck, "Don't Randomize", "Shuffle Chests")
 check_randomize_items.configure(width=19)
 check_randomize_items.grid(row=2, column=1, sticky=W)
 
-Label(frame_options, text="Treasure Gold Value:").grid(row=3, column=0, sticky=E)
-check_randomize_miniboss = OptionMenu(frame_options, minibosscheck, "Don't Randomize", "Shuffle Values", "Randomize Values")
+Label(frame_options2, text="Treasure Gold Value:").grid(row=3, column=0, sticky=E)
+check_randomize_miniboss = OptionMenu(frame_options2, minibosscheck, "Don't Randomize", "Shuffle Values", "Randomize Values")
 check_randomize_miniboss.configure(width=19)
 check_randomize_miniboss.grid(row=3, column=1, sticky=W)
 
-Label(frame_options, text="Minibosses:").grid(row=4, column=0, sticky=E)
-check_randomize_stands = OptionMenu(frame_options, abilitycheck, "Don't Randomize", "Shuffle Minibosses", "Randomize Minibosses")
+
+Label(frame_options2, text="Minibosses:").grid(row=4, column=0, sticky=E)
+check_randomize_stands = OptionMenu(frame_options2, abilitycheck, "Don't Randomize", "Shuffle Minibosses", "Randomize Minibosses")
 check_randomize_stands.configure(width=19)
 check_randomize_stands.grid(row=4, column=1, sticky=W)
 
-check_randomize_palettes = Checkbutton(frame_options, text="Randomize Kirby Colors", variable=palettecheck)
+check_randomize_palettes = Checkbutton(frame_options2, text="Randomize Kirby Colors", variable=palettecheck)
 check_randomize_palettes.grid(row=5, column=0, columnspan=2)
 
-Label(frame_options, text="Music:").grid(row=6, column=0, sticky=E)
-check_randomize_music = OptionMenu(frame_options, musiccheck, "Don't Randomize", "Shuffle Music")
+Label(frame_options2, text="Ability Statues:").grid(row=6, column=0, sticky=E)
+check_randomize_stands = OptionMenu(frame_options2, abilitycheck, "Don't Randomize", "Shuffle Abilities", "Randomize Abilities")
+check_randomize_stands.configure(width=19)
+check_randomize_stands.grid(row=6, column=1, sticky=W)
+
+Label(frame_options2, text="Music:").grid(row=7, column=0, sticky=E)
+check_randomize_music = OptionMenu(frame_options2, musiccheck, "Don't Randomize", "Shuffle Music", "Randomize Music")
 check_randomize_music.configure(width=19)
-check_randomize_music.grid(row=6, column=1, sticky=W)
+check_randomize_music.grid(row=7, column=1, sticky=W)
 
 #Generate ROM section.
 generate_button = Button(frame_generate_rom, text="Generate ROM",command=validateSettings)
 generate_button.grid(row=0, pady=6)
 
-warning_label = Label(frame_generate_rom, text="Please view the readme for info about the different settings.")
+warning_label = Label(frame_generate_rom, text="Please view the readme for more information on settings.")
 warning_label.grid(row=1)
 
-Label(frame_generate_rom, text="KSS GCO Randomizer").grid(row=2)
+Label(frame_generate_rom, text="Kirby Super Star GCO Randomizer").grid(row=2)
+
+english_radio = Radiobutton(frame_generate_rom, text="English", variable=language_var, value="English").grid(row=3, sticky=W)
+japanese_radio = Radiobutton(frame_generate_rom, text="日本語", variable=language_var, value="Japanese").grid(row=3, sticky=E)
 
 tk.mainloop()
 
