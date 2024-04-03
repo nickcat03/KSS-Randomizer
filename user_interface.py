@@ -10,6 +10,7 @@ import shutil
 import json 
 from randomize_doors import * 
 
+#initializing strings for text output. Blank for now because they will change depending on the selected language
 seed_error = ""
 no_input_rom = ""
 input_nonexistent = ""
@@ -80,7 +81,6 @@ def update_language():
 		input_nonexistent = "Error: Input ROM does not exist."
 		invalid_rom = "Error: File given is not a valid Kirby Super Star ROM."
 		randomize_success = "ROM randomized. Enjoy your game!"
-		warning_label.config(fg="#000000")
 	
 	elif language == "Japanese":
 		rom_path["text"] = "ROMへのパス:"
@@ -99,7 +99,6 @@ def update_language():
 		input_nonexistent = "エラー： 入力ROMが存在しません。"
 		invalid_rom = "エラー： 指定されたファイルは有効な星のカービィのROMではありません。"
 		randomize_success = "ROMランダム化。ゲームをお楽しみください!"
-		warning_label.config(fg="#000000")
 
     # Recreate all OptionMenu elements
 	door_randomization_type = OptionMenu(frame_options1, door_check, *door_options_list, command=check_door_settings)
@@ -107,6 +106,7 @@ def update_language():
 	door_randomization_type.grid(row=1, column=0, sticky=W)
 	door_check.set(door_options_list[0])
 	check_door_randomization()
+	warning_label.config(fg="#000000")
           
 #Double check if everything is good to go before pulling the trigger.
 def validateSettings():
