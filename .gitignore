@@ -1,2 +1,5 @@
 *.sfc
+*.smc
 __pycache__
+build
+dist
