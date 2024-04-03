@@ -245,7 +245,7 @@
     },
 
     "TowerFreefall_Room": {
-        "doors": ["TreeFreefall_TowerCannons"],
+        "doors": ["TowerFreefall_TowerCannons"],
         "desc": ["Large vertical room with the only way out being back to the cannon room"]
     },
 

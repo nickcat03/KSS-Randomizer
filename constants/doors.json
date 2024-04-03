@@ -24,7 +24,7 @@
         "linked_to": ["Tree1_Tree2"],
         "in_room": ["Tree_Room2"],
         "next_room": ["Tree_Room1"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -111,7 +111,7 @@
         "linked_to": ["Tree3_Reset1"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way", "switchpuzzle"]
+        "special": ["one-way", "switchpuzzle", "fake"]
     },
 
 
@@ -140,7 +140,7 @@
         "linked_to": ["Tree3_Reset2"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way", "switchpuzzle"]
+        "special": ["one-way", "switchpuzzle", "fake"]
     },
 
 
@@ -169,7 +169,7 @@
         "linked_to": ["Tree3_Reset3"],
         "in_room": ["Tree_Room3"],
         "next_room": ["Tree_Room3"],
-        "special": ["one-way", "switchpuzzle"]
+        "special": ["one-way", "switchpuzzle", "fake"]
     },
 
 
@@ -953,7 +953,7 @@
         "linked_to": ["TowerBasementPool_TowerBasementCannon"],
         "in_room": ["TowerBasementPool_Room"],
         "next_room": ["TowerBasementPool_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -1532,8 +1532,8 @@
         "spawn_coordinates": ["FC006A00"],
         "linked_to": ["TowerCandles1_TowerFreefall"],
         "in_room": ["TowerFreefall_Room"],
-        "next_room": ["TowerCandles1"],
-        "special": ["one-way"]
+        "next_room": ["TowerCandles1_Room"],
+        "special": ["one-way", "fake"]
     },
 
 
@@ -1551,7 +1551,7 @@
         "special": ["one-way"]
     },
 
-    "TowerCannons_Towerfreefall": {
+    "TowerCannons_TowerFreefall": {
         "rom_location": {
             "ENG": [],
             "JP0": [],
@@ -1562,7 +1562,7 @@
         "linked_to": ["TowerFreefall_TowerCannons"],
         "in_room": ["TowerCannons_Room"],
         "next_room": ["TowerFreefall_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -1649,7 +1649,7 @@
         "linked_to": ["TowerCandles2_TowerFreefall"],
         "in_room": ["TowerFreefall_Room"],
         "next_room": ["TowerCandles2_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -1678,7 +1678,7 @@
         "linked_to": ["TowerCannons_TowerOutside"],
         "in_room": ["TowerOutside_Room"],
         "next_room": ["TowerCannons_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -1910,7 +1910,7 @@
         "linked_to": ["TowerChamber_TowerOutside"],
         "in_room": ["TowerChamber_Room"],
         "next_room": ["TowerOutside_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -2403,7 +2403,7 @@
         "linked_to": ["GardenClouds_GardenHub"],
         "in_room": ["GardenHub_Room"],
         "next_room": ["GardenClouds_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -2519,7 +2519,7 @@
         "linked_to": ["GardenPool_GardenHub"],
         "in_room": ["GardenHub_Room"],
         "next_room": ["GardenPool_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     },
 
 
@@ -2722,6 +2722,6 @@
         "linked_to": ["End_EndingElevator"],
         "in_room": ["End_Room"],
         "next_room": ["EndingElevator_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "fake"]
     }
 }

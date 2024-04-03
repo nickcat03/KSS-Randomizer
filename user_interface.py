@@ -39,12 +39,12 @@ def openDirectory():
 
 def check_door_randomization():
 	if randomize_doors_var.get() == 0:
-		check_randomize_doors.config(state="disabled")
+		door_randomization_type.config(state="disabled")
 		randomize_save_doors.config(state="disabled")
 		randomize_ability_doors.config(state="disabled")
 		randomize_switch_puzzle.config(state="disabled")
 	else:
-		check_randomize_doors.config(state="normal")
+		door_randomization_type.config(state="normal")
 		randomize_save_doors.config(state="normal")
 		randomize_ability_doors.config(state="normal")
 		check_door_settings(door_check.get())
@@ -56,11 +56,11 @@ def check_door_settings(selection):
 		randomize_switch_puzzle.config(state="normal")
 
 def update_language():
-	global check_randomize_doors, language, seed_error, no_input_rom, input_nonexistent, invalid_rom, randomize_success
+	global door_randomization_type, language, seed_error, no_input_rom, input_nonexistent, invalid_rom, randomize_success
 	language = language_var.get()
 
 	# OptionMenu widgets need to be completely destroyed and recreated in order for them to use the new labels properly
-	check_randomize_doors.destroy()
+	door_randomization_type.destroy()
 
 	# Assign all text in this if statement
 	if language == "English":
@@ -102,9 +102,9 @@ def update_language():
 		warning_label.config(fg="#000000")
 
     # Recreate all OptionMenu elements
-	check_randomize_doors = OptionMenu(frame_options1, door_check, *door_options_list, command=check_door_settings)
-	check_randomize_doors.configure(width=19)
-	check_randomize_doors.grid(row=1, column=0, sticky=W)
+	door_randomization_type = OptionMenu(frame_options1, door_check, *door_options_list, command=check_door_settings)
+	door_randomization_type.configure(width=19)
+	door_randomization_type.grid(row=1, column=0, sticky=W)
 	door_check.set(door_options_list[0])
 	check_door_randomization()
           
@@ -195,17 +195,28 @@ def validateSettings():
 
 def generate_ROM(original_ROM, randomized_ROM, ROM_version):
 	seed_number = entry_seed_number.get()
+	is_randomizing_doors = randomize_doors_var.get()
+	door_randomization_method = door_check.get()
 	
 	shutil.copyfile(original_ROM, randomized_ROM)
 	KSS_ROM = open(randomized_ROM, 'rb+')
 	
-	random.seed(seed_number)
-	print("Seed:", seed_number)
-	iterations = 0
-	check_if_pass = "ERROR"
-	while check_if_pass == "ERROR":
-		iterations += 1
-		check_if_pass = randomize_doors(KSS_ROM, ROM_version)
+	if is_randomizing_doors:
+		save_doors = save_doors_var.get()
+		ability_doors = ability_doors_var.get()
+		switch_puzzle = switch_puzzle_var.get()
+
+		#This option should be disabled by default if only two way doors are being randomized
+		if door_randomization_method == "Two-Way Doors Only" or door_randomization_method == "片側ドアのみ":
+			switch_puzzle = False
+
+		random.seed(seed_number)
+		print("Seed:", seed_number)
+		iterations = 0
+		check_if_pass = "ERROR"
+		while check_if_pass == "ERROR":
+			iterations += 1
+			check_if_pass = randomize_doors(KSS_ROM, ROM_version, door_randomization_method, save_doors, ability_doors, switch_puzzle)
 	
 	print("Done. Iterated through door generation", iterations, "times.")
 	warning_label.config(text=randomize_success, fg="#000000")
@@ -233,6 +244,9 @@ abilitycheck = StringVar()
 musiccheck = StringVar()
 palettecheck = IntVar()
 randomize_doors_var = IntVar()
+save_doors_var = IntVar()
+ability_doors_var = IntVar()
+switch_puzzle_var = IntVar()
 
 itemcheck.set("Don't Randomize")
 minibosscheck.set("Don't Randomize")
@@ -302,19 +316,19 @@ randomize_doors_select = Checkbutton(frame_options1, text="Randomize Doors", var
 randomize_doors_select.grid(row=0, column=0, sticky=W)
 randomize_doors_select.select()
 
-check_randomize_doors = OptionMenu(frame_options1, door_check, "Two-Way Doors Only", command=check_door_settings)
-check_randomize_doors.configure(width=19)
-check_randomize_doors.grid(row=1, column=0, sticky=W)
+door_randomization_type = OptionMenu(frame_options1, door_check, "Two-Way Doors Only", command=check_door_settings)
+door_randomization_type.configure(width=19)
+door_randomization_type.grid(row=1, column=0, sticky=W)
 
 # Checkboxes for randomization settings
-randomize_save_doors = Checkbutton(frame_options1, text="Randomize Save Doors")
+randomize_save_doors = Checkbutton(frame_options1, text="Randomize Save Doors", variable=save_doors_var)
 randomize_save_doors.grid(row=2, column=0, sticky=W)
 
-randomize_ability_doors = Checkbutton(frame_options1, text="Randomize Ability Doors")
+randomize_ability_doors = Checkbutton(frame_options1, text="Randomize Ability Doors", variable=ability_doors_var)
 randomize_ability_doors.grid(row=3, column=0, sticky=W)
 randomize_ability_doors.select()
 
-randomize_switch_puzzle = Checkbutton(frame_options1, text="Randomize Switch Puzzle", state="disabled")
+randomize_switch_puzzle = Checkbutton(frame_options1, text="Randomize Switch Puzzle", variable=switch_puzzle_var, state="disabled")
 randomize_switch_puzzle.grid(row=4, column=0, sticky=W)
 
 #Commenting these out until they are actually finished
