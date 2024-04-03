@@ -2389,7 +2389,7 @@
         "linked_to": ["GardenHub_GardenClouds"],
         "in_room": ["GardenClouds_Room"],
         "next_room": ["GardenHub_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "warpstar"]
     },
 
     "GardenHub_GardenClouds": {
@@ -2403,7 +2403,7 @@
         "linked_to": ["GardenClouds_GardenHub"],
         "in_room": ["GardenHub_Room"],
         "next_room": ["GardenClouds_Room"],
-        "special": ["one-way", "fake"]
+        "special": ["one-way", "fake", "warpstar"]
     },
 
 
@@ -2505,7 +2505,7 @@
         "linked_to": ["GardenHub_GardenPool"],
         "in_room": ["GardenPool_Room"],
         "next_room": ["GardenHub_Room"],
-        "special": ["one-way"]
+        "special": ["one-way", "warpstar"]
     },
 
     "GardenHub_GardenPool": {
@@ -2519,7 +2519,7 @@
         "linked_to": ["GardenPool_GardenHub"],
         "in_room": ["GardenHub_Room"],
         "next_room": ["GardenPool_Room"],
-        "special": ["one-way", "fake"]
+        "special": ["one-way", "fake", "warpstar"]
     },
 
 

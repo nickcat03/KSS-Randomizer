@@ -71,7 +71,7 @@ def update_language():
 		randomize_doors_select["text"] = "Randomize Doors:"
 		door_options_list = ["Two-Way Doors Only", "Shuffle By Type", "Total Random"]
 		randomize_save_doors["text"] = "Randomize Save Doors"
-		randomize_ability_doors["text"] = "Randomize Ability Doors"
+		randomize_ability_doors["text"] = "Randomize Ability Rooms"
 		randomize_switch_puzzle["text"] = "Randomize Switch Puzzle"
 		generate_button["text"] = "Generate ROM"
 		warning_label["text"] = "Please view the ReadMe for more information on settings."
@@ -89,7 +89,7 @@ def update_language():
 		randomize_doors_select["text"] = "ドアのランダム化："
 		door_options_list = ["片側ドアのみ", "タイプ別にシャッフル", "完全ランダム"]
 		randomize_save_doors["text"] = "セーブドアのランダム化"
-		randomize_ability_doors["text"] = "アビリティドアのランダム化"
+		randomize_ability_doors["text"] = "コピー部屋のランダム化"
 		randomize_switch_puzzle["text"] = "ランダムスイッチパズル"
 		generate_button["text"] = "ROMの生成"
 		warning_label["text"] = "設定の詳細についてはReadMeをご覧ください。"

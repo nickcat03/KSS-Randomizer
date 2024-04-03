@@ -17,7 +17,8 @@ def randomize_doors(ROM_file, ROM_version, randomization_method, randomize_save_
             if (("switchpuzzle" in special_attributes and not randomize_switch_puzzle) or
             ("one-way" in special_attributes and not true_random) or
             ("save" in special_attributes and not randomize_save_rooms) or
-            ("boss" in special_attributes and not randomize_ability_doors)):
+            ("boss" in special_attributes and not randomize_ability_doors) or
+            "warpstar" in special_attributes):  #Warp stars use completely different room transition methods. Remove them until code is developed for them.
                 room = DOORS[door]["in_room"][0]
                 print("Removing", door, "from", room)
                 if room in ROOMS and door in ROOMS[room]["doors"]:
