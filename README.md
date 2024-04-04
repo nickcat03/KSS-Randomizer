@@ -2,8 +2,6 @@
 
 This is a randomizer for Kirby Super Star. This software currently only allows for room randomization in the Great Cave Offensive sub-game, but more features will soon be added.
 
-If you are interested in making content that uses this randomizer, all I ask is for some sort of credit either in the description or in the video itself. Thank you <3
-
 # Setup
 
 In order to use this randomizer, you will need the following:
