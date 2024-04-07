@@ -6,7 +6,7 @@ This is a randomizer for Kirby Super Star. This software currently only allows f
 
 In order to use this randomizer, you will need the following:
 - The randomizer software and a computer to run said software (to download the program .exe, click the Releases button on the right side of the page)
-- A ROM of Kirby Super Star. This can be any version of the game, as the randomizer accounts for all ROM versions.
+- A ROM of Kirby Super Star. This can be either English or Japanese 1.2, with support for more versions planned for the future.
 - A way to play the ROM. This could be an emulator, flashcart, etc.
 
 Launch the program, enter your ROM path and output path, select settings and generate the ROM.
