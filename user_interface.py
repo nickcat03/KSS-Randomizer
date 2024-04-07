@@ -336,10 +336,14 @@ randomize_switch_puzzle = Checkbutton(frame_options1, text="Randomize Switch Puz
 randomize_switch_puzzle.grid(row=4, column=0, sticky=W)
 
 #Commenting these out until they are actually finished
-'''
+
 #Chest content
+shuffle_chest_locations_select = Checkbutton(frame_options2, text="Shuffle Chest Locations:", variable=randomize_doors_var, command=check_door_randomization)
+shuffle_chest_locations_select.grid(row=0, column=1, sticky=W)
+shuffle_chest_locations_select.select()
+
 Label(frame_options2, text="Chests Contents:").grid(row=2, column=0, sticky=E)
-check_randomize_items = OptionMenu(frame_options2, itemcheck, "Don't Randomize", "Shuffle Chests")
+check_randomize_items = OptionMenu(frame_options2, itemcheck, "Don't Randomize", "Shuffle Chests", "Randomize Chests")
 check_randomize_items.configure(width=19)
 check_randomize_items.grid(row=2, column=1, sticky=W)
 
@@ -348,7 +352,7 @@ check_randomize_miniboss = OptionMenu(frame_options2, minibosscheck, "Don't Rand
 check_randomize_miniboss.configure(width=19)
 check_randomize_miniboss.grid(row=3, column=1, sticky=W)
 
-
+'''
 Label(frame_options2, text="Minibosses:").grid(row=4, column=0, sticky=E)
 check_randomize_stands = OptionMenu(frame_options2, abilitycheck, "Don't Randomize", "Shuffle Minibosses", "Randomize Minibosses")
 check_randomize_stands.configure(width=19)
