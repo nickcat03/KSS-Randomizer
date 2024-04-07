@@ -1,0 +1,661 @@
+{
+    "Gold_Medal": {
+        "rom_location": {
+            "ENG": ["317089"],
+            "JP0": [""],
+            "JP1": ["317827"]
+        },
+        "slot_number": ["00"],
+        "gold_amount": ["10270000"],
+        "item_data": ["36"]
+    },
+
+    "Gold_Coin": {
+        "rom_location": {
+            "ENG": ["30D140"],
+            "JP0": [""],
+            "JP1": ["30D964"]
+        },
+        "slot_number": ["01"],
+        "gold_amount": ["E8030000"],
+        "item_data": ["17"]
+    },
+
+    "Whip": {
+        "rom_location": {
+            "ENG": ["3170CB"],
+            "JP0": [""],
+            "JP1": ["317869"]
+        },
+        "slot_number": ["02"],
+        "gold_amount": ["901A0000"],
+        "item_data": ["04"]
+    },
+
+    "Crystal_Ball": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["327DC2"]
+        },
+        "slot_number": ["03"],
+        "gold_amount": ["400D0300"],
+        "item_data": ["11"]
+    },
+
+    "Lucky_Cat": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["327DBC"]
+        },
+        "slot_number": ["04"],
+        "gold_amount": ["F4010000"],
+        "item_data": ["0A"]
+    },
+
+    "Seiryu_Sword": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["33A566"]
+        },
+        "slot_number": ["05"],
+        "gold_amount": ["B02A0200"],
+        "item_data": ["22"]
+    },
+
+    "Screw_Ball": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["33A56D"]
+        },
+        "slot_number": ["06"],
+        "gold_amount": ["80380100"],
+        "item_data": ["32"]
+    },
+
+    "Echigo_Candy": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["33A58B"]
+        },
+        "slot_number": ["07"],
+        "gold_amount": ["401F0000"],
+        "item_data": ["0D"]
+    },
+
+    "Zebra_Mask": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["33A5D3"]
+        },
+        "slot_number": ["08"],
+        "gold_amount": ["F03D0400"],
+        "item_data": ["1A"]
+    },
+
+    "Star_Stone": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["310ED3"]
+        },
+        "slot_number": ["09"],
+        "gold_amount": ["B4400100"],
+        "item_data": ["10"]
+    },
+
+    "Beasts_Fang": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["310ED9"]
+        },
+        "slot_number": ["0A"],
+        "gold_amount": ["841C0000"],
+        "item_data": ["06"]
+    },
+
+    "Bandanna": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["312586"]
+        },
+        "slot_number": ["0B"],
+        "gold_amount": ["C6070000"],
+        "item_data": ["1E"]
+    },
+
+    "Springtime": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["312580"]
+        },
+        "slot_number": ["0C"],
+        "gold_amount": ["90D00300"],
+        "item_data": ["24"]
+    },
+
+    "Dime": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["3103A1"]
+        },
+        "slot_number": ["0D"],
+        "gold_amount": ["0A000000"],
+        "item_data": ["00"]
+    },
+
+    "Glass_Slippers": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["3103CC"]
+        },
+        "slot_number": ["0E"],
+        "gold_amount": ["C0D40100"],
+        "item_data": ["09"]
+    },
+
+    "Goblet": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["342025"]
+        },
+        "slot_number": ["0F"],
+        "gold_amount": ["20030000"],
+        "item_data": ["18"]
+    },
+
+    "Saucepan": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34161D"]
+        },
+        "slot_number": ["10"],
+        "gold_amount": ["0A000000"],
+        "item_data": ["03"]
+    },
+
+    "Brass_Knuckle": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34202B"]
+        },
+        "slot_number": ["11"],
+        "gold_amount": ["204E0000"],
+        "item_data": ["2D"]
+    },
+
+    "Amber_Rose": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["342031"]
+        },
+        "slot_number": ["12"],
+        "gold_amount": ["54560000"],
+        "item_data": ["15"]
+    },
+
+    "Fish_Fossil": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34A16B"]
+        },
+        "slot_number": ["13"],
+        "gold_amount": ["3A200000"],
+        "item_data": ["13"]
+    },
+
+    "Beast_Fossil": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34A165"]
+        },
+        "slot_number": ["14"],
+        "gold_amount": ["9C5E0000"],
+        "item_data": ["14"]
+    },
+
+    "Nunchuks": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["342037"]
+        },
+        "slot_number": ["15"],
+        "gold_amount": ["B8D80000"],
+        "item_data": ["39"]
+    },
+
+    "Bucket": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34D935"]
+        },
+        "slot_number": ["16"],
+        "gold_amount": ["C8000000"],
+        "item_data": ["37"]
+    },
+
+    "Summertime": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34D93B"]
+        },
+        "slot_number": ["17"],
+        "gold_amount": ["90D00300"],
+        "item_data": ["25"]
+    },
+
+    "100_dollar_coin": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34D941"]
+        },
+        "slot_number": ["18"],
+        "gold_amount": ["10270000"],
+        "item_data": ["01"]
+    },
+
+    "Ancient_Gem": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34A171"]
+        },
+        "slot_number": ["19"],
+        "gold_amount": ["A0090100"],
+        "item_data": ["07"]
+    },
+
+    "Falcon_Helmet": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34A177"]
+        },
+        "slot_number": ["1A"],
+        "gold_amount": ["28A00000"],
+        "item_data": ["30"]
+    },
+
+    "Dud": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34A0CD"]
+        },
+        "slot_number": ["1B"],
+        "gold_amount": ["1E000000"],
+        "item_data": ["12"]
+    },
+
+    "Truth_Mirror": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34A17D"]
+        },
+        "slot_number": ["1C"],
+        "gold_amount": ["20A10700"],
+        "item_data": ["08"]
+    },
+
+    "Star_Tiara": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["304DFF"]
+        },
+        "slot_number": ["1D"],
+        "gold_amount": ["883A0600"],
+        "item_data": ["29"]
+    },
+
+    "Turtle_Shell": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["31BEFF"]
+        },
+        "slot_number": ["1E"],
+        "gold_amount": ["20030000"],
+        "item_data": ["2E"]
+    },
+
+    "Sword": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["31CAC4"]
+        },
+        "slot_number": ["1F"],
+        "gold_amount": ["88F50400"],
+        "item_data": ["33"]
+    },
+
+    "Warrior_Shield": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["302B41"]
+        },
+        "slot_number": ["20"],
+        "gold_amount": ["50C30000"],
+        "item_data": ["1D"]
+    },
+
+    "Unicorn_Horn": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["3008D5"]
+        },
+        "slot_number": ["21"],
+        "gold_amount": ["AC390100"],
+        "item_data": ["23"]
+    },
+
+    "Autumntime": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["31F620"]
+        },
+        "slot_number": ["22"],
+        "gold_amount": ["90D00300"],
+        "item_data": ["26"]
+    },
+
+    "Rice_Bowl": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["300C6A"]
+        },
+        "slot_number": ["23"],
+        "gold_amount": ["32000000"],
+        "item_data": ["3A"]
+    },
+
+    "Tuts_Mask": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["34FFEB"]
+        },
+        "slot_number": ["24"],
+        "gold_amount": ["00710200"],
+        "item_data": ["19"]
+    },
+
+    "Mr_Saturn": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["305158"]
+        },
+        "slot_number": ["25"],
+        "gold_amount": ["C0D40100"],
+        "item_data": ["34"]
+    },
+
+    "Armor": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["32BEA8"]
+        },
+        "slot_number": ["26"],
+        "gold_amount": ["203C0300"],
+        "item_data": ["1F"]
+    },
+
+    "Treasure_Box": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["31F7FF"]
+        },
+        "slot_number": ["27"],
+        "gold_amount": ["A0860100"],
+        "item_data": ["0C"]
+    },
+
+    "Mannequin": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["306E02"]
+        },
+        "slot_number": ["28"],
+        "gold_amount": ["B80B0000"],
+        "item_data": ["2C"]
+    },
+
+    "Gold_Crown": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["316C38"]
+        },
+        "slot_number": ["29"],
+        "gold_amount": ["800E0800"],
+        "item_data": ["20"]
+    },
+
+    "Kings_Cape": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["30391C"]
+        },
+        "slot_number": ["2A"],
+        "gold_amount": ["60C00700"],
+        "item_data": ["05"]
+    },
+
+    "Model_Ship": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["309500"]
+        },
+        "slot_number": ["2B"],
+        "gold_amount": ["00350C00"],
+        "item_data": ["2B"]
+    },
+
+    "Sun_Ring": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["309439"]
+        },
+        "slot_number": ["2C"],
+        "gold_amount": ["00350C00"],
+        "item_data": ["2A"]
+    },
+
+    "Wintertime": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["306A1D"]
+        },
+        "slot_number": ["2D"],
+        "gold_amount": ["90D00300"],
+        "item_data": ["27"]
+    },
+
+    "Katana": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["301341"]
+        },
+        "slot_number": ["2E"],
+        "gold_amount": ["301B0F00"],
+        "item_data": ["0E"]
+    },
+
+    "Charm": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["32FB9A"]
+        },
+        "slot_number": ["2F"],
+        "gold_amount": ["401F0000"],
+        "item_data": ["02"]
+    },
+
+    "Xmas_Tree": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["301CDB"]
+        },
+        "slot_number": ["30"],
+        "gold_amount": ["409C0000"],
+        "item_data": ["3B"]
+    },
+
+    "Kongs_Barrel": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["305BFF"]
+        },
+        "slot_number": ["31"],
+        "gold_amount": ["DC050000"],
+        "item_data": ["31"]
+    },
+
+    "Ramias_Scale": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["3037C6"]
+        },
+        "slot_number": ["32"],
+        "gold_amount": ["00320000"],
+        "item_data": ["1B"]
+    },
+
+    "Shiny_Bamboo": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["3059F2"]
+        },
+        "slot_number": ["33"],
+        "gold_amount": ["C0270900"],
+        "item_data": ["38"]
+    },
+
+    "Tire": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["31D3BF"]
+        },
+        "slot_number": ["34"],
+        "gold_amount": ["4C040000"],
+        "item_data": ["2F"]
+    },
+
+    "Spirit_Charm": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["30325C"]
+        },
+        "slot_number": ["35"],
+        "gold_amount": ["A4320100"],
+        "item_data": ["21"]
+    },
+
+    "Pegasus_Wing": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["32F3DB"]
+        },
+        "slot_number": ["36"],
+        "gold_amount": ["30A70000"],
+        "item_data": ["1C"]
+    },
+
+    "Raccoon_Doll": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["316F48"]
+        },
+        "slot_number": ["37"],
+        "gold_amount": ["D61F0000"],
+        "item_data": ["0B"]
+    },
+
+    "Shell_Whistle": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["338491"]
+        },
+        "slot_number": ["38"],
+        "gold_amount": ["50400100"],
+        "item_data": ["28"]
+    },
+
+    "Orihalcon": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["338497"]
+        },
+        "slot_number": ["39"],
+        "gold_amount": ["00D00700"],
+        "item_data": ["0F"]
+    },
+
+    "Platinum_Ring": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["31DC89"]
+        },
+        "slot_number": ["3A"],
+        "gold_amount": ["409C0000"],
+        "item_data": ["16"]
+    },
+
+    "Triforce": {
+        "rom_location": {
+            "ENG": [""],
+            "JP0": [""],
+            "JP1": ["31F9D8"]
+        },
+        "slot_number": ["3B"],
+        "gold_amount": ["00350C00"],
+        "item_data": ["35"]
+    }
+}

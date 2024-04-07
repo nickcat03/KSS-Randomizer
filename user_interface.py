@@ -8,7 +8,8 @@ import os
 import sys
 import shutil
 import json 
-from randomize_doors import * 
+from randomization_scripts.randomize_doors import * 
+from randomization_scripts.randomize_chests import *
 
 #initializing strings for text output. Blank for now because they will change depending on the selected language
 seed_error = ""
@@ -171,15 +172,16 @@ def validateSettings():
 			match version_read:
 				case "013300":
 					ROM_version = "ENG"
-				case "003300":
-					ROM_version = "JP0"
+				#case "003300":
+				#	ROM_version = "JP0"
 				case "003301":
 					ROM_version = "JP1"
 				case "003302":
 					# 003302 is JP 1.2, but since 1.1 and 1.2 share the same ROM locations, they will be grouped together
 					ROM_version = "JP1"
 				case _:
-					pass
+					is_valid = False
+					warning_label.config(text=invalid_rom, fg="#FF0000")
 
         #If everything is good to go, start ROM generation
 		if ROM_version != "" and is_valid:
@@ -217,8 +219,10 @@ def generate_ROM(original_ROM, randomized_ROM, ROM_version):
 		while check_if_pass == "ERROR":
 			iterations += 1
 			check_if_pass = randomize_doors(KSS_ROM, ROM_version, door_randomization_method, save_doors, ability_doors, switch_puzzle)
+		print("Done. Iterated through door generation", iterations, "times.")
+
+	randomize_treasures(KSS_ROM, ROM_version)
 	
-	print("Done. Iterated through door generation", iterations, "times.")
 	warning_label.config(text=randomize_success, fg="#000000")
 
 

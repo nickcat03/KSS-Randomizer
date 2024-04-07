@@ -5,7 +5,7 @@ import os
 import sys
 
 #Self explanatory...
-def writeBytesToFile(file,data,address,bytes):
+def write_bytes_to_file(file, data, address):
 	file.seek(address)
 	file.write(data)
      
