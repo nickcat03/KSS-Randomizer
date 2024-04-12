@@ -2719,7 +2719,7 @@
         },
         "room_number": ["35"],
         "spawn_coordinates": ["6C008200"],
-        "linked_to": ["End_EndingElevator"],
+        "linked_to": ["EndingElevator_End"],
         "in_room": ["End_Room"],
         "next_room": ["EndingElevator_Room"],
         "special": ["one-way", "fake"]

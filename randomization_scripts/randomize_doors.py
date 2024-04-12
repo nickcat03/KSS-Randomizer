@@ -91,12 +91,12 @@ def randomize_doors(ROM_file, ROM_version, randomization_method, randomize_save_
 
         return valid_doors
 
-    def write_data_to_ROM():
-        for door in DOOR_LIST:
+    def write_data_to_ROM(list):
+        for door in list:
             #print("Writing door data", doors_randomized[door])
             #print("Address being written to:", DOORS[door])
             door_data = doors_randomized[door]
-            rom_locations = DOORS[door]['rom_location'][ROM_version]
+            rom_locations = ALL_DOORS[door]['rom_location'][ROM_version]
             #Most doors have one rom location, but some may have two if they span two tiles
             #Doors that have no rom locations are custom coordinates to link one-way doors
             for rom_location in rom_locations:
@@ -173,10 +173,9 @@ def randomize_doors(ROM_file, ROM_version, randomization_method, randomize_save_
             else:
                 print(f"{door_data_to_edit} is most likely a custom door, so it was not removed from the list.")
 
-            # This is probably redundant
-            linked_door_room = DOORS[door_data_to_edit]["in_room"][0]
-            if linked_door_room not in visited_rooms:
-                visited_rooms.add(linked_door_room)
+            #Don't add room to visited if door is a one-way because it can lead to softlocks (this only applies to Total Random)
+            if linked_room_of_random_door not in visited_rooms and "one-way" not in DOORS[current_door]["special"]:
+                visited_rooms.add(linked_room_of_random_door)
 
             door_queue.remove(current_door)
             already_processed.add(current_door)
@@ -184,25 +183,17 @@ def randomize_doors(ROM_file, ROM_version, randomization_method, randomize_save_
             if current_room not in visited_rooms:
                 visited_rooms.add(current_room)
 
+
     #For exclusively shuffling one-way doors if the user prefers keeping door types together
     def shuffle_one_way_doors():
 
-        one_way_door_queue = list(ONE_WAY_DOORS.keys())
-        print(one_way_door_queue)
-
-        available_one_way_doors = copy.deepcopy(one_way_door_queue)
+        available_one_way_doors = copy.deepcopy(ONE_WAY_DOOR_LIST)
     
-        while one_way_door_queue:
-            current_door = one_way_door_queue[0]
-
+        for current_door in ONE_WAY_DOOR_LIST:
             random_door = random.choice(list(available_one_way_doors))
-
             doors_randomized[current_door] = ONE_WAY_DOORS[random_door]
-
             print(f"{current_door} becomes {random_door}")
-
             available_one_way_doors.remove(random_door)
-            one_way_door_queue.remove(current_door)
 
 
     # --- Main program loop ---
@@ -219,12 +210,15 @@ def randomize_doors(ROM_file, ROM_version, randomization_method, randomize_save_
     DOORS = json.load(open(DOOR_DATA))
     ROOMS = json.load(open(ROOM_DATA))
 
+    ALL_DOORS = copy.deepcopy(DOORS)
+
     ONE_WAY_DOORS = {}
 
     # Delete doors from lists based on user options
     check_options()
 
     DOOR_LIST = list(DOORS.keys())
+    ONE_WAY_DOOR_LIST = list(ONE_WAY_DOORS.keys())
 
     # Copy door data for data manipulation
     available_doors_in_room = copy.deepcopy(ROOMS)
@@ -269,7 +263,9 @@ def randomize_doors(ROM_file, ROM_version, randomization_method, randomize_save_
     else:
         print("Processed", processed_amount, "doors out of", total_door_amount, "doors")
 
-    write_data_to_ROM()
+    write_data_to_ROM(DOOR_LIST)
+    if randomize_one_ways:
+        write_data_to_ROM(ONE_WAY_DOOR_LIST)
     
     return "PASS"
 
